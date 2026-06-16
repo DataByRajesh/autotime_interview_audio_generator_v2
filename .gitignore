@@ -34,6 +34,12 @@ Thumbs.db
 *.mp3
 *.onnx
 *.onnx.json
+output/
+ffmpeg-*-essentials_build/
 
 # Temporary working folders
 *_temp/
+
+# Local config (do not commit your personal config)
+config.json
+config.real.json

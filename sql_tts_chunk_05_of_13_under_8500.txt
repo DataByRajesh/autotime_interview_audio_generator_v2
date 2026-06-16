@@ -1,0 +1,328 @@
+SQL Interview Podcast — Chunk 5 of 13
+
+In interviews, avoid positioning SELECT as only syntax.
+Explain why you use it.
+
+Interview answer:
+SELECT is used to retrieve specific columns from a table.
+
+Analyst answer:
+I use SELECT to inspect records, validate field values, and understand the current state of the system.
+
+Rewind:
+SELECT retrieves data.
+
+SECTION: WHERE.
+WHERE filters records based on a condition.
+
+At concept level, WHERE means:
+Do not show everything.
+Show only records that match this condition.
+
+Examples:
+Show only active customers.
+Show only failed payments.
+Show only transactions above one thousand.
+Show records created today.
+Show payments for one customer.
+
+This matters because real systems may have millions of records.
+An analyst must narrow the result to the affected data.
+
+Interview answer:
+WHERE is used to filter rows before results are returned.
+
+Analyst answer:
+WHERE helps me focus on affected records during data validation or issue investigation.
+
+Rewind:
+WHERE filters data.
+
+SECTION: ORDER BY.
+ORDER BY sorts query results.
+
+At concept level, ORDER BY means:
+Show the data in a useful order.
+
+You may sort by created date.
+You may sort by amount.
+You may sort by customer name.
+You may sort by status.
+
+In investigation, sorting by latest date is common.
+
+For example:
+If a payment failed, sort by created date descending to see the latest payment attempts.
+
+Interview answer:
+ORDER BY is used to sort query results in ascending or descending order.
+
+Analyst answer:
+ORDER BY helps me review recent transactions, logs, status changes, and events in the correct sequence.
+
+Rewind:
+ORDER BY sorts results.
+
+SECTION: COUNT.
+COUNT returns the number of records.
+
+At concept level, COUNT answers:
+How many?
+
+How many failed payments?
+How many active customers?
+How many transactions happened yesterday?
+How many records have missing email addresses?
+How many duplicate customer IDs exist?
+
+COUNT is very useful for business impact.
+
+One failed payment may be minor.
+Ten thousand failed payments may be a production incident.
+
+Interview answer:
+COUNT is used to count the number of rows matching a condition.
+
+Analyst answer:
+COUNT helps me quantify the scale and business impact of an issue.
+
+Rewind:
+COUNT measures volume.
+
+SECTION: GROUP BY.
+GROUP BY summarises data by category.
+
+At concept level, GROUP BY answers:
+How many in each group?
+
+Examples:
+How many payments by status?
+How many transactions by currency?
+How many tickets by priority?
+How many customers by account status?
+
+In fintech, GROUP BY is useful for dashboards, operations monitoring, and reporting checks.
+
+Interview answer:
+GROUP BY groups rows with the same values and allows aggregate calculations like count or sum.
+
+Analyst answer:
+GROUP BY helps me summarise patterns across business categories, such as payment status or transaction type.
+
+Rewind:
+GROUP BY creates summaries by category.
+
+SECTION: HAVING.
+HAVING filters grouped results.
+
+This is different from WHERE.
+
+WHERE filters individual rows before grouping.
+HAVING filters groups after aggregation.
+
+Example:
+Find customers with more than three failed payments.
+
+First, filter failed payments.
+Then group by customer.
+Then use HAVING to show only customers where failed count is greater than three.
+
+Interview answer:
+WHERE filters rows before aggregation. HAVING filters grouped results after aggregation.
+
+Analyst answer:
+HAVING is useful when I need to find groups that meet a certain threshold, such as customers with multiple failed payments.
+
+Rewind:
+HAVING filters after grouping.
+
+SECTION: JOIN.
+JOIN connects data from different tables.
+
+This is one of the most important SQL concepts.
+
+Business information is usually split across multiple tables.
+
+Customer details may be in customers.
+Account details may be in accounts.
+Payment status may be in payments.
+Settlement details may be in settlements.
+Action history may be in audit logs.
+
+To understand the full workflow, we join tables.
+
+Interview answer:
+A join combines related records from two or more tables based on a matching column.
+
+Analyst answer:
+I use joins to connect business entities and verify whether the system flow is complete.
+
+Rewind:
+JOIN connects related tables.
+
+SECTION: INNER JOIN.
+INNER JOIN returns only matching records from both tables.
+
+Example:
+Customers with payment records.
+
+If a customer has no payment record, they will not appear in the inner join result.
+
+Business use:
+Use INNER JOIN when you only need records where the relationship exists on both sides.
+
+Examples:
+Payments with customers.
+Accounts with customers.
+Transactions with accounts.
+Settlements with payments.
+
+Interview answer:
+INNER JOIN returns records that have matching values in both tables.
+
+Rewind:
+INNER JOIN shows matches only.
+
+SECTION: LEFT JOIN.
+LEFT JOIN returns all records from the left table and matching records from the right table.
+
+If there is no match on the right side, the right-side fields return NULL.
+
+This is very useful for finding missing records.
+
+Examples:
+Payments without settlements.
+Customers without accounts.
+Transactions without audit logs.
+Applications without status updates.
+
+Interview answer:
+LEFT JOIN returns all records from the left table, plus matching records from the right table. If no match exists, the right-side columns show NULL.
+
+Analyst answer:
+LEFT JOIN is useful for reconciliation and missing-data investigation.
+
+Rewind:
+LEFT JOIN helps find missing relationships.
+
+SECTION: NULL.
+NULL means missing, unknown, or not available.
+
+NULL is not zero.
+NULL is not an empty string.
+NULL means no value is stored.
+
+Examples:
+Email is NULL.
+Settlement date is NULL.
+Approval timestamp is NULL.
+Audit user is NULL.
+
+Why it matters:
+Missing email may affect customer communication.
+Missing settlement date may suggest payment is not settled.
+Missing audit user may affect compliance evidence.
+
+Interview answer:
+NULL represents a missing or unknown value. It must be checked using IS NULL or IS NOT NULL.
+
+Analyst answer:
+NULL checks are important because missing data can affect workflows, reporting, compliance, and customer experience.
+
+Rewind:
+NULL means missing or unknown.
+
+SECTION: DISTINCT.
+DISTINCT returns unique values.
+
+At concept level, DISTINCT answers:
+What unique values exist?
+
+Example:
+What payment statuses exist in the system?
+
+Expected statuses may be pending, completed, failed, cancelled.
+
+But DISTINCT may reveal inconsistent data:
+FAILED,
+Failed,
+FAIL,
+Failure.
+
+This can expose data quality problems.
+
+Interview answer:
+DISTINCT removes duplicate values from the result set.
+
+Analyst answer:
+DISTINCT helps me understand unique categories and detect inconsistent values.
+
+Rewind:
+DISTINCT shows unique values.
+
+SECTION: CASE.
+CASE adds conditional logic in SQL.
+
+At concept level, CASE means:
+If this condition is true, return this result.
+Otherwise return another result.
+
+Example:
+If amount is above ten thousand, mark high value.
+If amount is above one thousand, mark medium value.
+Otherwise mark low value.
+
+Business use:
+CASE can help classify records based on business rules.
+
+Interview answer:
+CASE is used to apply conditional logic within a query.
+
+Analyst answer:
+CASE is useful for report logic, data categorisation, and business rule validation.
+
+Rewind:
+CASE adds if-then logic.
+
+SECTION: SUBQUERY.
+A subquery is a query inside another query.
+
+At concept level, it means:
+Use the result of one query inside another query.
+
+Example:
+Find customers whose customer IDs appear in failed payments.
+
+The inner query finds customer IDs from failed payments.
+The outer query retrieves customer details.
+
+Interview answer:
+A subquery is a nested query used to filter or calculate results based on another query.
+
+Analyst answer:
+Subqueries are useful when the analysis needs multiple logical steps.
+
+Rewind:
+A subquery is a query inside a query.
+
+SECTION: DATE FILTERING.
+Date filtering is used to retrieve records from a specific time period.
+
+Examples:
+Transactions from today.
+Payments from last week.
+Tickets created this month.
+Audit logs after a release.
+
+Date filtering matters because many investigations are time-based.
+
+If a production issue started after a release, you may check records after that release time.
+
+Interview answer:
+Date filtering helps retrieve records within a specific date or timestamp range.
+
+Analyst answer:
+I use date filtering to investigate issues within a release window, reporting period, or incident timeframe.
+
+Rewind:
+Date filtering narrows data by time.

@@ -32,6 +32,7 @@ python interview_audio_generator_v2.py ^
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import shutil
 import subprocess
@@ -296,36 +297,70 @@ def main() -> None:
         description="Generate a long-form interview podcast MP3 using Piper TTS."
     )
 
-    parser.add_argument("--input", required=True, help="Input .txt file")
-    parser.add_argument("--output", required=True, help="Output .mp3 file")
-    parser.add_argument("--voice", required=True, help="Piper .onnx voice model")
+    parser.add_argument("--input", required=False, help="Input .txt file")
+    parser.add_argument("--output", required=False, help="Output .mp3 file")
+    parser.add_argument("--voice", required=False, help="Piper .onnx voice model")
     parser.add_argument("--config", default=None, help="Optional Piper .onnx.json config")
     parser.add_argument("--piper", default=None, help="Optional piper executable path")
     parser.add_argument("--ffmpeg", default=None, help="Optional ffmpeg executable path")
-    parser.add_argument("--speed", type=float, default=1.12, help="Final MP3 speed. Recommended 1.10-1.18")
-    parser.add_argument("--bitrate", default="128k", help="MP3 bitrate, e.g. 96k or 128k")
-    parser.add_argument("--chunk-size", type=int, default=2200, help="TTS chunk size in characters")
+    parser.add_argument("--config-file", default=None, help="Optional JSON config file (overrides defaults)")
+    parser.add_argument("--speed", type=float, default=None, help="Final MP3 speed. Recommended 1.10-1.18")
+    parser.add_argument("--bitrate", default=None, help="MP3 bitrate, e.g. 96k or 128k")
+    parser.add_argument("--chunk-size", type=int, default=None, help="TTS chunk size in characters")
     parser.add_argument("--keep-temp", action="store_true", help="Keep temporary WAV files")
     parser.add_argument("--dry-run", action="store_true", help="Validate setup and show chunk count only")
 
     args = parser.parse_args()
 
-    if not (0.8 <= args.speed <= 1.5):
+    # Load JSON config file if provided. Command-line args take precedence.
+    file_cfg: dict = {}
+    if args.config_file:
+        cfg_path = Path(args.config_file)
+        if not cfg_path.exists():
+            raise FileNotFoundError(f"Config file not found: {cfg_path}")
+        try:
+            file_cfg = json.loads(cfg_path.read_text(encoding="utf-8"))
+        except Exception as exc:  # pragma: no cover - defensive
+            raise RuntimeError(f"Failed to parse config file: {exc}")
+
+    def resolve(name: str, default=None):
+        # prefer CLI value (not None), then config file, else default
+        val = getattr(args, name, None)
+        if val is not None:
+            return val
+        return file_cfg.get(name, default)
+
+    speed = float(resolve("speed", 1.12))
+    if not (0.8 <= speed <= 1.5):
         raise ValueError("Speed must be between 0.8 and 1.5. Recommended: 1.10 to 1.18.")
 
-    input_path = require_file(args.input, "Input script")
-    voice_model = require_file(args.voice, "Piper voice model")
-    config_file = require_file(args.config, "Piper config") if args.config else None
+    input_arg = resolve("input")
+    output_arg = resolve("output")
+    voice_arg = resolve("voice")
+    config_arg = resolve("config")
 
-    piper_exe = require_executable("piper", args.piper)
-    ffmpeg_exe = require_executable("ffmpeg", args.ffmpeg)
+    if not input_arg:
+        raise ValueError("Input script not provided (use --input or provide in config-file)")
+    if not output_arg:
+        raise ValueError("Output path not provided (use --output or provide in config-file)")
+    if not voice_arg:
+        raise ValueError("Voice model not provided (use --voice or provide in config-file)")
 
-    output_mp3 = Path(args.output)
+    input_path = require_file(input_arg, "Input script")
+    voice_model = require_file(voice_arg, "Piper voice model")
+    config_file = require_file(config_arg, "Piper config") if config_arg else None
+
+    piper_exe = require_executable("piper", resolve("piper", args.piper))
+    ffmpeg_exe = require_executable("ffmpeg", resolve("ffmpeg", args.ffmpeg))
+
+    output_mp3 = Path(output_arg)
     output_mp3.parent.mkdir(parents=True, exist_ok=True)
 
     raw_text = input_path.read_text(encoding="utf-8")
     clean_text = clean_text_for_tts(raw_text)
-    chunks = split_text(clean_text, max_chars=args.chunk_size)
+    chunk_size = int(resolve("chunk_size", 2200))
+    bitrate = resolve("bitrate", "128k")
+    chunks = split_text(clean_text, max_chars=chunk_size)
 
     if not chunks:
         raise ValueError("No readable text found in input file.")
@@ -338,7 +373,7 @@ def main() -> None:
     print(f"Piper: {piper_exe}")
     print(f"FFmpeg: {ffmpeg_exe}")
     print(f"Chunks: {len(chunks)}")
-    print(f"Speed: {args.speed}")
+    print(f"Speed: {speed}")
 
     if args.dry_run:
         print("Dry run complete. No audio generated.")
@@ -376,8 +411,8 @@ def main() -> None:
         ffmpeg_exe=ffmpeg_exe,
         input_wav=merged_wav,
         output_mp3=output_mp3,
-        speed=args.speed,
-        bitrate=args.bitrate,
+        speed=speed,
+        bitrate=bitrate,
     )
 
     if not args.keep_temp:

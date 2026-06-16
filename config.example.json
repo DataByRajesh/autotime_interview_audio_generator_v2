@@ -1,0 +1,11 @@
+{
+  "input": "sql_theory_interview_podcast_consolidated.txt",
+  "output": "sql_interview_podcast_final.mp3",
+  "voice": "C:/tts/piper/voices/en_GB-alba-medium.onnx",
+  "config": "C:/tts/piper/voices/en_GB-alba-medium.onnx.json",
+  "piper": "C:/tts/piper/piper.exe",
+  "ffmpeg": "C:/ffmpeg/bin/ffmpeg.exe",
+  "speed": 1.12,
+  "bitrate": "128k",
+  "chunk_size": 2200
+}
