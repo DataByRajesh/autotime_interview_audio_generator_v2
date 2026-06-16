@@ -1,0 +1,4 @@
+A short sample input with technical terms:
+SQL, API, INNER JOIN, and arrows -> to convert.
+
+Use this file to test the generator.
