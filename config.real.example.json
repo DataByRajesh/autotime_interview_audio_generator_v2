@@ -1,0 +1,11 @@
+{
+  "input": "sample_sql_podcast.txt",
+  "output": "output/sample_test.mp3",
+  "voice": "C:/tts/piper/voices/your_voice.onnx",
+  "config": "C:/tts/piper/voices/your_voice.onnx.json",
+  "piper": "C:/tts/piper/piper.exe",
+  "ffmpeg": "C:/ffmpeg/bin/ffmpeg.exe",
+  "speed": 1.12,
+  "bitrate": "192k",
+  "chunk_size": 2200
+}

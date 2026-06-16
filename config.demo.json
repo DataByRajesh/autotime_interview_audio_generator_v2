@@ -1,0 +1,11 @@
+{
+  "input": "sample_input.txt",
+  "output": "sample_output_demo.mp3",
+  "voice": "dummy_voice.onnx",
+  "config": "dummy_voice.onnx.json",
+  "piper": "piper_stub.bat",
+  "ffmpeg": "ffmpeg_stub.bat",
+  "speed": 1.12,
+  "bitrate": "128k",
+  "chunk_size": 2200
+}

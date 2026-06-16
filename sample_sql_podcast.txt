@@ -1,0 +1,1 @@
+This is a short sample script for a 2-minute interview-style podcast.\n\nIntroduce the topic, ask one or two concise technical questions, and provide clear, paced answers.\n\nRepeat this paragraph several times to create a longer sample for testing local TTS voice clarity and speed.
