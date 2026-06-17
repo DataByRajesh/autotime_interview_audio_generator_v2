@@ -5,7 +5,7 @@
   "config": "C:/tts/piper/voices/your_voice.onnx.json",
   "piper": "C:/tts/piper/piper.exe",
   "ffmpeg": "C:/ffmpeg/bin/ffmpeg.exe",
-  "speed": 1.12,
+  "speed": 1.0,
   "bitrate": "192k",
   "chunk_size": 2200
 }

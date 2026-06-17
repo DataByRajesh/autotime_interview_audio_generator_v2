@@ -26,7 +26,7 @@ python interview_audio_generator_v2.py ^
   --piper "C:\tts\piper\piper.exe" ^
   --voice "C:\tts\piper\voices\en_GB-alba-medium.onnx" ^
   --config "C:\tts\piper\voices\en_GB-alba-medium.onnx.json" ^
-  --speed 1.12
+  --speed 1.0
 """
 
 from __future__ import annotations
@@ -268,7 +268,7 @@ def export_mp3(
     speed: float,
     bitrate: str,
 ) -> None:
-    # atempo accepts 0.5-2.0 in one filter, so our recommended speed range is safe.
+    # atempo accepts 0.5-2.0 in one filter, and validation keeps this in range.
     audio_filter = ",".join([
         f"atempo={speed}",
         "highpass=f=90",
@@ -304,7 +304,7 @@ def main() -> None:
     parser.add_argument("--piper", default=None, help="Optional piper executable path")
     parser.add_argument("--ffmpeg", default=None, help="Optional ffmpeg executable path")
     parser.add_argument("--config-file", default=None, help="Optional JSON config file (overrides defaults)")
-    parser.add_argument("--speed", type=float, default=None, help="Final MP3 speed. Recommended 1.10-1.18")
+    parser.add_argument("--speed", type=float, default=None, help="Final MP3 speed. Use 1.0 for normal playback")
     parser.add_argument("--bitrate", default=None, help="MP3 bitrate, e.g. 96k or 128k")
     parser.add_argument("--chunk-size", type=int, default=None, help="TTS chunk size in characters")
     parser.add_argument("--keep-temp", action="store_true", help="Keep temporary WAV files")
@@ -330,9 +330,9 @@ def main() -> None:
             return val
         return file_cfg.get(name, default)
 
-    speed = float(resolve("speed", 1.12))
+    speed = float(resolve("speed", 1.0))
     if not (0.8 <= speed <= 1.5):
-        raise ValueError("Speed must be between 0.8 and 1.5. Recommended: 1.10 to 1.18.")
+        raise ValueError("Speed must be between 0.8 and 1.5. Use 1.0 for normal playback.")
 
     input_arg = resolve("input")
     output_arg = resolve("output")

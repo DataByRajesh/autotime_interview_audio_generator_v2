@@ -19,7 +19,7 @@ python interview_audio_generator_v2.py ^
   --piper "%PIPER%" ^
   --voice "%VOICE%" ^
   --config "%CONFIG%" ^
-  --speed 1.12 ^
+  --speed 1.0 ^
   --dry-run
 
 echo.
@@ -32,6 +32,6 @@ python interview_audio_generator_v2.py ^
   --piper "%PIPER%" ^
   --voice "%VOICE%" ^
   --config "%CONFIG%" ^
-  --speed 1.12
+  --speed 1.0
 
 pause

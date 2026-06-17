@@ -67,7 +67,7 @@ python interview_audio_generator_v2.py --config-file config.json
 Start with:
 
 ```text
-speed = 1.12
+speed = 1.0
 chunk size = 2200
 bitrate = 128k
 ```
@@ -75,13 +75,13 @@ bitrate = 128k
 If it sounds too slow:
 
 ```text
-speed = 1.15
+speed = 1.08
 ```
 
 If it sounds too fast:
 
 ```text
-speed = 1.08
+speed = 0.95
 ```
 
 ## Dry run first
@@ -95,7 +95,7 @@ python interview_audio_generator_v2.py ^
   --piper "C:\tts\piper\piper.exe" ^
   --voice "C:\tts\piper\voices\en_GB-alba-medium.onnx" ^
   --config "C:\tts\piper\voices\en_GB-alba-medium.onnx.json" ^
-  --speed 1.12 ^
+  --speed 1.0 ^
   --dry-run
 ```
 
@@ -135,7 +135,7 @@ Troubleshooting
 - Voice model missing: If the voice `.onnx` file is not found, download a compatible Piper model and ensure the `voice` path in `config.real.json` points to it.
 - Output folder missing: The script will create parent folders for `output` automatically, but ensure you have write permissions.
 - Audio sounds robotic: Try a different `.onnx` model or adjust `--speed` closer to `1.0`. Higher speeds may introduce artifacts.
-- Audio too slow/fast: Tune the `speed` value in `config.real.json` (recommended 1.08–1.15).
+- Audio too slow/fast: Tune the `speed` value in `config.real.json`. Use `1.0` for normal playback.
 
 Demo vs Real
 - Demo (`config.demo.json`): uses `piper_stub.bat` and `ffmpeg_stub.bat` and produces placeholder audio. Useful for offline testing and CI.

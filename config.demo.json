@@ -5,7 +5,7 @@
   "config": "dummy_voice.onnx.json",
   "piper": "piper_stub.bat",
   "ffmpeg": "ffmpeg_stub.bat",
-  "speed": 1.12,
+  "speed": 1.0,
   "bitrate": "128k",
   "chunk_size": 2200
 }

@@ -82,7 +82,7 @@ python interview_audio_generator_v2.py `
   --voice "C:\tts\piper\voices\en_GB-alba-medium.onnx" `
   --config "C:\tts\piper\voices\en_GB-alba-medium.onnx.json" `
   --ffmpeg "C:\ffmpeg\bin\ffmpeg.exe" `
-  --speed 1.12 `
+  --speed 1.0 `
   --bitrate 128k
 ```
 
@@ -106,7 +106,7 @@ Important settings:
 - `config`: optional Piper `.onnx.json` config path.
 - `piper`: Piper executable path.
 - `ffmpeg`: FFmpeg executable path.
-- `speed`: final playback speed, usually `1.08` to `1.15`.
+- `speed`: final playback speed. Use `1.0` for normal playback.
 - `bitrate`: MP3 bitrate, such as `128k` or `192k`.
 - `chunk_size`: text chunk size in characters, usually around `2200`.
 
@@ -117,5 +117,5 @@ Local files such as `config.json`, `config.real.json`, generated audio, voice mo
 - If Piper is not found, confirm the `piper` path in your config or add Piper to `PATH`.
 - If FFmpeg is not found, confirm the `ffmpeg` path or run `ffmpeg -version`.
 - If the voice model is missing, check the `.onnx` path and matching `.onnx.json` path.
-- If audio sounds too fast or slow, adjust `speed` closer to `1.0` or within the recommended range.
+- If audio sounds too fast or slow, adjust `speed`; `1.0` is normal playback.
 - If a long generation stops midway, rerun the same command. Existing WAV chunks are skipped.
