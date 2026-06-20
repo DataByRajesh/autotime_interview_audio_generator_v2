@@ -143,6 +143,83 @@ Demo vs Real
 
 Keep this project local-first: Piper and FFmpeg are free/open-source; obtain the voice models you prefer and run everything locally — no cloud is required.
 
+
+## Psychology-backed workplace learning modes
+
+The original text-to-audio command still works. The new learning features are optional and generate phone-friendly scripts before sending them through the same Piper and FFmpeg pipeline.
+
+Available modes:
+- `learn_mode`: topic, why it matters, simple meaning, job example, simpler repeat, common confusion, recap.
+- `recall_mode`: question, pause, answer, repeated answer, second question, pause, final memory sentence.
+- `compare_mode`: compares two similar concepts such as UAT vs SIT or settlement vs reconciliation.
+- `interview_mode`: turns a concept into simple, stronger, FinTech/payment, and polished interview answers.
+- `workplace_playlist_mode`: uses shorter sentences, pause markers, repeated key points, and quiz prompts.
+
+Pause markers supported in scripts:
+- `[PAUSE_SHORT]` = 700ms target
+- `[PAUSE_MEDIUM]` = 1200ms target
+- `[PAUSE_LONG]` = 2000ms target
+
+Current limitation: real FFmpeg silence insertion is marked as a TODO in `replace_pause_markers_for_tts`. For now, pause markers are converted into punctuation and blank lines before Piper runs, which encourages natural TTS pauses but is not millisecond-exact.
+
+List built-in templates:
+
+```powershell
+python interview_audio_generator_v2.py --list-topic-templates
+```
+
+Create a script only:
+
+```powershell
+python interview_audio_generator_v2.py --learning-mode learn_mode --topic "UAT" --script-output output/uat_learn.txt --script-only
+```
+
+Generate one learning audio file:
+
+```powershell
+python interview_audio_generator_v2.py --config-file config.real.json --learning-mode interview_mode --topic "Payment lifecycle" --output output/payment_lifecycle_interview.mp3 --speed 0.85
+```
+
+Generate a spaced repetition workplace playlist. This defaults to final `.wav` files for the Day 1, Day 2, Day 4, and Day 7 sequence:
+
+```powershell
+python interview_audio_generator_v2.py --config-file config.real.json --spaced-playlist --topic "Agile Scrum Jira" --compare-topic "Scrum" --output output/agile_scrum_jira_playlist
+```
+
+Example playlist output filenames:
+
+```text
+01_Agile_Scrum_Jira_Day1_Learn.wav
+02_Agile_Scrum_Jira_Day2_Recall.wav
+03_Agile_Scrum_Jira_Day4_Compare.wav
+04_Agile_Scrum_Jira_Day7_Interview.wav
+```
+
+Built-in topic templates include Agile, Scrum, Jira, User stories, Acceptance criteria, UAT, SIT, QA, Regression testing, SQL joins, Payment lifecycle, Settlement, Reconciliation, Incident management, Requirements gathering, Stakeholder communication, and Business Systems Analyst interview answers.
+
+
+Batch-generate separate MP3 files for deep single-concept transcripts in your Downloads folder:
+
+```powershell
+python batch_generate_deep_concepts.py
+```
+
+This creates one separate MP3 per matching `.txt` file in `output/deep_concepts_085x`. It is resumable and skips existing MP3 files.
+
+Optional batch flags:
+
+```powershell
+python batch_generate_deep_concepts.py --input-dir "C:\Users\rajan\Downloads" --output-dir output/deep_concepts_085x --speed 0.85
+```
+
+Cognitive load checks warn when:
+- average sentence length is too long
+- paragraphs are too dense
+- no pause markers exist
+- too many new terms appear in one section
+- workplace speed is above 1.0
+- no quiz questions are included
+
 ## Grade-level summary
 
 Current grade: B+ / practical MVP.
