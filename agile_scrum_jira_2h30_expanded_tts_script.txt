@@ -1,0 +1,3469 @@
+Agile, Scrum and Jira Masterclass
+Final Consolidated TTS Script
+For IT Business Analyst, Business Systems Analyst, Technical BA, Application Analyst and FinTech Systems Analyst Interviews
+
+Start.
+
+This is my final consolidated learning script for Agile, Scrum and Jira.
+
+I am learning this for IT Business Analyst, Business Systems Analyst, Technical Business Analyst, Application Analyst and FinTech Systems Analyst interviews.
+
+My goal is not to memorise textbook words.
+
+My goal is to understand the meaning behind each concept.
+
+My goal is to explain Agile, Scrum and Jira clearly in interviews.
+
+My goal is to connect every concept with real delivery work.
+
+This script uses one main example again and again.
+
+The main example is:
+
+Successful payment missing settlement record.
+
+This example will help me remember everything.
+
+Agile. Scrum. Jira. Product backlog. Epic. User story. Task. Bug. Spike. Technical debt. Acceptance criteria. Given When Then. Definition of Ready. Definition of Done. UAT. Defect triage. SQL validation. Stakeholder communication.
+
+The most important memory line is:
+
+Agile is the mindset.
+Scrum is the framework.
+Jira is the tracking tool.
+
+Repeat.
+
+Agile is the mindset.
+Scrum is the framework.
+Jira is the tracking tool.
+
+One more time.
+
+Agile is how the team thinks about delivery.
+Scrum is how the team organises delivery.
+Jira is how the team tracks delivery.
+
+Now I will learn everything slowly.
+
+Section 1. Agile.
+
+Terminology.
+
+Agile means flexible and adaptive. In software delivery, Agile means delivering work in small useful pieces, getting feedback, and improving continuously.
+
+Agile is not one meeting. Agile is not one tool. Agile is not only Jira. Agile is not only speed. Agile is a delivery mindset.
+
+Concept.
+
+Agile is a way of building and delivering software step by step. The team does not try to build everything at once. The team breaks work into smaller useful parts. The team builds one part, tests it, shows it to users, gets feedback, improves it, then moves to the next part.
+
+The Agile cycle is:
+
+Build small.
+Test early.
+Get feedback.
+Improve.
+Repeat.
+
+Repeat that.
+
+Build small.
+Test early.
+Get feedback.
+Improve.
+Repeat.
+
+This is the heart of Agile. Agile is a way to reduce delivery risk. It reduces the risk of building the wrong thing.
+
+In old-style delivery, sometimes called waterfall, the team may spend months gathering requirements. Then they write a large requirement document. Then developers build the full system. Then testers test near the end. Then business users see the system very late.
+
+The risk is that after many months, business users may say: This is not what we wanted. This report has the wrong fields. This workflow is too slow. This dashboard does not show the exception we need. The system is technically complete, but not useful.
+
+Agile tries to avoid this. Agile says: do not wait until the end to learn whether the solution is useful. Show smaller parts earlier. Get feedback earlier. Improve earlier. Deliver business value earlier.
+
+Example.
+
+Imagine a company has a payment system. Finance operations cannot easily identify successful payments that have no settlement record. They also cannot easily see payment and settlement amount mismatches. They cannot easily identify duplicate payment references. They rely on manual spreadsheet checks.
+
+The business problem is: Finance operations need a better way to identify payment reconciliation exceptions.
+
+If the team tries to build everything at once, the dashboard may become too large. It may include missing settlements, amount mismatches, duplicate payments, refunds, chargebacks, filters, export, audit logs, user permissions, management summary and daily alerts. That is too much for one delivery.
+
+Agile breaks it down.
+
+Sprint one: show successful payments without settlement records.
+Sprint two: show payment and settlement amount mismatches.
+Sprint three: add date, currency and payment method filters.
+Sprint four: add export.
+Sprint five: add audit log.
+Sprint six: add management summary.
+
+This is Agile. Small useful delivery. Early feedback. Continuous improvement.
+
+Repeat the concept.
+
+Agile means small delivery, early feedback and continuous improvement. Agile does not mean chaos. Agile does not mean no planning. Agile does not mean no documentation. Agile means flexible structure.
+
+Memory line.
+
+Agile is flexible structure.
+
+Interview answer.
+
+Agile is an iterative way of delivering software in smaller increments. Instead of waiting until the end of a large project, Agile teams deliver useful parts regularly, get feedback and adapt. From a Business Analyst perspective, Agile helps turn business needs into user stories, acceptance criteria and testable requirements throughout delivery.
+
+Memory lock.
+
+Agile reduces risk by creating early feedback.
+
+Section 2. Business Analyst in Agile.
+
+Terminology.
+
+A Business Analyst, or BA, is the person who helps understand the business problem and convert it into clear requirements for the delivery team. In Agile, the BA is a clarity creator.
+
+Concept.
+
+The BA connects business and technology. The BA helps business users explain the real problem. The BA helps developers understand what to build. The BA helps testers understand what to test. The BA helps the Product Owner prepare clear backlog items.
+
+The BA creates user stories, acceptance criteria, process flows, UAT scenarios and defect descriptions.
+
+Example.
+
+Business says: We need better reconciliation.
+
+This is vague. The BA should not directly create a Jira ticket called “Improve reconciliation”.
+
+The BA asks: What reconciliation issue are you facing? Are successful payments missing settlement records? Are settlement amounts different from payment amounts? Are there duplicate payments? Which team is affected? What fields should the report show? What filters are needed? What is the business impact? What does success look like?
+
+Repeat the concept.
+
+The BA does not just write notes. The BA does not just attend meetings. The BA does not just take minutes. The BA creates clarity. The BA turns vague business language into clear, testable delivery work.
+
+Payment example.
+
+Business problem: Successful payments are missing settlement records.
+
+The BA asks: What status means successful? Is it SUCCESS, COMPLETED or CAPTURED? Where is settlement data stored? Is settlement immediate or batch-based? How long should we wait before calling settlement missing? Which users need access? Should the report show total affected amount? Should export be allowed? Should export be audited?
+
+Now the BA has moved from vague requirement to clear delivery logic.
+
+Interview answer.
+
+As a Business Analyst in Agile, I help translate business problems into clear user stories, acceptance criteria, process flows and testable requirements. I work with the Product Owner, developers, testers and stakeholders to clarify scope, business rules, edge cases and expected outcomes.
+
+Memory lock.
+
+The BA turns vague problems into clear, testable work.
+
+Section 3. Scrum.
+
+Terminology.
+
+Scrum is an Agile framework. A framework means a structured way of working. Scrum gives the team roles, ceremonies and a delivery rhythm.
+
+Concept.
+
+Scrum organises work into short delivery cycles called sprints. The team prepares work, plans the sprint, builds, tests, reviews, improves, then repeats. Scrum helps Agile become practical.
+
+Agile is the idea. Scrum is the routine. Agile is the mindset. Scrum is the framework.
+
+Example.
+
+The team wants to build a missing settlement report. In Scrum, this work is written as a user story. The story is refined. The story is planned into a sprint. Developers build it. Testers test it. The BA clarifies questions. The team reviews it at the end of the sprint. Stakeholders give feedback. The next sprint improves the product.
+
+Repeat the concept.
+
+Scrum gives Agile structure. Scrum uses sprints. Scrum uses roles. Scrum uses ceremonies. Scrum helps the team deliver work regularly.
+
+Interview answer.
+
+Scrum is an Agile framework that organises work into sprints. It includes roles such as Product Owner, Scrum Master and Development Team, and ceremonies such as sprint planning, daily stand-up, backlog refinement, sprint review and retrospective. As a BA, I support Scrum by clarifying requirements, preparing stories, defining acceptance criteria and supporting delivery and UAT.
+
+Memory lock.
+
+Scrum gives Agile a working rhythm.
+
+Section 4. Sprint.
+
+Terminology.
+
+A sprint is a fixed delivery period. It is a short time window where the team works on selected backlog items. A sprint is usually one to four weeks. Two weeks is common.
+
+Concept.
+
+During a sprint, the team should build, test and complete agreed work. The sprint should contain clear and ready work. If work is unclear, developers and testers may get blocked. That is why backlog refinement is important before sprint planning.
+
+Example.
+
+Sprint goal: Deliver missing settlement report.
+
+Sprint work may include: create backend query, build API endpoint, create report screen, add date filter, add currency filter, prepare test data and validate with SQL.
+
+Repeat the concept.
+
+A sprint is a short delivery window. A sprint contains selected work. A sprint should produce tested output. A sprint should not contain unclear work.
+
+Interview answer.
+
+A sprint is a fixed delivery period where the team works on selected backlog items. At the end of the sprint, the aim is to deliver completed and tested work that meets the agreed acceptance criteria.
+
+Memory lock.
+
+A sprint is a short delivery window with agreed work.
+
+Section 5. Product Owner.
+
+Terminology.
+
+The Product Owner is the person responsible for product value and priority. The Product Owner manages the product backlog. The Product Owner decides what is most important for the business.
+
+Concept.
+
+The Product Owner owns priority. The BA helps with clarity. The Product Owner may know what the business wants. The BA helps convert that into clear stories and acceptance criteria.
+
+Example.
+
+Product Owner says: We need a reconciliation dashboard.
+
+The BA asks: Which issue is highest priority? Missing settlements? Amount mismatches? Refund issues? Chargebacks?
+
+If missing settlements are highest priority, the BA writes the first user story for that.
+
+Repeat the concept.
+
+Product Owner decides priority. Product Owner owns value. Product Owner manages backlog. BA supports by clarifying details.
+
+Interview answer.
+
+The Product Owner owns product priorities and business value. As a BA, I support the Product Owner by clarifying requirements, writing user stories, defining acceptance criteria and making backlog items ready for delivery.
+
+Memory lock.
+
+Product Owner decides priority. BA creates clarity.
+
+Section 6. Scrum Master.
+
+Terminology.
+
+The Scrum Master is the person who helps the team follow Scrum and remove blockers. A blocker means something stopping the team from progressing.
+
+Concept.
+
+The Scrum Master protects delivery flow. The Scrum Master helps the team improve. The Scrum Master is not a traditional boss. The Scrum Master is a facilitator.
+
+Example.
+
+The team is blocked because settlement API documentation is missing. The Scrum Master may help escalate the issue. The BA explains the business impact. The Product Owner may adjust priority if needed.
+
+Repeat the concept.
+
+Scrum Master removes blockers. Scrum Master protects flow. Scrum Master improves process. Scrum Master helps the team work better.
+
+Interview answer.
+
+The Scrum Master supports the Scrum process, removes blockers and helps the team improve continuously. They help the team work effectively rather than managing the team like a traditional boss.
+
+Memory lock.
+
+Scrum Master removes blockers and protects delivery flow.
+
+Section 7. Development Team.
+
+Terminology.
+
+The Development Team is the group that builds, tests and delivers the solution. It may include developers, testers, QA engineers, DevOps engineers, data engineers and designers.
+
+Concept.
+
+The Development Team delivers the work. The BA helps them understand what to deliver. Developers build. Testers test. BA clarifies business rules.
+
+Example.
+
+Developers build the missing settlement report. Testers verify that only successful payments without settlements appear. The BA clarifies: Should failed payments appear? Should pending settlements appear? What delay is allowed before settlement is called missing?
+
+Repeat the concept.
+
+Development Team builds. Development Team tests. Development Team delivers. BA clarifies what the system should do.
+
+Interview answer.
+
+The Development Team is responsible for building and testing the solution. As a BA, I support the team by clarifying requirements, explaining business rules and making sure acceptance criteria are clear and testable.
+
+Memory lock.
+
+Development Team delivers. BA clarifies.
+
+Section 8. Scrum Ceremonies.
+
+Terminology.
+
+Ceremonies are regular Scrum meetings. They help the team plan, align, review and improve. The main ceremonies are sprint planning, daily stand-up, backlog refinement, sprint review and retrospective.
+
+Concept.
+
+Each ceremony has a purpose. Sprint planning selects work. Daily stand-up tracks blockers. Backlog refinement prepares future work. Sprint review shows completed work. Retrospective improves the team.
+
+Example.
+
+For the missing settlement report, planning selects it for sprint. Stand-up reveals blockers. Refinement prepares the story. Review shows the completed report. Retrospective improves the next sprint.
+
+Repeat the concept.
+
+Ceremonies are not random meetings. They create rhythm. They create visibility. They create feedback.
+
+Interview answer.
+
+Scrum ceremonies help the team plan, coordinate, review and improve. As a BA, I support these ceremonies by explaining requirements, clarifying acceptance criteria, answering questions and helping validate whether the delivered work meets the business need.
+
+Memory lock.
+
+Planning selects. Stand-up tracks. Refinement prepares. Review shows. Retro improves.
+
+Section 9. Sprint Planning.
+
+Terminology.
+
+Sprint planning is the meeting where the team decides what work to take into the sprint.
+
+Concept.
+
+The team checks whether stories are clear, ready and realistic. The Product Owner explains priority. The BA explains requirements and acceptance criteria. Developers and testers discuss effort, risk and dependencies.
+
+Example.
+
+Story: As a finance operations analyst, I want to view successful payments without settlement records so that I can investigate reconciliation exceptions.
+
+Questions in sprint planning: Is the story clear? Are acceptance criteria complete? Do we know the data source? Do we know settlement timing? Do we have test data? Can we complete this in the sprint?
+
+Repeat the concept.
+
+Sprint planning selects sprint work. Sprint planning checks readiness. Sprint planning confirms what can be delivered.
+
+Interview answer.
+
+Sprint planning is where the team agrees what work will be delivered in the sprint. As a BA, I support sprint planning by explaining business value, acceptance criteria, data rules and dependencies.
+
+Memory lock.
+
+Sprint planning selects the work.
+
+Section 10. Daily Stand-Up.
+
+Terminology.
+
+Daily stand-up is a short daily meeting to discuss progress and blockers.
+
+Concept.
+
+It is usually around fifteen minutes. It is not for long problem-solving. It is for quick alignment.
+
+Example.
+
+Developer says: I am blocked because settlement timing is unclear.
+
+The BA follows up after stand-up and clarifies with the Product Owner or business user.
+
+Repeat the concept.
+
+Stand-up is quick. Stand-up tracks blockers. Stand-up keeps the team aligned. Stand-up is not a long discussion meeting.
+
+Interview answer.
+
+Daily stand-up helps the team stay aligned on progress and blockers. As a BA, I listen for requirement-related blockers and help resolve them quickly.
+
+Memory lock.
+
+Daily stand-up exposes blockers early.
+
+Section 11. Backlog Refinement.
+
+Terminology.
+
+Backlog refinement is the session where upcoming work is clarified and prepared.
+
+Concept.
+
+This is one of the most important sessions for a BA. The team reviews future stories. They clarify requirements. They split large stories. They improve acceptance criteria. They identify dependencies. They capture open questions.
+
+Example.
+
+Vague backlog item: Build reconciliation dashboard.
+
+In refinement, the BA splits it into: view missing settlements, view amount mismatches, add filters, add export and add audit log.
+
+Repeat the concept.
+
+Refinement prepares future work. Refinement turns vague ideas into clear stories. Refinement reduces sprint confusion.
+
+Interview answer.
+
+Backlog refinement is where upcoming work is clarified and prepared. As a BA, I use refinement to explain the business problem, improve user stories, define acceptance criteria, identify dependencies and make stories ready for sprint planning.
+
+Memory lock.
+
+Refinement turns vague ideas into clear delivery items.
+
+Section 12. Sprint Review.
+
+Terminology.
+
+Sprint review is the meeting where completed work is demonstrated to stakeholders.
+
+Concept.
+
+The team shows what was delivered. Stakeholders give feedback. The Product Owner checks whether the work meets business value.
+
+Example.
+
+The team demonstrates the missing settlement report. Finance users check: Are correct records shown? Are required fields present? Are filters working? Does count match SQL validation? Is this useful for daily investigation?
+
+Repeat the concept.
+
+Review shows completed work. Review gathers feedback. Review checks business value.
+
+Interview answer.
+
+Sprint review is where the team demonstrates completed work and receives feedback. As a BA, I help confirm whether the delivered feature meets acceptance criteria and business expectations.
+
+Memory lock.
+
+Sprint review shows what was delivered.
+
+Section 13. Retrospective.
+
+Terminology.
+
+Retrospective means looking back and improving. In Scrum, retrospective is the meeting where the team discusses what went well, what did not and what can improve.
+
+Concept.
+
+Retrospective is not blame. It is improvement.
+
+Example.
+
+The team may say: Acceptance criteria were unclear. Test data was not ready. UAT started late. Stakeholder feedback was delayed.
+
+Improvement actions: Write clearer acceptance criteria. Prepare test data earlier. Resolve open questions before sprint planning.
+
+Repeat the concept.
+
+Retrospective improves the team. Retrospective improves the process. Retrospective is continuous improvement.
+
+Interview answer.
+
+Retrospective helps the team improve. As a BA, I may use retrospectives to improve requirement clarity, refinement readiness, UAT preparation and stakeholder communication.
+
+Memory lock.
+
+Retrospective improves the process.
+
+Section 14. Jira.
+
+Terminology.
+
+Jira is a work tracking tool. It is commonly used by Agile teams to track epics, stories, tasks, bugs and sprint progress.
+
+Concept.
+
+Jira makes work visible. Jira shows what is planned, in progress, blocked, in testing and done. Jira is not Agile itself. Jira is not Scrum itself. Jira is the tracking tool.
+
+Example.
+
+The missing settlement report is tracked in Jira. The Jira ticket contains business context, user story, acceptance criteria, dependencies, comments and testing notes.
+
+Repeat the concept.
+
+Jira tracks work. Jira makes delivery visible. Jira helps teams manage progress.
+
+Interview answer.
+
+Jira is used to track Agile delivery items such as epics, user stories, tasks, bugs and sprint progress. As a BA, I use Jira to document requirements, acceptance criteria, defects, dependencies and delivery updates.
+
+Memory lock.
+
+Jira makes delivery visible.
+
+Section 15. Product Backlog.
+
+Terminology.
+
+The product backlog is the list of work the team may do in the future.
+
+Concept.
+
+It is a prioritised work queue. It can include epics, stories, tasks, bugs, spikes, change requests and technical debt. The Product Owner prioritises it. The BA clarifies it.
+
+Example.
+
+Weak backlog item: Improve payment process.
+
+Better backlog item: As a finance operations analyst, I want to view payment and settlement amount mismatches so that I can investigate reconciliation exceptions before month-end reporting.
+
+Repeat the concept.
+
+Backlog is future work. Backlog is prioritised. Backlog should be refined. Backlog should not stay vague.
+
+Interview answer.
+
+The product backlog is a prioritised list of work items the team may deliver. As a BA, I help refine backlog items so they are clear, testable and linked to business value.
+
+Memory lock.
+
+Backlog is the future work list.
+
+Section 16. Epic.
+
+Terminology.
+
+An epic is a large body of work.
+
+Concept.
+
+An epic is too big to complete as one small story. It is broken into smaller user stories.
+
+Example.
+
+Epic: Payment reconciliation dashboard.
+
+Stories inside the epic: view missing settlements, view amount mismatches, add filters, add export, add audit logging, add management summary.
+
+Repeat the concept.
+
+Epic is big. Epic is a large goal. Epic is broken into stories.
+
+Interview answer.
+
+An epic is a large piece of work that is broken down into smaller user stories. It helps organise related work under one larger business objective.
+
+Memory lock.
+
+Epic is the big goal.
+
+Section 17. User Story.
+
+Terminology.
+
+A user story is a requirement written from the user’s perspective.
+
+Concept.
+
+The format is: As a user, I want something, so that I get a benefit.
+
+It answers: Who is the user? What do they need? Why do they need it?
+
+Example.
+
+As a finance operations analyst, I want to view successful payments without settlement records so that I can investigate reconciliation exceptions quickly.
+
+Who? Finance operations analyst. What? View successful payments without settlement records. Why? To investigate reconciliation exceptions quickly.
+
+Repeat the concept.
+
+User story equals who, what and why.
+
+A weak story says: Create settlement report.
+
+A strong story says: As a finance operations analyst, I want to view successful payments without settlement records so that I can investigate reconciliation exceptions quickly.
+
+More examples.
+
+As a payment support analyst, I want to view failed payments with customer details and failure reason so that I can investigate customer complaints faster.
+
+As a compliance analyst, I want to see customers with missing KYC status so that I can investigate onboarding risk.
+
+As a finance manager, I want to view the total value of payments missing settlement so that I can understand financial exposure.
+
+Interview answer.
+
+A user story captures the user, the need and the business value. It helps the team understand what to build and why it matters.
+
+Memory lock.
+
+User story equals who, what and why.
+
+Section 18. Task.
+
+Terminology.
+
+A task is a specific piece of delivery work.
+
+Concept.
+
+A story explains business value. A task explains the work needed to deliver that value.
+
+Example.
+
+Story: Show successful payments without settlement records.
+
+Tasks: create backend query, build API endpoint, design report table, add date filter, add currency filter and prepare UAT data.
+
+Repeat the concept.
+
+Story is business need. Task is delivery work. Story says what value is needed. Task says what work must be done.
+
+Interview answer.
+
+A task is a specific piece of work needed to deliver a user story. Stories explain business value, while tasks represent technical or delivery activities.
+
+Memory lock.
+
+Story is user value. Task is delivery work.
+
+Section 19. Bug.
+
+Terminology.
+
+A bug is a defect or issue in the system.
+
+Concept.
+
+A bug means actual behaviour does not match expected behaviour. A good bug needs evidence and business impact.
+
+Example.
+
+Expected result: Successful payment should create settlement record.
+
+Actual result: Payment is SUCCESS, but settlement record is missing.
+
+Evidence: Payment ID 105 has no settlement record.
+
+Business impact: Finance operations cannot reconcile the payment.
+
+Repeat the concept.
+
+Bug means something is wrong. Bug means expected and actual are different. Bug needs evidence. Bug needs impact.
+
+Weak bug: Payment not working.
+
+Strong bug: Payment ID 105 has status SUCCESS, but no matching settlement record exists. Expected result is settlement creation. Actual result is missing settlement. Business impact is reconciliation failure.
+
+Interview answer.
+
+A good bug report should include expected result, actual result, steps to reproduce, evidence and business impact. This helps developers and testers investigate quickly.
+
+Memory lock.
+
+Good bug equals expected, actual, evidence and impact.
+
+Section 20. Severity and Priority.
+
+Terminology.
+
+Severity means impact. Priority means urgency.
+
+Concept.
+
+Severity asks: How serious is the issue? Priority asks: How quickly should we fix it?
+
+Example.
+
+High severity and high priority: Payment processing is down for all customers.
+
+High severity but lower priority: A serious issue exists in a feature not used in the current release.
+
+Low severity but high priority: Small wording error on a regulatory disclosure page before go-live.
+
+Repeat the concept.
+
+Severity is impact. Priority is urgency. They are related but not the same.
+
+Interview answer.
+
+Severity is about how serious the issue is. Priority is about how quickly it needs to be fixed.
+
+Memory lock.
+
+Severity equals impact. Priority equals urgency.
+
+Section 21. Spike.
+
+Terminology.
+
+A spike is a time-boxed research task.
+
+Concept.
+
+A spike is used when the team needs to investigate uncertainty before building.
+
+Example.
+
+Investigate whether the payment gateway API provides settlement status in real time.
+
+Another example: Check whether the reconciliation dashboard should use the reporting database or direct source-system access.
+
+Repeat the concept.
+
+Spike is research. Spike reduces uncertainty. Spike helps the team understand before committing.
+
+Interview answer.
+
+A spike is a time-boxed research task used when the team needs to investigate technical or functional uncertainty before building a feature.
+
+Memory lock.
+
+Spike is research before delivery.
+
+Section 22. Technical Debt.
+
+Terminology.
+
+Technical debt means old design, shortcuts or poor structure that makes future work harder.
+
+Concept.
+
+Technical debt is hidden future cost. It can slow delivery. It can increase incidents. It can create business risk.
+
+Example.
+
+A payment report depends on manual spreadsheet exports because a proper dashboard was never built.
+
+Another example: Settlement logic is duplicated in multiple systems.
+
+Another example: Old code makes every small payment change risky.
+
+Repeat the concept.
+
+Technical debt is hidden cost. Technical debt slows future change. Technical debt can create operational risk.
+
+Interview answer.
+
+Technical debt refers to design or implementation choices that make future changes harder. As a BA, I may help explain business impact when technical debt affects operations, reporting, incidents or delivery speed.
+
+Memory lock.
+
+Technical debt is hidden future cost.
+
+Section 23. Acceptance Criteria.
+
+Terminology.
+
+Acceptance criteria are the conditions that must be met for a user story to be accepted.
+
+Concept.
+
+Acceptance criteria make a story testable. They explain expected behaviour. They reduce misunderstanding between business, developers and testers.
+
+Example.
+
+User story: As a finance operations analyst, I want to view successful payments without settlement records so that I can investigate reconciliation exceptions quickly.
+
+Acceptance criteria: Only SUCCESS payments should appear. Only payments with no matching settlement should appear. The report should show payment ID, reference, customer ID, amount, currency, date and payment method. The user should filter by date, currency and payment method. If no records exist, show “No missing settlements found”. The count should match SQL validation.
+
+Now understand why each rule matters.
+
+Only SUCCESS payments should appear. This avoids showing failed payments as settlement exceptions.
+
+Only payments with no matching settlement should appear. This is the core business rule.
+
+The report should show payment ID and reference. This helps users identify the transaction.
+
+The report should show amount and currency. This helps users understand financial impact.
+
+The report should show date. This helps users prioritise older exceptions.
+
+Filters help investigation. No-records message avoids confusion. SQL validation confirms data accuracy.
+
+Repeat the concept.
+
+Acceptance criteria make stories clear. Acceptance criteria make stories testable. Acceptance criteria reduce misunderstanding.
+
+Bad acceptance criteria: System should work properly. Dashboard should be user-friendly. Data should be accurate.
+
+Good acceptance criteria: Only SUCCESS payments with no settlement should appear. Report count should match SQL validation. User can filter by date range and currency. If no records exist, show “No missing settlements found”.
+
+Interview answer.
+
+Acceptance criteria should be clear, specific and testable. They define what must be true for the story to be accepted by the business.
+
+Memory lock.
+
+Story gives the goal. Acceptance criteria give the rules.
+
+Section 24. Given When Then.
+
+Terminology.
+
+Given When Then is a structured format for acceptance criteria. Given means setup. When means action. Then means result.
+
+Concept.
+
+It helps describe expected behaviour clearly.
+
+Example.
+
+Given a payment has status SUCCESS, and no matching settlement record exists, when the finance operations user opens the missing settlement report, then the payment should appear in the report.
+
+Another example: Given a payment has status FAILED, when the user opens the missing settlement report, then the payment should not appear in the report.
+
+Another example: Given no missing settlement records exist, when the user opens the report, then the system should display “No missing settlements found”.
+
+Repeat the concept.
+
+Given is setup. When is action. Then is result. Given When Then makes requirements easier to test.
+
+Interview answer.
+
+Given When Then helps structure acceptance criteria into precondition, action and expected result. It is useful because it makes requirements easier to test.
+
+Memory lock.
+
+Given is setup. When is action. Then is result.
+
+Section 25. Definition of Ready.
+
+Terminology.
+
+Definition of Ready means the story is ready to start development.
+
+Concept.
+
+Ready means the team has enough clarity. Developers are not guessing. Testers understand expected behaviour.
+
+A story may be ready when business value is clear, acceptance criteria are written, dependencies are known, data fields are understood, open questions are resolved or documented, test data needs are known and the team can estimate the story.
+
+Example.
+
+Not ready: Build reconciliation dashboard.
+
+Why not ready? Too broad. Unclear exceptions. Unclear data source. Unclear filters. Unclear business rule.
+
+Ready: As a finance operations analyst, I want to view successful payments without settlement records so that I can investigate reconciliation exceptions quickly. Acceptance criteria are defined. Data source is known. Settlement timing is confirmed. Test data is available.
+
+Repeat the concept.
+
+Ready means clear enough to start. Ready means enough detail exists. Ready means blockers are reduced before sprint.
+
+Interview answer.
+
+Definition of Ready helps ensure the story is clear enough before development starts. As a BA, I help make stories ready by clarifying requirements, acceptance criteria, dependencies, data rules and open questions.
+
+Memory lock.
+
+Ready means clear enough to start.
+
+Section 26. Definition of Done.
+
+Terminology.
+
+Definition of Done means the story is truly complete.
+
+Concept.
+
+Done does not only mean code complete. Done means the work meets quality and business acceptance.
+
+Example.
+
+A missing settlement report is done when development is complete, acceptance criteria are met, QA testing passed, critical defects are fixed, UAT is completed if required and Product Owner accepts it.
+
+Repeat the concept.
+
+Done means accepted. Done means tested. Done means business criteria are met. Done does not mean only coded.
+
+Interview answer.
+
+Definition of Done helps the team agree what complete means. For a BA, it ensures the story is not only coded but also tested, accepted and aligned with business expectations.
+
+Memory lock.
+
+Done means accepted, not just coded.
+
+Section 27. UAT.
+
+Terminology.
+
+UAT means User Acceptance Testing.
+
+Concept.
+
+UAT checks whether the delivered solution meets business needs. It is business validation. It is not random clicking. It checks whether the system supports the real business process.
+
+Example.
+
+Requirement: Successful payments should create settlement records.
+
+UAT scenario: Identify a successful payment. Check settlement record exists. Compare payment and settlement amount. Expected result: settlement exists and amount matches.
+
+Another UAT scenario. Requirement: Missing settlement report should show successful payments with no settlement. Steps: open missing settlement report, apply date filter, search payment reference. Expected result: payment appears if it is successful and settlement is missing.
+
+Another UAT scenario. Requirement: Successful payment with settlement should not appear. Steps: open report and search payment reference. Expected result: payment does not appear because settlement exists.
+
+Repeat the concept.
+
+UAT confirms business acceptance. UAT checks real user needs. UAT confirms whether the solution works for the business process.
+
+Interview answer.
+
+UAT validates whether the delivered solution meets business needs. As a BA, I support UAT by preparing scenarios, expected results, test data and helping clarify defects.
+
+Memory lock.
+
+UAT confirms business acceptance.
+
+Section 28. SQL Validation in Agile.
+
+Terminology.
+
+SQL validation means using SQL queries to check whether system data matches the expected business rule.
+
+Concept.
+
+For a Business Systems Analyst, SQL helps validate reports, UAT results and defects.
+
+Example.
+
+Acceptance criteria says: Only successful payments without settlements should appear.
+
+SQL validation logic: use payments table, left join settlements table, filter payment status SUCCESS and find records where settlement ID is NULL.
+
+In simple business language, this means compare successful payment records with settlement records and show cases where settlement is missing.
+
+Repeat the concept.
+
+Agile defines the need. Jira tracks the work. Acceptance criteria define expected behaviour. SQL proves the data. UAT confirms business value.
+
+Interview answer.
+
+SQL can support Agile delivery by validating data, checking UAT results, investigating defects and confirming whether the delivered feature matches business rules.
+
+Memory lock.
+
+SQL proves the data.
+
+Section 29. Handling Unclear Requirements.
+
+Terminology.
+
+Unclear requirement means the business request is vague and not ready for development.
+
+Concept.
+
+A BA should clarify before writing the ticket.
+
+Example.
+
+Vague requirement: We need better reconciliation.
+
+Clarifying questions: What issue are you facing? Missing settlements? Amount mismatches? Duplicate payments? Who needs the report? What fields should be shown? What filters are needed? What does success look like?
+
+Repeat the concept.
+
+Do not accept vague requirements. Clarify the business problem. Clarify the user. Clarify the expected outcome. Clarify the data rule. Clarify success criteria.
+
+Interview answer.
+
+When requirements are unclear, I clarify the business problem, users, current process, expected outcome, data rules, edge cases and success criteria before turning the requirement into user stories and acceptance criteria.
+
+Memory lock.
+
+Clarify before you document.
+
+Section 30. Change Request.
+
+Terminology.
+
+A change request is a new or changed requirement.
+
+Concept.
+
+Agile accepts change, but change still needs impact assessment.
+
+Example.
+
+Original story: Show missing settlements.
+
+New request: Also show refunds and chargebacks.
+
+This may be a separate story.
+
+The BA asks: Is it urgent? Is it in scope? Does it affect sprint work? Does it need Product Owner approval? Does it affect testing?
+
+Repeat the concept.
+
+Agile accepts change. Change needs impact assessment. Change needs prioritisation. Change should not silently break sprint scope.
+
+Interview answer.
+
+I handle change requests by clarifying the need, assessing impact and discussing priority with the Product Owner and delivery team. If it is urgent, sprint scope may be adjusted. If not, it can go into the backlog for future prioritisation.
+
+Memory lock.
+
+Change is welcome, but impact must be managed.
+
+Section 31. Good Jira Story Ticket.
+
+Terminology.
+
+A Jira ticket is a work item in Jira. A story ticket represents a user-focused requirement.
+
+Concept.
+
+A good Jira story ticket should include enough information for developers to build and testers to validate. It should include title, business context, user story, acceptance criteria, data rules, dependencies, assumptions, out of scope, testing notes, priority and linked epic.
+
+Example.
+
+Ticket type: Story.
+Title: Show successful payments missing settlement records.
+Epic: Payment reconciliation dashboard.
+
+Business context: Finance operations currently perform manual checks to identify successful payments that do not have matching settlement records. This delays reconciliation and increases operational risk. The team needs a report that highlights successful payments where settlement is missing.
+
+User story: As a finance operations analyst, I want to view successful payments without settlement records so that I can investigate reconciliation exceptions quickly.
+
+Acceptance criteria: Only payments with status SUCCESS should be included. Payments should appear only where no matching settlement record exists. The report should display payment ID, payment reference, customer ID, amount, currency, payment date and payment method. The user should be able to filter by date range, currency and payment method. The report should display total record count and total affected amount. If no records exist, show “No missing settlements found”. The result count should match SQL validation.
+
+Data rules: Payment status must be read from the payments table. Settlement match should be based on payment ID or payment reference, depending on confirmed system design. Pending settlements within the expected processing window should be excluded if the business confirms a delay rule.
+
+Dependencies: Settlement data source must be available. Payment-to-settlement matching rule must be confirmed. Test data must include successful payments with and without settlements.
+
+Assumptions: Finance operations users have permission to view payment exception records. The first version does not include refunds or chargebacks.
+
+Out of scope: Refund exceptions. Chargeback exceptions. Automated alert emails. Audit log for export.
+
+Testing notes: QA should validate records against SQL query. UAT should be completed by finance operations user.
+
+Priority: High, because reconciliation delay affects finance operations.
+
+Repeat the concept.
+
+A good Jira ticket does not only say what to build. It explains why it matters. It gives business context. It gives testable rules. It highlights dependencies. It reduces assumptions. It helps developers and testers.
+
+Interview answer.
+
+A good Jira ticket explains what is needed, why it matters and how it will be accepted. I include business context, user story, acceptance criteria, data rules, dependencies and testing notes so developers and testers do not need to guess.
+
+Memory lock.
+
+Good Jira ticket equals context, story, rules and tests.
+
+Section 32. Jira Bug Ticket.
+
+Terminology.
+
+A bug ticket documents a defect. A defect means actual behaviour does not match expected behaviour.
+
+Concept.
+
+A good bug ticket should include title, environment, steps to reproduce, expected result, actual result, evidence, affected records, severity, priority, business impact and possible root cause if known.
+
+Example.
+
+Ticket type: Bug.
+Title: Successful payment PAY1005 missing settlement record.
+Environment: UAT environment.
+Module: Payment reconciliation.
+
+Steps to reproduce: open the payments table or payment screen. Search for payment reference PAY1005. Confirm payment status is SUCCESS. Search settlement records using payment ID or payment reference. No settlement record is found.
+
+Expected result: A payment with status SUCCESS should have a matching settlement record after the expected processing window.
+
+Actual result: Payment PAY1005 has status SUCCESS, but no matching settlement record exists.
+
+Evidence: SQL validation shows payment exists in payments table and no matching settlement exists in settlements table.
+
+Affected record: PAY1005.
+
+Business impact: Finance operations cannot reconcile this payment. If the issue affects multiple payments, daily reconciliation and reporting may be delayed.
+
+Severity: High, if multiple successful payments are missing settlements.
+
+Priority: High, if this blocks UAT sign-off or month-end reconciliation.
+
+Notes: Need to confirm whether settlement should be immediate or batch-based.
+
+Repeat the concept.
+
+A weak bug says payment not working. A strong bug says what was expected, what actually happened, how to reproduce it, which record is affected, what evidence exists and what business impact it creates.
+
+Interview answer.
+
+For bug tickets, I provide expected result, actual result, steps to reproduce, evidence, affected records and business impact. This helps the team triage and fix issues faster.
+
+Memory lock.
+
+Bug ticket needs expected, actual, evidence and impact.
+
+Section 33. Defect Triage.
+
+Terminology.
+
+Defect triage is the process of reviewing, prioritising and assigning defects. Triage means deciding how serious the issue is, how urgent it is and what should happen next.
+
+Concept.
+
+In defect triage, the team may ask: Is this a real defect? Is it expected behaviour? What is the severity? What is the priority? Who should investigate it? Does it block release? Does it block UAT? Does it affect customers? Does it affect finance, compliance or reporting?
+
+Example.
+
+Bug: Successful payment missing settlement.
+
+In triage, the team asks: Is settlement expected immediately? Is there a batch delay? Is the payment actually successful? Is the settlement created in a different system? Is this one record or many records? Is the amount high? Does it affect reporting? Does it block UAT?
+
+Repeat the concept.
+
+A BA helps triage by clarifying business impact. The BA does not always fix the bug. The BA helps explain why the bug matters. The BA confirms expected behaviour. The BA helps decide whether it is truly a defect or expected system design.
+
+Scenario.
+
+Developer says: The missing settlement is expected because settlement is batch-based.
+
+BA response: The BA should clarify the business rule. If settlement is expected after batch processing, the acceptance criteria should include the processing window. The report should show only records missing settlement after the allowed settlement delay.
+
+Interview answer.
+
+In defect triage, I help clarify expected behaviour, business impact and acceptance criteria. I also help determine whether the issue is a true defect, a data issue, a requirement gap or expected behaviour.
+
+Memory lock.
+
+Triage decides seriousness, urgency and next action.
+
+Section 34. Backlog Refinement Roleplay.
+
+Terminology.
+
+Backlog refinement is where upcoming work is clarified before sprint planning.
+
+Concept.
+
+Refinement makes stories ready. The BA plays a major role.
+
+Roleplay.
+
+Product Owner: We need a payment reconciliation dashboard.
+
+BA: Which reconciliation problem should we solve first?
+
+Product Owner: Finance team needs to identify successful payments without settlements.
+
+BA: Who will use this report?
+
+Product Owner: Finance operations analysts.
+
+BA: What action will they take after seeing the report?
+
+Product Owner: They will investigate missing settlement records and escalate to payment operations.
+
+BA: What fields should the report show?
+
+Product Owner: Payment ID, reference, customer ID, amount, currency, payment date and payment method.
+
+BA: Should failed payments appear?
+
+Product Owner: No. Only successful payments.
+
+BA: How do we define missing settlement?
+
+Product Owner: Successful payment with no settlement after batch processing.
+
+BA: What is the batch processing window?
+
+Product Owner: End of business day.
+
+BA: Should we exclude payments from today until the batch is complete?
+
+Product Owner: Yes.
+
+BA: Should users filter by date and currency?
+
+Product Owner: Yes.
+
+BA: Should export be included in the first version?
+
+Product Owner: Not first version. Add export as a separate story.
+
+Repeat the concept.
+
+Refinement is where vague ideas become clear. Refinement prevents sprint blockers. Refinement exposes missing details. Refinement improves acceptance criteria.
+
+Interview answer.
+
+In backlog refinement, I help clarify the business problem, users, business rules, fields, filters, dependencies and open questions. I also help split large items into smaller stories that are ready for sprint planning.
+
+Memory lock.
+
+Refinement removes confusion before sprint.
+
+Section 35. Sprint Planning Roleplay.
+
+Terminology.
+
+Sprint planning is where the team chooses what work to deliver in the sprint.
+
+Concept.
+
+Sprint planning should not be the first time the team sees the story. The story should already be refined. In sprint planning, the team checks readiness and capacity.
+
+Roleplay.
+
+Product Owner: The missing settlement report is high priority. I want it in this sprint.
+
+Developer: Do we know the data source?
+
+BA: Yes. Payment data comes from the payments table. Settlement data comes from the settlements table.
+
+Tester: Do we have test data?
+
+BA: We need three types of test data: successful payment without settlement, successful payment with settlement, and failed payment without settlement.
+
+Developer: What about settlement delay?
+
+BA: Payments from the current day should be excluded until batch processing is complete.
+
+Tester: Are acceptance criteria ready?
+
+BA: Yes. I have added payment status rule, missing settlement rule, fields, filters, no-records message and SQL validation.
+
+Scrum Master: Any blockers?
+
+Developer: No blocker, but we need confirmation on payment ID versus payment reference matching.
+
+BA: I will confirm that before development starts.
+
+Repeat the concept.
+
+Sprint planning checks whether work is ready. Sprint planning checks capacity. Sprint planning checks dependencies. Sprint planning confirms sprint commitment.
+
+Interview answer.
+
+In sprint planning, I help the team understand the story, acceptance criteria, data rules and dependencies. I also highlight open questions so the team can decide whether the story is ready for the sprint.
+
+Memory lock.
+
+Sprint planning chooses clear, realistic work.
+
+Section 36. Daily Stand-Up Examples.
+
+Terminology.
+
+Daily stand-up is a short daily meeting for progress and blockers.
+
+Concept.
+
+It is not for long discussions. It helps identify blockers early. A BA listens for requirement, data or stakeholder blockers.
+
+Example blocker one.
+
+Developer: I cannot continue because the matching rule is unclear.
+
+BA action: Clarify whether settlement should match payment ID, payment reference or external transaction reference.
+
+Example blocker two.
+
+Tester: I cannot test because there is no successful payment without settlement in UAT data.
+
+BA action: Work with QA or data team to prepare test data.
+
+Example blocker three.
+
+Developer: The API does not provide settlement status.
+
+BA action: Raise dependency and maybe create a spike to investigate available data.
+
+Example blocker four.
+
+Product Owner: Finance stakeholder has not confirmed the settlement delay rule.
+
+BA action: Follow up and capture decision in Jira or Confluence.
+
+Repeat the concept.
+
+A BA does not need to speak for a long time in stand-up. But a BA should listen carefully. Many delivery blockers are requirement blockers. Many testing blockers are data blockers. Many stakeholder blockers need BA follow-up.
+
+Interview answer.
+
+In daily stand-up, I listen for blockers related to requirements, data, test scenarios and stakeholder decisions. If something is unclear, I follow up after stand-up and update the ticket or documentation.
+
+Memory lock.
+
+Stand-up exposes blockers. BA helps remove requirement blockers.
+
+Section 37. Sprint Review Example.
+
+Terminology.
+
+Sprint review is where completed work is demonstrated and feedback is collected.
+
+Concept.
+
+Sprint review is not just a technical demo. It checks business value. It helps stakeholders see what was built.
+
+Example.
+
+The team demonstrates missing settlement report.
+
+Developer shows: report page, date filter, currency filter, missing settlement records and no-records message.
+
+Tester explains: QA tested successful payments without settlement, successful payments with settlement, failed payments and filters.
+
+BA explains: The report is designed to help finance operations identify successful payments missing settlements after the batch processing window.
+
+Finance stakeholder checks: Can I see payment reference? Can I see amount and currency? Can I filter old records? Can I export?
+
+Product Owner says: Export is not in this sprint. It is a future story.
+
+Stakeholder says: This is useful, but we need total affected amount.
+
+BA captures feedback: Add total affected amount as a new backlog item or improvement.
+
+Repeat the concept.
+
+Sprint review gets feedback. Feedback may create new stories. Feedback does not mean the current story failed. Feedback helps improve the product.
+
+Interview answer.
+
+In sprint review, I help confirm whether delivered work meets acceptance criteria and business needs. I also capture stakeholder feedback and convert it into backlog items where needed.
+
+Memory lock.
+
+Review shows work and captures feedback.
+
+Section 38. Retrospective Example.
+
+Terminology.
+
+Retrospective means looking back to improve.
+
+Concept.
+
+The retrospective is about team process improvement. It is not blame. It is not personal criticism. It is about improving delivery.
+
+Example retrospective after missing settlement sprint.
+
+What went well? The user story was clear. SQL validation helped testing. Finance stakeholder attended sprint review.
+
+What did not go well? Test data was not ready early. Matching rule was confirmed late. UAT user joined only at the end.
+
+What can improve? Prepare test data before sprint starts. Confirm matching rule during refinement. Invite UAT user earlier. Add data dependency checklist to Definition of Ready.
+
+Repeat the concept.
+
+Retrospective improves process. Retrospective can improve BA work. Retrospective can improve testing readiness. Retrospective can improve stakeholder involvement.
+
+Interview answer.
+
+In retrospectives, I contribute by identifying improvements in requirement clarity, refinement readiness, test data, UAT preparation and communication between business and delivery teams.
+
+Memory lock.
+
+Retro improves the next sprint.
+
+Section 39. Stakeholder Communication.
+
+Terminology.
+
+Stakeholders are people or groups affected by the system or involved in delivery. Stakeholders may include Product Owner, business users, developers, testers, support, finance, compliance, operations and managers.
+
+Concept.
+
+Different stakeholders need different communication. Business users need simple language. Developers need clear rules and edge cases. Testers need expected results and test data. Product Owners need value, priority and trade-offs. Managers need risk, progress and impact.
+
+Example.
+
+Business user says: We waste too much time checking payments.
+
+BA asks: Which payment checks take time? What records are you comparing? What exceptions are you looking for? How often do you check? What report would help? What action do you take after finding an issue?
+
+Instead of saying to business: We will left join payments and settlements.
+
+Say: We will compare successful payment records with settlement records and show cases where settlement is missing.
+
+Repeat the concept.
+
+Business speaks problem. BA translates into requirements. Developers need rules. Testers need expected behaviour. Product Owner needs priority information.
+
+Interview answer.
+
+When working with stakeholders, I adapt my communication. I use plain language with business users, clear rules with developers, expected results with testers and value-impact information with Product Owners.
+
+Memory lock.
+
+Business speaks problem. BA translates into requirements.
+
+Section 40. Stakeholder Conflict.
+
+Terminology.
+
+Stakeholder conflict means different stakeholders want different things or have different priorities.
+
+Concept.
+
+A BA should not take sides too quickly. The BA should clarify value, urgency, risk and impact.
+
+Scenario.
+
+Finance operations wants missing settlement report first. Customer support wants failed payment error report first. Compliance wants audit log first. All three say their need is important.
+
+BA approach: clarify each need.
+
+Finance need: reconciliation delay and financial reporting.
+Support need: customer complaints and service quality.
+Compliance need: audit evidence and access tracking.
+
+Ask: What is the business impact? What is the risk if delayed? Is there a regulatory deadline? How many users are affected? Is there a workaround? Can the work be split?
+
+Product Owner decides priority. BA supports with clear information.
+
+Repeat the concept.
+
+BA does not normally own final priority. BA supports prioritisation with evidence. BA makes trade-offs visible.
+
+Interview answer.
+
+When stakeholders have conflicting priorities, I clarify the business value, urgency, risk and impact of each request. I then support the Product Owner with clear information so priorities can be decided transparently.
+
+Memory lock.
+
+BA clarifies trade-offs. Product Owner decides priority.
+
+Section 41. Agile Documentation.
+
+Terminology.
+
+Documentation means written information that explains requirements, decisions, rules, processes, tests or system behaviour.
+
+Concept.
+
+Agile does not mean no documentation. Agile means useful documentation. The right level of documentation depends on the work.
+
+Simple change may need a clear Jira ticket. Complex regulated change may need user stories, process flows, data mapping, decision log and UAT evidence.
+
+Example documentation for missing settlement report: Jira story, acceptance criteria, data mapping, matching rule decision, process flow, SQL validation query, UAT scenarios, defect log, release note, access control decision and audit requirement for future export.
+
+Repeat the concept.
+
+Agile documentation should be useful. Not too heavy. Not missing. Clear enough for delivery. Clear enough for testing. Clear enough for support. Clear enough for audit when needed.
+
+Interview answer.
+
+Agile does not mean no documentation. As a BA, I document what is needed for clear delivery, testing, support and audit, such as user stories, acceptance criteria, business rules, process flows, data mapping and UAT scenarios.
+
+Memory lock.
+
+Agile documentation should be lightweight but useful.
+
+Section 42. Complete Agile BA Flow.
+
+Terminology.
+
+Agile BA flow means the full journey from business problem to accepted solution.
+
+Concept.
+
+A vague business issue becomes a clear user story. The user story becomes a Jira ticket. The Jira ticket becomes sprint work. Sprint work becomes tested feature. Tested feature becomes UAT. UAT becomes business acceptance.
+
+Example.
+
+Business problem: Finance operations cannot identify successful payments missing settlement records.
+
+Step one: clarify the problem. Who is affected? Finance operations. What is the issue? Successful payments may not have settlement records. Why does it matter? Finance cannot reconcile the payments. What happens today? Manual spreadsheet checking.
+
+Step two: define the business rule. If payment status is SUCCESS, then settlement should exist after the expected processing window.
+
+Step three: write user story. As a finance operations analyst, I want to view successful payments without settlement records so that I can investigate reconciliation exceptions quickly.
+
+Step four: write acceptance criteria. Only SUCCESS payments should be considered. Only records with no settlement should appear. Fields should include payment ID, reference, customer ID, amount, currency, date and payment method. Filters should include date range, currency and payment method. If no records exist, show a no-records message. Count should match SQL validation.
+
+Step five: create Jira ticket. Include title, context, user story, acceptance criteria, data rules, dependencies, priority and testing notes.
+
+Step six: refine the backlog item. Discuss data source, settlement timing, filters, permissions, edge cases and test data.
+
+Step seven: plan into sprint. Team confirms the story is ready and estimates effort.
+
+Step eight: develop. Developers build. BA clarifies questions.
+
+Step nine: test. Testers validate against acceptance criteria.
+
+Step ten: validate with SQL. SQL confirms report data matches backend rule.
+
+Step eleven: complete UAT. Finance operations confirms the report helps investigation.
+
+Step twelve: close as done. Product Owner accepts. Story is closed.
+
+Repeat the concept.
+
+Problem becomes story. Story becomes ticket. Ticket becomes delivery. Delivery becomes test. Test becomes business acceptance.
+
+Interview answer.
+
+I would manage a payment reconciliation feature by clarifying the business problem, breaking it into smaller stories, writing acceptance criteria, creating Jira tickets, supporting refinement and sprint delivery, helping testers, validating data using SQL and supporting UAT with finance users.
+
+Memory lock.
+
+Problem becomes story. Story becomes ticket. Ticket becomes delivery. Delivery becomes business acceptance.
+
+Section 43. Full Interview Simulation.
+
+Interviewer: What is Agile?
+
+Answer: Agile is an iterative way of delivering software in smaller increments. Teams build useful parts, get feedback and adapt. From a BA perspective, Agile helps reduce the risk of building the wrong thing because requirements are clarified and validated throughout delivery.
+
+Repeat shorter: Agile means build small, test early, get feedback and improve.
+
+Interviewer: What is Scrum?
+
+Answer: Scrum is an Agile framework that organises work into sprints. It includes roles like Product Owner, Scrum Master and Development Team, and ceremonies like sprint planning, daily stand-up, backlog refinement, sprint review and retrospective.
+
+Repeat shorter: Scrum gives Agile a sprint-based delivery rhythm.
+
+Interviewer: What is Jira?
+
+Answer: Jira is a tool used to track Agile work such as epics, stories, tasks, bugs and sprint progress. As a BA, I use Jira to document stories, acceptance criteria, defects and delivery updates.
+
+Repeat shorter: Jira makes work visible.
+
+Interviewer: Where does a BA fit in Scrum?
+
+Answer: A BA supports the Product Owner and delivery team by clarifying business needs, writing user stories, defining acceptance criteria, preparing backlog items, answering questions during development and supporting testing and UAT.
+
+Repeat shorter: BA creates clarity across business, development, testing and UAT.
+
+Interviewer: How do you write a user story?
+
+Answer: I identify the user, the need and the business value. For example: As a finance operations analyst, I want to view successful payments without settlement records so that I can investigate reconciliation exceptions quickly.
+
+Repeat shorter: User story equals who, what and why.
+
+Interviewer: How do you define acceptance criteria?
+
+Answer: I define clear, testable conditions that must be true for the story to be accepted. For the missing settlement report, criteria may include showing only successful payments with no settlement, showing required fields, allowing filters and matching SQL validation.
+
+Repeat shorter: Acceptance criteria make stories testable.
+
+Interviewer: How do you handle unclear requirements?
+
+Answer: I ask clarifying questions to understand the business problem, users, current process, expected outcome, data rules, edge cases and success criteria. I then convert the clarified requirement into user stories and acceptance criteria.
+
+Repeat shorter: Clarify before writing the ticket.
+
+Interviewer: How do you use Jira?
+
+Answer: I use Jira to document stories, acceptance criteria, defects, dependencies and delivery updates. A good Jira ticket should explain what is needed, why it matters and how it will be accepted.
+
+Repeat shorter: Jira tracks work and creates visibility.
+
+Interviewer: How do you support UAT?
+
+Answer: I prepare UAT scenarios, expected results, test data and business rules based on acceptance criteria. During UAT, I help users validate the feature and raise clear defects where actual behaviour differs from expected behaviour.
+
+Repeat shorter: UAT confirms business acceptance.
+
+Interviewer: How does SQL connect to your BA role?
+
+Answer: SQL helps me validate data, check UAT results, investigate defects and confirm whether reports match business rules. For example, I can validate successful payments missing settlements by comparing payment and settlement records.
+
+Repeat shorter: SQL proves the data.
+
+Interviewer: Give me a complete example.
+
+Answer: If finance operations cannot identify successful payments missing settlement records, I would first clarify the business problem and data rules. Then I would write a user story, define acceptance criteria, create a Jira ticket, support refinement and sprint planning, answer developer questions, support QA testing, validate the report using SQL and support UAT with finance users. This shows how a business problem becomes a tested and accepted solution.
+
+Repeat final answer shorter: Clarify the problem. Write the story. Define criteria. Track in Jira. Support sprint delivery. Test. Validate with SQL. Support UAT. Close as done.
+
+Section 44. Pause-and-Answer Drill.
+
+Now I will practise active recall.
+
+Question one. What is Agile?
+Pause.
+Answer: Agile is an iterative way of delivering software in smaller increments with regular feedback and improvement.
+
+Question two. What is Scrum?
+Pause.
+Answer: Scrum is an Agile framework that organises work into sprints, roles and ceremonies.
+
+Question three. What is Jira?
+Pause.
+Answer: Jira is a tool used to track Agile work such as epics, stories, tasks, bugs and sprint progress.
+
+Question four. What is a user story?
+Pause.
+Answer: A user story is a requirement written from the user’s perspective, explaining who needs something, what they need and why it matters.
+
+Question five. What are acceptance criteria?
+Pause.
+Answer: Acceptance criteria are clear and testable conditions that must be met for a story to be accepted.
+
+Question six. What is backlog refinement?
+Pause.
+Answer: Backlog refinement is where upcoming work is clarified, split, estimated and prepared before sprint planning.
+
+Question seven. What is sprint planning?
+Pause.
+Answer: Sprint planning is where the team agrees what work to take into the sprint.
+
+Question eight. What is daily stand-up?
+Pause.
+Answer: Daily stand-up is a short daily meeting to discuss progress and blockers.
+
+Question nine. What is sprint review?
+Pause.
+Answer: Sprint review is where the team demonstrates completed work and gets feedback.
+
+Question ten. What is retrospective?
+Pause.
+Answer: Retrospective is where the team discusses what went well, what did not and what can improve.
+
+Question eleven. What is UAT?
+Pause.
+Answer: UAT is User Acceptance Testing, where business users validate whether the solution meets business needs.
+
+Question twelve. What is a bug?
+Pause.
+Answer: A bug is a defect where actual behaviour does not match expected behaviour.
+
+Question thirteen. What is severity?
+Pause.
+Answer: Severity is the impact of a defect.
+
+Question fourteen. What is priority?
+Pause.
+Answer: Priority is the urgency of fixing a defect.
+
+Question fifteen. What is Definition of Ready?
+Pause.
+Answer: Definition of Ready means the story is clear enough to start development.
+
+Question sixteen. What is Definition of Done?
+Pause.
+Answer: Definition of Done means the story is truly complete, tested and accepted.
+
+Question seventeen. What is the BA role in Agile?
+Pause.
+Answer: The BA creates clarity by turning business problems into user stories, acceptance criteria, Jira tickets, UAT scenarios and defect reports.
+
+Section 45. Final Deep Memory Story.
+
+Now I will remember everything as one story.
+
+A business user says: We need better reconciliation.
+
+The BA does not create a vague ticket. The BA asks questions.
+
+What issue? Missing settlements.
+Who is affected? Finance operations.
+Why does it matter? Reconciliation delay.
+What data is needed? Payment ID, reference, customer, amount, currency and date.
+What rule applies? Successful payments should have settlement records after batch processing.
+
+Now the BA writes a user story: As a finance operations analyst, I want to view successful payments without settlement records so that I can investigate reconciliation exceptions quickly.
+
+Then the BA writes acceptance criteria: Only SUCCESS payments. No matching settlement. Required fields. Filters. No-records message. SQL validation.
+
+Then the BA creates Jira ticket: Context. Story. Criteria. Rules. Dependencies. Testing notes.
+
+Then the team refines the story: Clarify data source. Clarify settlement timing. Clarify permissions. Clarify test data.
+
+Then sprint planning happens. Team checks readiness. Team estimates effort. Team takes it into sprint.
+
+Then development happens. Developers build. BA clarifies questions.
+
+Then QA testing happens. Tester checks expected behaviour.
+
+Then SQL validation happens. Payment records are compared with settlement records.
+
+Then UAT happens. Finance user confirms the report helps investigation.
+
+Then the Product Owner accepts. Then the story is done.
+
+This is Agile. This is Scrum. This is Jira. This is BA work.
+
+Repeat final story shorter.
+
+Business problem. Clarify. User story. Acceptance criteria. Jira ticket. Refinement. Sprint planning. Development. Testing. SQL validation. UAT. Done.
+
+Section 46. Final Memory Lock.
+
+Agile is the mindset.
+Scrum is the framework.
+Jira is the tracking tool.
+BA creates clarity.
+Product Owner owns priority.
+Scrum Master removes blockers.
+Development Team builds and tests.
+Backlog stores future work.
+Epic is big goal.
+Story is user value.
+Task is delivery work.
+Bug is defect.
+Spike is research.
+Technical debt is hidden future cost.
+Acceptance criteria make stories testable.
+Given When Then structures expected behaviour.
+Definition of Ready means clear enough to start.
+Definition of Done means accepted, not just coded.
+UAT confirms business acceptance.
+SQL proves the data.
+
+Final interview identity:
+
+I understand Agile, Scrum and Jira from a Business Analyst and systems delivery perspective. I can turn business problems into user stories, acceptance criteria, Jira tickets, UAT scenarios and defect reports. I can support Product Owners, developers, testers and business users. I can use SQL validation to confirm system data. My role is to create clarity and help the team deliver the right business outcome.
+
+Repeat final identity.
+
+As a Business Analyst, my role is to create clarity. I help the business explain the problem. I help the team understand what to build. I help testers understand what to validate. I help UAT confirm business acceptance. I help connect Agile delivery with real business value.
+
+End.
+
+Additional Expansion Layer for True 2.5 Hour Target
+Advanced Agile, Scrum, Jira, BA Delivery, Interview Practice and Memory Drills
+
+Start of additional expansion layer.
+
+This additional section expands the foundation script into a longer training audio.
+
+The purpose of this section is not to add random words.
+
+The purpose is to deepen understanding.
+
+I will now learn the same Agile, Scrum and Jira topic with advanced Business Analyst delivery concepts.
+
+I will still keep the same main example:
+
+Successful payment missing settlement record.
+
+This keeps memory strong.
+
+But now I will also add more real workplace concepts:
+
+Waterfall versus Agile.
+
+Kanban.
+
+Roadmap.
+
+Release planning.
+
+Story points.
+
+Estimation.
+
+Velocity.
+
+Burndown chart.
+
+Definition of Ready checklist.
+
+Definition of Done checklist.
+
+RAID log.
+
+Confluence.
+
+Process mapping.
+
+Data mapping.
+
+Environments.
+
+UAT sign-off.
+
+Release notes.
+
+Production validation.
+
+Post-release support.
+
+Business workshops.
+
+Stakeholder questions.
+
+Interview simulations.
+
+This will make the content stronger for IT Business Analyst, Business Systems Analyst, Technical BA, Application Analyst and FinTech Systems Analyst roles.
+
+Repeat the core line.
+
+Agile is the mindset.
+
+Scrum is the framework.
+
+Jira is the tracking tool.
+
+The BA creates clarity.
+
+The Product Owner owns priority.
+
+The Scrum Master removes blockers.
+
+The Development Team builds and tests.
+
+UAT confirms business acceptance.
+
+SQL proves the data.
+
+Now I will continue.
+
+Section 47. Waterfall versus Agile.
+
+Terminology.
+
+Waterfall is a project delivery approach where work usually moves in a sequence.
+
+Requirements first.
+
+Design next.
+
+Development next.
+
+Testing next.
+
+Deployment next.
+
+The word waterfall gives the idea of water flowing down step by step.
+
+Once one stage is complete, the next stage starts.
+
+Agile is different.
+
+Agile delivers in smaller increments.
+
+Agile gets feedback earlier.
+
+Concept.
+
+Waterfall can work when requirements are stable, clear and unlikely to change.
+
+For example, if a company is doing a fixed compliance change with clearly defined rules and fixed deadline, a more structured waterfall-style approach may work.
+
+But many software products are uncertain.
+
+Users may not know exactly what they need until they see something.
+
+Business priorities may change.
+
+Data rules may become clearer during analysis.
+
+Technology constraints may appear during development.
+
+That is where Agile helps.
+
+Agile allows learning during delivery.
+
+Example.
+
+Finance operations says:
+
+We need a reconciliation dashboard.
+
+In a waterfall approach, the team may collect all dashboard requirements first, build everything, test everything and show users near the end.
+
+In Agile, the team can deliver the missing settlement report first.
+
+Finance users test it.
+
+They give feedback.
+
+Then the team adds amount mismatches.
+
+Then filters.
+
+Then export.
+
+Then audit log.
+
+Repeat the concept.
+
+Waterfall is sequential.
+
+Agile is iterative.
+
+Waterfall tries to define more upfront.
+
+Agile learns through small delivery and feedback.
+
+Interview answer.
+
+Waterfall is a sequential approach where requirements, design, development and testing happen in larger stages. Agile is iterative, where the team delivers smaller increments, gets feedback and adapts. As a BA, I can work with structured documentation where needed, but Agile helps me validate requirements earlier with business users.
+
+Memory line.
+
+Waterfall is step-by-step phases. Agile is step-by-step learning.
+
+Section 48. Kanban.
+
+Terminology.
+
+Kanban is an Agile method focused on visualising work and managing flow.
+
+Kanban often uses a board with columns like:
+
+To Do.
+
+In Progress.
+
+In Review.
+
+Testing.
+
+Done.
+
+Concept.
+
+Kanban is useful when work arrives continuously.
+
+For example, production support issues, application support tasks, small enhancements or operational requests.
+
+Scrum uses fixed sprints.
+
+Kanban focuses more on continuous flow.
+
+Kanban may limit how much work can be in progress at one time.
+
+This is called WIP limit.
+
+WIP means work in progress.
+
+A WIP limit prevents the team from starting too many things and finishing too few.
+
+Example.
+
+An Application Analyst team receives ongoing tickets:
+
+Payment failure investigation.
+
+Settlement mismatch issue.
+
+User access issue.
+
+Report data issue.
+
+Small dashboard enhancement.
+
+Instead of planning everything into two-week sprints, the team may use Kanban to move tickets from To Do to In Progress to Testing to Done.
+
+Repeat the concept.
+
+Scrum works in sprints.
+
+Kanban works in continuous flow.
+
+Scrum asks what can we complete in this sprint.
+
+Kanban asks how can we keep work moving smoothly.
+
+Interview answer.
+
+Kanban is an Agile method used to visualise work and manage flow. It is useful for support, operational work and continuous delivery. Scrum is sprint-based, while Kanban is flow-based. As a BA or Application Analyst, I may use Kanban-style boards to track incoming issues, enhancements and support work.
+
+Memory line.
+
+Scrum is sprint flow. Kanban is continuous flow.
+
+Section 49. Roadmap versus Backlog.
+
+Terminology.
+
+A roadmap is a high-level plan showing where the product or system is going over time.
+
+A backlog is the detailed list of work items the team may deliver.
+
+Concept.
+
+Roadmap is bigger picture.
+
+Backlog is delivery detail.
+
+Roadmap may say:
+
+Quarter one: reconciliation visibility.
+
+Quarter two: automated exception alerts.
+
+Quarter three: audit and compliance reporting.
+
+Backlog contains the actual work:
+
+Missing settlement report.
+
+Amount mismatch report.
+
+Currency filter.
+
+Export.
+
+Audit log.
+
+Email alert.
+
+Management summary.
+
+Example.
+
+Product roadmap:
+
+Improve finance operations reconciliation over the next three months.
+
+Backlog items:
+
+Build missing settlement report.
+
+Build mismatch report.
+
+Add filters.
+
+Add export.
+
+Add user permissions.
+
+Add audit log.
+
+Repeat the concept.
+
+Roadmap shows direction.
+
+Backlog shows work.
+
+Roadmap is strategic.
+
+Backlog is tactical.
+
+Interview answer.
+
+A roadmap is a high-level view of planned product or system direction, while the backlog contains specific work items such as epics, stories, tasks and bugs. As a BA, I help ensure backlog items support the wider roadmap and business priorities.
+
+Memory line.
+
+Roadmap is direction. Backlog is delivery detail.
+
+Section 50. Release Planning.
+
+Terminology.
+
+A release is a version of software delivered to users or production.
+
+Release planning means deciding what features or fixes will be included in a release and when they will go live.
+
+Concept.
+
+Agile teams work in sprints, but not every sprint must go to production.
+
+Sometimes several sprints contribute to a release.
+
+Release planning considers:
+
+Business priority.
+
+Technical readiness.
+
+Testing status.
+
+UAT status.
+
+Defects.
+
+Dependencies.
+
+Compliance requirements.
+
+Deployment window.
+
+Communication to users.
+
+Example.
+
+The team builds missing settlement report in sprint one.
+
+Amount mismatch report in sprint two.
+
+Filters in sprint three.
+
+The Product Owner may decide to release all three together as Reconciliation Dashboard Version One.
+
+Before release, the team checks:
+
+Are stories done?
+
+Has QA passed?
+
+Has UAT signed off?
+
+Are critical defects fixed?
+
+Is documentation ready?
+
+Are release notes ready?
+
+Is production deployment approved?
+
+Repeat the concept.
+
+Sprint is delivery cycle.
+
+Release is what users receive.
+
+A sprint produces work.
+
+A release makes work available.
+
+Interview answer.
+
+Release planning is deciding what completed work will be delivered to users and when. As a BA, I support release planning by confirming business readiness, UAT sign-off, documentation, known issues and stakeholder communication.
+
+Memory line.
+
+Sprint builds work. Release gives it to users.
+
+Section 51. Story Points and Estimation.
+
+Terminology.
+
+Estimation means judging how much effort, complexity or uncertainty a piece of work has.
+
+Story points are a common Agile estimation method.
+
+Story points do not directly mean hours.
+
+They represent relative size, effort, complexity and uncertainty.
+
+Concept.
+
+A simple story may be 2 points.
+
+A medium story may be 5 points.
+
+A complex story may be 8 points or 13 points.
+
+The actual scale depends on the team.
+
+The BA usually does not force estimates.
+
+Developers and testers estimate delivery effort.
+
+But the BA helps reduce uncertainty by clarifying requirements.
+
+A vague story gets higher estimate because risk is unclear.
+
+A clear story can be estimated better.
+
+Example.
+
+Vague story:
+
+Build reconciliation dashboard.
+
+This may be huge.
+
+Maybe 13 points or more.
+
+Clear story:
+
+Show successful payments without settlement records.
+
+This may be smaller.
+
+Maybe 5 points.
+
+Another story:
+
+Add currency filter.
+
+Maybe 2 points.
+
+Add export with audit log.
+
+Maybe 5 or 8 points depending on audit complexity.
+
+Repeat the concept.
+
+Estimation is not only time.
+
+Estimation includes complexity.
+
+Estimation includes uncertainty.
+
+BA reduces uncertainty.
+
+Better clarity helps better estimation.
+
+Interview answer.
+
+Story points are used to estimate relative effort, complexity and uncertainty. As a BA, I do not force estimates, but I support estimation by clarifying scope, acceptance criteria, dependencies, data rules and edge cases.
+
+Memory line.
+
+BA clarity reduces estimation uncertainty.
+
+Section 52. Velocity.
+
+Terminology.
+
+Velocity is the amount of work a Scrum team completes in a sprint, usually measured in story points.
+
+Concept.
+
+Velocity helps the team understand its delivery capacity over time.
+
+If a team completes around 25 points each sprint, that becomes a planning guide.
+
+Velocity should not be used to pressure people blindly.
+
+It is mainly for forecasting and learning.
+
+Example.
+
+Sprint one:
+
+Team completes 20 points.
+
+Sprint two:
+
+Team completes 24 points.
+
+Sprint three:
+
+Team completes 22 points.
+
+The team may forecast around 22 points per sprint.
+
+If the reconciliation dashboard has 66 points of remaining work, it may take around three sprints.
+
+But this is only a forecast.
+
+Dependencies, defects, holidays and changing scope can affect it.
+
+Repeat the concept.
+
+Velocity shows delivery trend.
+
+Velocity helps planning.
+
+Velocity is not a weapon.
+
+Velocity is not a guarantee.
+
+Interview answer.
+
+Velocity is the amount of work a team completes in a sprint, often measured in story points. It helps with planning and forecasting, but it should be used carefully because it is a team learning metric, not a pressure tool.
+
+Memory line.
+
+Velocity helps forecast, not force.
+
+Section 53. Burndown Chart.
+
+Terminology.
+
+A burndown chart is a visual chart that shows remaining work during a sprint.
+
+Concept.
+
+The chart starts with the total planned work.
+
+As work is completed, the remaining work goes down.
+
+If the line is not going down, the team may be blocked or work may be larger than expected.
+
+Example.
+
+The sprint starts with five stories.
+
+During the first few days, no stories move to done.
+
+The burndown line stays flat.
+
+This may mean:
+
+Stories are too large.
+
+Testing is blocked.
+
+Requirements are unclear.
+
+Developers are stuck.
+
+Test data is missing.
+
+A BA may look at the burndown and ask:
+
+Are requirement blockers stopping progress?
+
+Are acceptance criteria unclear?
+
+Is UAT data missing?
+
+Are dependencies blocking testing?
+
+Repeat the concept.
+
+Burndown shows remaining work.
+
+Burndown helps spot risk.
+
+Burndown does not explain everything by itself.
+
+The team must discuss why progress is slow.
+
+Interview answer.
+
+A burndown chart shows remaining work during a sprint. As a BA, I may use it to understand whether stories are moving through delivery and whether requirement, dependency or testing blockers need attention.
+
+Memory line.
+
+Burndown shows whether sprint work is burning down.
+
+Section 54. RAID Log.
+
+Terminology.
+
+RAID stands for Risks, Assumptions, Issues and Dependencies.
+
+A RAID log is a document or tracker used to manage these items.
+
+Concept.
+
+RAID helps teams manage uncertainty.
+
+Risk is something that may happen.
+
+Assumption is something believed to be true but not yet fully confirmed.
+
+Issue is a problem happening now.
+
+Dependency is something needed from another person, team or system.
+
+Example for missing settlement report.
+
+Risk:
+
+Settlement data may not be available in time.
+
+Assumption:
+
+Payment ID can be used to match payments and settlements.
+
+Issue:
+
+UAT test data is missing.
+
+Dependency:
+
+Payment gateway team must confirm settlement timing.
+
+Repeat.
+
+Risk may happen.
+
+Assumption is believed true.
+
+Issue is happening now.
+
+Dependency is needed from others.
+
+Interview answer.
+
+A RAID log tracks risks, assumptions, issues and dependencies. As a BA, I use it to make delivery uncertainty visible, especially when requirements depend on external systems, stakeholder decisions, data availability or regulatory constraints.
+
+Memory line.
+
+RAID makes uncertainty visible.
+
+Section 55. Confluence.
+
+Terminology.
+
+Confluence is a documentation and collaboration tool often used with Jira.
+
+Jira tracks work.
+
+Confluence stores supporting documentation.
+
+Concept.
+
+Jira is good for tickets.
+
+Confluence is good for longer documents.
+
+A BA may use Confluence for:
+
+Meeting notes.
+
+Requirement notes.
+
+Process flows.
+
+Business rules.
+
+Glossary.
+
+Decision logs.
+
+UAT plan.
+
+Release notes.
+
+System overview.
+
+Data mapping.
+
+Example.
+
+Jira ticket contains the missing settlement story.
+
+Confluence page contains:
+
+Payment reconciliation process flow.
+
+Glossary of payment statuses.
+
+Settlement timing rule.
+
+Matching rule decision.
+
+UAT scenarios.
+
+SQL validation approach.
+
+Repeat.
+
+Jira tracks delivery.
+
+Confluence stores knowledge.
+
+Jira is ticket-level.
+
+Confluence is document-level.
+
+Interview answer.
+
+Jira is useful for tracking delivery items, while Confluence is useful for supporting documentation such as business rules, process flows, decision logs, meeting notes and UAT plans. As a BA, I may use both together.
+
+Memory line.
+
+Jira tracks work. Confluence stores knowledge.
+
+Section 56. Process Mapping.
+
+Terminology.
+
+Process mapping means visually or logically showing how a business process works step by step.
+
+Concept.
+
+A BA uses process mapping to understand current process and future process.
+
+Current process is called as-is process.
+
+Future process is called to-be process.
+
+As-is means how things work today.
+
+To-be means how things should work after improvement.
+
+Example.
+
+As-is reconciliation process:
+
+Finance exports payment data.
+
+Finance exports settlement data.
+
+Finance manually compares spreadsheets.
+
+Finance identifies missing settlements.
+
+Finance emails payment operations.
+
+Finance waits for response.
+
+To-be process:
+
+Finance opens reconciliation dashboard.
+
+System shows successful payments missing settlement.
+
+Finance filters by date and currency.
+
+Finance exports exceptions if needed.
+
+Finance escalates using standard workflow.
+
+Repeat.
+
+As-is is current state.
+
+To-be is future state.
+
+Process mapping helps find pain points.
+
+Process mapping helps design better workflow.
+
+Interview answer.
+
+Process mapping helps understand how work is done today and how it should work in the future. As a BA, I use as-is and to-be process flows to identify pain points, clarify requirements and support better system design.
+
+Memory line.
+
+As-is is today. To-be is tomorrow.
+
+Section 57. Data Mapping.
+
+Terminology.
+
+Data mapping means connecting data fields from one system, table or file to another.
+
+Concept.
+
+In Business Systems Analyst work, data mapping is important when systems integrate or reports combine data.
+
+Example.
+
+Payment system fields:
+
+payment_id.
+
+payment_reference.
+
+customer_id.
+
+amount.
+
+currency.
+
+payment_status.
+
+payment_date.
+
+Settlement system fields:
+
+settlement_id.
+
+payment_reference.
+
+settlement_amount.
+
+settlement_currency.
+
+settlement_status.
+
+settlement_date.
+
+Data mapping asks:
+
+Which field connects payment to settlement?
+
+Is it payment_id?
+
+Is it payment_reference?
+
+Is it external_transaction_id?
+
+Are amount and currency stored in the same format?
+
+Do dates use same timezone?
+
+Repeat.
+
+Data mapping connects fields.
+
+Data mapping prevents mismatch.
+
+Data mapping supports integration, reporting and testing.
+
+Interview answer.
+
+Data mapping defines how fields from one system or table relate to another. As a BA or BSA, I use data mapping to clarify source fields, matching rules, transformations and validation checks for reporting, migration or integration work.
+
+Memory line.
+
+Data mapping explains which data goes where.
+
+Section 58. Environments.
+
+Terminology.
+
+An environment is a separate place where software runs.
+
+Common environments are development, test, UAT, staging and production.
+
+Development is where developers build.
+
+Test is where QA tests.
+
+UAT is where business users validate.
+
+Staging is production-like environment.
+
+Production is the live system used by real users.
+
+Concept.
+
+Different environments help reduce risk.
+
+You do not test new changes directly in production.
+
+You build and test first.
+
+Then UAT.
+
+Then release to production.
+
+Example.
+
+Missing settlement report is built in development.
+
+QA tests it in test environment.
+
+Finance validates it in UAT environment.
+
+Deployment team releases it to production.
+
+After release, BA or support team may perform production validation.
+
+Repeat.
+
+Development is build.
+
+Test is QA.
+
+UAT is business validation.
+
+Production is live.
+
+Interview answer.
+
+Software changes usually move through environments such as development, test, UAT and production. As a BA, I support UAT readiness, test data needs, business validation and post-release checks.
+
+Memory line.
+
+Dev builds. Test checks. UAT accepts. Production is live.
+
+Section 59. Production Validation.
+
+Terminology.
+
+Production validation means checking after release that the feature works correctly in the live environment.
+
+Concept.
+
+Even after QA and UAT, the team may do smoke testing or validation after deployment.
+
+Smoke testing means quick basic checks to confirm critical functions work.
+
+Example.
+
+After missing settlement report goes live, the team checks:
+
+Can finance user access the report?
+
+Does the page load?
+
+Are filters working?
+
+Does data appear?
+
+Does count look reasonable?
+
+Are permissions correct?
+
+Are there any errors?
+
+Repeat.
+
+UAT validates before release.
+
+Production validation checks after release.
+
+Smoke test confirms basic live functionality.
+
+Interview answer.
+
+Production validation is a post-release check to confirm the deployed feature works in the live environment. As a BA, I may support by confirming key business scenarios, user access and expected output after deployment.
+
+Memory line.
+
+After release, check the live basics.
+
+Section 60. Release Notes.
+
+Terminology.
+
+Release notes are short documentation explaining what changed in a release.
+
+Concept.
+
+Release notes help users, support teams and stakeholders understand new features, fixes and known issues.
+
+Example release note.
+
+Release: Reconciliation Dashboard Version One.
+
+New feature:
+
+Finance users can view successful payments missing settlement records.
+
+Filters added:
+
+Date range and currency.
+
+Known limitation:
+
+Export is not included in this release.
+
+Validation:
+
+Report output has passed UAT and SQL validation.
+
+Support note:
+
+If expected records are missing, check settlement processing window before raising defect.
+
+Repeat.
+
+Release notes explain what changed.
+
+Release notes help support.
+
+Release notes reduce confusion.
+
+Interview answer.
+
+Release notes summarise what has changed in a release, including new features, fixes, known issues and user guidance. As a BA, I may help prepare release notes so business users and support teams understand the change.
+
+Memory line.
+
+Release notes tell users what changed.
+
+Section 61. Business Workshop.
+
+Terminology.
+
+A workshop is a meeting designed to discover, clarify or solve something with stakeholders.
+
+Concept.
+
+A BA runs or supports workshops to gather requirements, clarify process, prioritise work or validate solutions.
+
+Example workshop agenda for reconciliation dashboard:
+
+Objective:
+
+Understand finance reconciliation pain points.
+
+Attendees:
+
+Finance operations, Product Owner, BA, QA lead, developer representative.
+
+Questions:
+
+What reconciliation issues happen most often?
+
+Which issues are highest impact?
+
+What fields are needed?
+
+What filters are needed?
+
+What is the current manual process?
+
+What are the reporting deadlines?
+
+What does success look like?
+
+Outputs:
+
+Prioritised requirements.
+
+Initial user stories.
+
+Open questions.
+
+Data dependencies.
+
+UAT users.
+
+Repeat.
+
+Workshop is not just chatting.
+
+Workshop has objective.
+
+Workshop has questions.
+
+Workshop has outputs.
+
+Interview answer.
+
+A workshop helps gather and clarify requirements with stakeholders. As a BA, I prepare the objective, ask structured questions, capture decisions, identify open points and convert outcomes into stories, acceptance criteria or process flows.
+
+Memory line.
+
+Workshop turns stakeholder knowledge into requirements.
+
+Section 62. Edge Cases.
+
+Terminology.
+
+An edge case is a less common situation that may still affect system behaviour.
+
+Concept.
+
+Good BAs think about normal cases and edge cases.
+
+Normal case:
+
+Successful payment missing settlement appears in report.
+
+Edge cases:
+
+Payment is successful but settlement is pending within allowed window.
+
+Payment was reversed.
+
+Payment currency differs from settlement currency.
+
+Payment has duplicate reference.
+
+Settlement exists but amount is zero.
+
+Payment is successful in one system but failed in another.
+
+Example.
+
+Should a same-day successful payment appear as missing settlement before batch processing completes?
+
+Maybe no.
+
+That is an edge case.
+
+Repeat.
+
+Edge cases are unusual situations.
+
+Edge cases prevent surprises.
+
+Edge cases improve acceptance criteria.
+
+Interview answer.
+
+Edge cases are less common scenarios that may affect system behaviour. As a BA, I try to identify edge cases during refinement so developers and testers understand how the system should behave beyond the normal path.
+
+Memory line.
+
+Edge cases are unusual but important.
+
+Section 63. Happy Path and Negative Path.
+
+Terminology.
+
+Happy path means the normal successful flow.
+
+Negative path means what happens when something goes wrong or conditions are not met.
+
+Concept.
+
+Testing should include both.
+
+Happy path example:
+
+Successful payment with no settlement appears in report.
+
+Negative path example:
+
+Failed payment with no settlement should not appear.
+
+Another negative path:
+
+Successful payment with settlement should not appear.
+
+Another negative path:
+
+User without permission should not access the report.
+
+Repeat.
+
+Happy path is expected success.
+
+Negative path tests what should not happen.
+
+Both are important.
+
+Interview answer.
+
+Happy path tests the normal successful scenario, while negative path tests exceptions or conditions where the system should behave differently. As a BA, I help define both through acceptance criteria and UAT scenarios.
+
+Memory line.
+
+Happy path proves it works. Negative path proves it behaves correctly.
+
+Section 64. Functional and Non-Functional Requirements.
+
+Terminology.
+
+Functional requirements describe what the system should do.
+
+Non-functional requirements describe how well the system should do it.
+
+Concept.
+
+Functional example:
+
+The report should show successful payments without settlement records.
+
+Non-functional examples:
+
+The report should load within five seconds.
+
+Only authorised users should access it.
+
+Export should be audited.
+
+Data should be retained according to policy.
+
+The system should handle large record volume.
+
+Repeat.
+
+Functional means behaviour.
+
+Non-functional means quality, performance, security and reliability.
+
+Interview answer.
+
+Functional requirements define what the system should do, while non-functional requirements define quality expectations such as performance, security, reliability, usability and auditability. As a BA, I try to capture both when relevant.
+
+Memory line.
+
+Functional is what. Non-functional is how well.
+
+Section 65. Permissions and Access Control.
+
+Terminology.
+
+Permissions define who can access or perform actions in a system.
+
+Access control means controlling what users can see or do.
+
+Concept.
+
+In finance and regulated systems, access control is important.
+
+Not every user should see payment exception data.
+
+Example.
+
+Finance operations can view reconciliation report.
+
+Finance manager can view total affected amount.
+
+Support team can view limited customer payment status.
+
+Compliance can view audit log.
+
+Unauthorized users cannot access the report.
+
+Repeat.
+
+Access control protects data.
+
+Permissions define user actions.
+
+BA should ask who can view, edit, export or approve.
+
+Interview answer.
+
+Permissions and access control define who can access specific features or data. As a BA, I clarify user roles, access needs and restrictions, especially for financial or sensitive data.
+
+Memory line.
+
+Who can see and who can do matters.
+
+Section 66. Audit Log.
+
+Terminology.
+
+An audit log records important user or system actions.
+
+Concept.
+
+Audit logs are useful for compliance, investigation and accountability.
+
+Example.
+
+If a user exports missing settlement records, the system may record:
+
+User ID.
+
+Export time.
+
+Filters applied.
+
+Number of records exported.
+
+File name.
+
+Reason if required.
+
+Repeat.
+
+Audit log records actions.
+
+Audit log supports investigation.
+
+Audit log supports compliance.
+
+Interview answer.
+
+An audit log records important actions in a system, such as who accessed, changed or exported data. As a BA, I may capture audit requirements when the feature involves financial, sensitive or regulated data.
+
+Memory line.
+
+Audit log answers who did what and when.
+
+Section 67. Traceability.
+
+Terminology.
+
+Traceability means linking requirements to design, development, testing and acceptance.
+
+Concept.
+
+Traceability helps prove that every requirement was delivered and tested.
+
+Example.
+
+Requirement:
+
+Show successful payments missing settlements.
+
+Linked user story:
+
+Jira story REC-101.
+
+Linked acceptance criteria:
+
+Only SUCCESS payments with no settlement appear.
+
+Linked test case:
+
+UAT scenario one.
+
+Linked defect:
+
+Bug REC-145 if failed.
+
+Linked release:
+
+Reconciliation Dashboard Version One.
+
+Repeat.
+
+Traceability connects requirement to delivery.
+
+Traceability supports audit.
+
+Traceability prevents missed requirements.
+
+Interview answer.
+
+Traceability links requirements to stories, acceptance criteria, test cases, defects and releases. As a BA, I use traceability to make sure business requirements are delivered, tested and accepted.
+
+Memory line.
+
+Traceability proves requirement to result.
+
+Section 68. Risk-Based Prioritisation.
+
+Terminology.
+
+Risk-based prioritisation means prioritising work based on business risk as well as value.
+
+Concept.
+
+Not all features are equal.
+
+Some reduce operational risk.
+
+Some reduce compliance risk.
+
+Some improve customer experience.
+
+Some are nice to have.
+
+Example.
+
+Missing settlements may be high priority because they affect finance reconciliation.
+
+Audit log may be high priority if compliance requires evidence.
+
+Colour change may be lower priority.
+
+Repeat.
+
+Priority is not only popularity.
+
+Priority can be based on risk, urgency, value and deadline.
+
+Interview answer.
+
+I support prioritisation by clarifying business value, urgency, risk, regulatory impact and user impact. This helps the Product Owner decide what should be delivered first.
+
+Memory line.
+
+Priority follows value and risk.
+
+Section 69. Agile Interview Mistakes to Avoid.
+
+Now I will learn common mistakes.
+
+Mistake one:
+
+Saying Agile means no documentation.
+
+Correction:
+
+Agile means useful documentation.
+
+Mistake two:
+
+Saying Jira is Agile.
+
+Correction:
+
+Jira is only a tracking tool.
+
+Mistake three:
+
+Saying the BA decides all priority.
+
+Correction:
+
+Product Owner usually owns priority. BA supports with clarity.
+
+Mistake four:
+
+Saying done means code complete.
+
+Correction:
+
+Done means tested and accepted based on Definition of Done.
+
+Mistake five:
+
+Ignoring UAT.
+
+Correction:
+
+UAT confirms business acceptance.
+
+Mistake six:
+
+Writing vague user stories.
+
+Correction:
+
+Use user, need and value.
+
+Mistake seven:
+
+Writing vague acceptance criteria.
+
+Correction:
+
+Make them specific and testable.
+
+Repeat.
+
+Agile is not no documentation.
+
+Jira is not Agile itself.
+
+BA creates clarity.
+
+Product Owner decides priority.
+
+Done means accepted.
+
+UAT matters.
+
+Interview answer if challenged:
+
+I understand Agile is not about skipping structure. It is about delivering value iteratively while keeping requirements, testing and feedback clear. As a BA, I focus on clarity, testability and business value.
+
+Memory line.
+
+Do not sound vague. Sound clear, practical and testable.
+
+Section 70. Final Long Interview Answer.
+
+Now I will prepare one long professional answer.
+
+Question:
+
+Can you explain how you would work in an Agile team as a Business Analyst?
+
+Answer:
+
+In an Agile team, I would start by understanding the business problem and clarifying the user need. I would work with the Product Owner and stakeholders to understand priority, business value, current process, expected outcome and success criteria. Then I would convert the requirement into user stories with clear acceptance criteria. I would support backlog refinement by explaining the business rules, data needs, dependencies and edge cases. During sprint planning, I would help the team understand whether the story is ready and what open questions remain. During development, I would answer requirement questions and clarify business rules. During testing, I would support QA with expected results and test scenarios. During UAT, I would help business users validate the feature and raise clear defects if actual behaviour does not match expected behaviour. For systems or reporting work, I would also use SQL validation to confirm the data matches business rules. My goal as a BA is to create clarity, reduce misunderstanding and help the team deliver the right business outcome.
+
+Repeat shorter.
+
+Understand problem.
+
+Clarify value.
+
+Write story.
+
+Define criteria.
+
+Refine backlog.
+
+Plan sprint.
+
+Support development.
+
+Support testing.
+
+Validate data.
+
+Support UAT.
+
+Close as done.
+
+Memory line.
+
+A BA creates clarity from problem to acceptance.
+
+Section 71. Second Pause-and-Answer Drill.
+
+Question.
+
+What is the difference between roadmap and backlog?
+
+Pause.
+
+Answer.
+
+Roadmap is high-level direction. Backlog is detailed delivery work.
+
+Question.
+
+What is release planning?
+
+Pause.
+
+Answer.
+
+Release planning decides what completed work will go live and when.
+
+Question.
+
+What are story points?
+
+Pause.
+
+Answer.
+
+Story points estimate relative effort, complexity and uncertainty.
+
+Question.
+
+What is velocity?
+
+Pause.
+
+Answer.
+
+Velocity is the amount of work a team completes in a sprint, usually measured in story points.
+
+Question.
+
+What is a burndown chart?
+
+Pause.
+
+Answer.
+
+A burndown chart shows remaining work during a sprint.
+
+Question.
+
+What is RAID?
+
+Pause.
+
+Answer.
+
+RAID stands for risks, assumptions, issues and dependencies.
+
+Question.
+
+What is Confluence?
+
+Pause.
+
+Answer.
+
+Confluence is a documentation tool often used with Jira.
+
+Question.
+
+What is process mapping?
+
+Pause.
+
+Answer.
+
+Process mapping shows how a business process works today and how it should work in the future.
+
+Question.
+
+What is data mapping?
+
+Pause.
+
+Answer.
+
+Data mapping connects fields between systems, tables or files.
+
+Question.
+
+What is production validation?
+
+Pause.
+
+Answer.
+
+Production validation checks that a released feature works correctly in the live environment.
+
+Question.
+
+What is an edge case?
+
+Pause.
+
+Answer.
+
+An edge case is a less common situation that still affects system behaviour.
+
+Question.
+
+What is a non-functional requirement?
+
+Pause.
+
+Answer.
+
+A non-functional requirement defines quality expectations such as performance, security, reliability or auditability.
+
+Question.
+
+What is an audit log?
+
+Pause.
+
+Answer.
+
+An audit log records important user or system actions.
+
+Question.
+
+What is traceability?
+
+Pause.
+
+Answer.
+
+Traceability links requirements to stories, tests, defects and releases.
+
+Section 72. Final 2.5 Hour Memory Lock.
+
+Now I will lock the whole topic again.
+
+Agile is the mindset.
+
+Scrum is the framework.
+
+Jira is the tracking tool.
+
+Waterfall is sequential.
+
+Agile is iterative.
+
+Kanban is continuous flow.
+
+Roadmap is direction.
+
+Backlog is delivery detail.
+
+Sprint is a short delivery window.
+
+Release is what users receive.
+
+Story points estimate complexity.
+
+Velocity helps forecast.
+
+Burndown shows remaining work.
+
+RAID makes uncertainty visible.
+
+Confluence stores knowledge.
+
+Process mapping shows workflow.
+
+Data mapping connects fields.
+
+UAT confirms business acceptance.
+
+Production validation checks live behaviour.
+
+Product Owner owns priority.
+
+Scrum Master removes blockers.
+
+Development Team builds and tests.
+
+BA creates clarity.
+
+Epic is big goal.
+
+Story is user value.
+
+Task is delivery work.
+
+Bug is defect.
+
+Spike is research.
+
+Technical debt is hidden future cost.
+
+Acceptance criteria make stories testable.
+
+Given When Then structures behaviour.
+
+Definition of Ready means clear enough to start.
+
+Definition of Done means accepted, not just coded.
+
+SQL proves the data.
+
+Final identity one more time.
+
+I understand Agile, Scrum and Jira from a Business Analyst and systems delivery perspective.
+
+I can clarify business problems.
+
+I can write user stories.
+
+I can define acceptance criteria.
+
+I can create Jira tickets.
+
+I can support backlog refinement.
+
+I can support sprint planning.
+
+I can support developers and testers.
+
+I can prepare UAT scenarios.
+
+I can manage defects clearly.
+
+I can use SQL to validate system data.
+
+I can communicate with Product Owners, business users, developers, testers and managers.
+
+My role is to create clarity and help the team deliver the right business outcome.
+
+End of full expanded Agile, Scrum and Jira masterclass script.

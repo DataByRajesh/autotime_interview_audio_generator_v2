@@ -1,0 +1,3273 @@
+Ireland and EU Interview Audio Pack — Parts 1, 2 and 3 Combined
+SQL, Scenario Practice, and FinTech Domain Knowledge
+For IT Business Analyst, Business Systems Analyst, Application Analyst, Financial Systems Analyst, FinTech Systems, and Regulated Systems Roles
+
+Start.
+
+This is a combined audio preparation pack for my Ireland and EU interview route.
+
+It combines three parts.
+
+Part 1 is SQL concepts master.
+Part 2 is scenario-based SQL interview practice.
+Part 3 is FinTech domain deep dive for Ireland and Europe.
+
+The goal is not to memorise random answers.
+The goal is to build interview judgement.
+
+I need to sound like a practical IT Business Analyst and Business Systems Analyst who understands systems, data, business workflows, payments, UAT, defects, incidents, reporting, and regulated financial environments.
+
+My target identity is simple:
+
+I use SQL to validate system behaviour, investigate data issues, support UAT, detect mismatches, find missing records, and explain evidence clearly to business and technical teams.
+
+I understand payments, settlements, reconciliation, ledger thinking, customer data, operational risk, and regulatory control evidence.
+
+I am not presenting myself as a generic analyst.
+I am presenting myself as a FinTech and regulated systems Business Analyst with technical depth.
+
+How to listen to this audio.
+
+If I am working, I should not try to memorise every query in one pass.
+I should listen for patterns.
+
+The main patterns are:
+
+What is the business problem?
+Which tables are involved?
+Which keys connect the tables?
+What SQL logic proves the issue?
+What is the business impact?
+How would I explain it to a non-technical stakeholder?
+
+That is the interview standard.
+
+Now I begin Part 1.
+
+Part 1 — SQL Concepts Master
+
+Part 1 is SQL concepts master.
+
+This part explains SQL from four angles.
+
+Technical angle.
+Business angle.
+System angle.
+Interview angle.
+
+The technical angle is syntax and query logic.
+The business angle is why the result matters.
+The system angle is how data flows across applications.
+The interview angle is how to explain it calmly and clearly.
+
+For my target roles, SQL is not just a technical skill.
+SQL is a system investigation skill.
+
+SQL helps me answer questions such as:
+
+Which records were created?
+Which records are missing?
+Which customers are affected?
+Which payments failed?
+Which settlements are missing?
+Which values do not match?
+Which records are duplicates?
+Which records have missing mandatory data?
+Did a release create a new issue?
+Does the report match the source system?
+Did the UAT test pass?
+
+A weak answer says: I can write SQL.
+A strong answer says: I can use SQL to prove what happened inside the system and explain the impact.
+
+1. Database tables, rows, and columns
+
+A database stores structured data.
+The data is stored in tables.
+A table has rows and columns.
+A row is one record.
+A column is one field.
+
+In a payment system, a customers table may store customer ID, name, email, country, KYC status, and created date.
+A payments table may store payment ID, customer ID, payment reference, amount, currency, payment method, status, and payment date.
+A settlements table may store settlement ID, payment ID, settlement amount, settlement status, and settlement date.
+A refunds table may store refund ID, payment ID, refund amount, refund status, and refund date.
+A chargebacks table may store chargeback ID, payment ID, dispute reason, chargeback amount, and case status.
+A ledger table may store accounting entries.
+An audit log may store who changed what and when.
+A status history table may store the movement from initiated, authorised, captured, successful, failed, settled, refunded, or disputed.
+
+The important interview point is that one business event normally creates data across multiple tables.
+When a customer makes a payment, the payment table may store the initial transaction, the status history may store status changes, the settlement table may store settlement, the ledger may store financial postings, and the audit log may store system actions.
+
+So I should not think only table by table.
+I should think process by process.
+The business process creates data.
+SQL helps me read that process from the database.
+
+In interview language, I can say:
+
+I use SQL to understand the data trail behind a business process. For example, a payment may create records in payment, settlement, ledger, status history, and audit tables. By checking those related tables, I can understand whether the process completed correctly or where it failed.
+
+2. Primary keys and foreign keys
+
+A primary key uniquely identifies a record.
+For example, customer_id uniquely identifies one customer.
+payment_id uniquely identifies one payment.
+settlement_id uniquely identifies one settlement.
+
+A foreign key links one table to another.
+For example, customer_id in the payments table links a payment to a customer.
+payment_id in the settlements table links a settlement to a payment.
+
+This matters because joins depend on correct keys.
+If I join using the wrong key, I may create wrong results and wrong conclusions.
+
+Business example:
+
+If a payment has customer_id 10, then customer_id 10 should exist in the customers table.
+If not, the payment is an orphan record.
+That can cause reporting, support, compliance, and customer ownership problems.
+
+Interview answer:
+
+A primary key uniquely identifies a record. A foreign key connects records across tables. In analyst work, understanding keys is important because SQL joins must reflect the real system relationship. Wrong joins can lead to wrong business conclusions.
+
+3. SELECT — choosing useful data
+
+SELECT chooses which columns I want to see.
+A beginner may write:
+
+SELECT * FROM payments;
+
+This shows every column.
+But in professional analysis, I should usually select only the fields needed for the business question.
+
+Example:
+
+SELECT payment_id, payment_reference, customer_id, amount, currency, status, payment_date
+FROM payments;
+
+The technical purpose is to retrieve specific columns.
+The business purpose is to see the core facts of the transaction.
+The system purpose is to identify the payment record that represents the event.
+
+In an interview, I should say:
+
+I avoid selecting unnecessary columns where possible. I select the fields needed for the investigation, such as payment ID, reference, customer ID, amount, currency, status, and date. This keeps the query focused and easier to explain.
+
+4. WHERE — filtering the business question
+
+WHERE filters records.
+In real systems, tables may contain millions of rows.
+I rarely want everything.
+I want records that match the business question.
+
+Example:
+
+SELECT payment_id, payment_reference, amount, status
+FROM payments
+WHERE status = 'FAILED';
+
+Technical explanation:
+This returns only failed payment rows.
+
+Business explanation:
+This helps identify transactions that did not complete.
+
+System explanation:
+This shows where the payment process stopped or failed.
+
+Interview explanation:
+
+WHERE is useful when I need to investigate a specific condition, such as failed payments, pending payments, high-value payments, a specific customer, or a specific incident window.
+
+5. AND, OR, and IN
+
+AND means all conditions must be true.
+
+Example:
+
+SELECT payment_id, amount, status
+FROM payments
+WHERE status = 'SUCCESS'
+AND amount > 1000;
+
+This shows successful payments above 1000.
+
+OR means one of the conditions can be true.
+
+Example:
+
+SELECT payment_id, status
+FROM payments
+WHERE status = 'FAILED'
+OR status = 'PENDING';
+
+A cleaner version is IN:
+
+SELECT payment_id, status
+FROM payments
+WHERE status IN ('FAILED', 'PENDING');
+
+Interview explanation:
+
+I use AND when all business conditions must match. I use OR or IN when the business question includes multiple categories, such as failed or pending payments.
+
+6. SQL clause order
+
+The common SQL order is:
+
+SELECT.
+FROM.
+JOIN.
+WHERE.
+GROUP BY.
+HAVING.
+ORDER BY.
+
+Example:
+
+SELECT status, COUNT(*) AS payment_count
+FROM payments
+WHERE payment_date >= '2026-06-01'
+GROUP BY status
+HAVING COUNT(*) > 10
+ORDER BY payment_count DESC;
+
+In plain language:
+
+Choose columns.
+Choose table.
+Join related tables if needed.
+Filter rows.
+Group records.
+Filter groups.
+Sort results.
+
+This order is important in interviews because it shows I understand query structure rather than just memorising fragments.
+
+7. Aliases
+
+Aliases make SQL cleaner.
+
+FROM customers c means customers is called c.
+FROM payments p means payments is called p.
+FROM settlements s means settlements is called s.
+
+Then I can write c.customer_name, p.amount, and s.settlement_amount.
+
+Correct format:
+p.customer_id.
+
+Wrong format:
+customer_id.p.
+
+The table alias comes first.
+The column name comes second.
+
+Interview explanation:
+
+I use aliases to keep queries readable, especially when joining several tables. It also makes it clear which table each column comes from.
+
+8. INNER JOIN
+
+INNER JOIN returns matching records from both tables.
+
+Business question:
+Show customer name, country, payment reference, amount, and payment status.
+
+Customer name and country are in customers.
+Payment reference and amount are in payments.
+So I need to join the tables.
+
+Query:
+
+SELECT c.customer_name, c.country, p.payment_reference, p.amount, p.status
+FROM customers c
+JOIN payments p
+ON c.customer_id = p.customer_id;
+
+Technical explanation:
+The join connects customers and payments using customer_id.
+
+Business explanation:
+This shows which customer made which payment.
+
+System explanation:
+This connects customer master data with transaction data.
+
+Interview answer:
+
+A join is used when the business question requires data from more than one table. For example, to investigate failed payments by customer or country, I join customer data with payment data using customer_id.
+
+9. LEFT JOIN
+
+LEFT JOIN returns all records from the left table and matching records from the right table.
+If there is no match, the right table values return NULL.
+
+This is one of the most important analyst concepts.
+It helps find missing related records.
+
+Business rule:
+Every successful payment should have a settlement record.
+
+Query:
+
+SELECT p.payment_id, p.payment_reference, p.amount, p.status, s.settlement_id
+FROM payments p
+LEFT JOIN settlements s
+ON p.payment_id = s.payment_id
+WHERE p.status = 'SUCCESS'
+AND s.settlement_id IS NULL;
+
+Technical explanation:
+Start with payments.
+Left join settlements.
+Keep successful payments.
+Find records where settlement is missing.
+
+Business explanation:
+This identifies successful payments not settled.
+
+System explanation:
+The payment completed, but the downstream settlement record was not created.
+
+UAT explanation:
+If the requirement says successful payments must settle, this query validates that rule.
+
+Interview answer:
+
+I use LEFT JOIN when I need to find missing related records. In payments, it helps identify successful payments without settlements, which is important for reconciliation, UAT, and defect investigation.
+
+10. RIGHT JOIN and FULL OUTER JOIN
+
+RIGHT JOIN returns all records from the right table and matching records from the left table.
+In practice, I can often rewrite it as a LEFT JOIN by changing table order.
+
+FULL OUTER JOIN returns all records from both tables.
+It shows matches where possible, and NULL where no match exists.
+
+A FULL OUTER JOIN can be useful when comparing two datasets.
+For example, it can show:
+
+Payments with settlements.
+Payments without settlements.
+Settlements without payments.
+
+But in most Business Analyst scenarios, INNER JOIN and LEFT JOIN cover most needs.
+
+Interview answer:
+
+I mainly use INNER JOIN for matching records and LEFT JOIN for missing records. I understand RIGHT JOIN and FULL OUTER JOIN, but for practical analysis, LEFT JOIN is usually enough to identify missing child or parent records.
+
+11. NULL handling
+
+NULL means missing, unknown, or not available.
+NULL is not zero.
+NULL is not blank text.
+NULL means there is no value.
+
+Correct:
+
+WHERE status IS NULL.
+
+Incorrect:
+
+WHERE status = NULL.
+
+To check available values:
+
+WHERE status IS NOT NULL.
+
+Business example:
+
+SELECT payment_id, status
+FROM payments
+WHERE status IS NULL;
+
+This finds payments with missing status.
+
+System impact:
+Missing status can break reporting, workflows, customer support, reconciliation, and UAT.
+
+Interview answer:
+
+NULL handling is important because missing values can indicate incomplete processing, failed data migration, API mapping issues, or workflow defects.
+
+12. Mismatch checks
+
+SQL can compare two columns.
+
+Business rule:
+Payment amount should match settlement amount unless there is a valid business reason such as fees, FX conversion, partial settlement, refund, or chargeback.
+
+Query:
+
+SELECT p.payment_id, p.payment_reference, p.amount AS payment_amount, s.settlement_amount, p.currency, p.status, s.settlement_status
+FROM payments p
+JOIN settlements s
+ON p.payment_id = s.payment_id
+WHERE p.amount <> s.settlement_amount;
+
+Technical explanation:
+Join payment and settlement records.
+Compare amount fields.
+Return mismatches.
+
+Business explanation:
+This identifies reconciliation issues.
+
+System explanation:
+The issue could come from calculation logic, data mapping, currency handling, partial settlement, or downstream integration.
+
+Interview answer:
+
+I would not immediately call every mismatch a defect. I would first check whether business rules explain the difference, then raise a defect if the mismatch is unexpected.
+
+13. COUNT, SUM, AVG, MIN, and MAX
+
+COUNT counts records.
+SUM adds values.
+AVG calculates average.
+MIN finds the smallest value.
+MAX finds the highest value.
+
+Query:
+
+SELECT status, COUNT(*) AS payment_count, SUM(amount) AS total_amount, AVG(amount) AS average_amount, MIN(amount) AS minimum_amount, MAX(amount) AS maximum_amount
+FROM payments
+GROUP BY status;
+
+Business explanation:
+This shows both volume and value by payment status.
+
+Interview insight:
+Count alone can mislead.
+Ten failed payments worth 100 euros may be less urgent than two failed payments worth 20,000 euros.
+A strong analyst checks both count and value.
+
+14. GROUP BY
+
+GROUP BY summarises rows into groups.
+
+If I group by status, I get one result per status.
+If I group by country, I get one result per country.
+If I group by customer, I get one result per customer.
+
+Example:
+
+SELECT c.country, COUNT(*) AS failed_payment_count
+FROM customers c
+JOIN payments p
+ON c.customer_id = p.customer_id
+WHERE p.status = 'FAILED'
+GROUP BY c.country;
+
+Business explanation:
+This shows failed payments by country.
+
+System insight:
+If failures are concentrated in one country, the root cause may involve local issuer behaviour, gateway routing, currency, payment method availability, or regulatory rules.
+
+15. HAVING
+
+WHERE filters rows before grouping.
+HAVING filters groups after aggregation.
+
+Example:
+
+SELECT c.country, COUNT(*) AS failed_payment_count
+FROM customers c
+JOIN payments p
+ON c.customer_id = p.customer_id
+WHERE p.status = 'FAILED'
+GROUP BY c.country
+HAVING COUNT(*) > 10;
+
+Business explanation:
+This identifies countries with more than ten failed payments.
+
+Interview answer:
+
+WHERE is used before aggregation. HAVING is used after aggregation. I use HAVING when I need to filter summarised results, such as customers with repeated failures or countries with high failure counts.
+
+16. CASE WHEN
+
+CASE WHEN creates business categories.
+
+Example:
+
+SELECT payment_id, amount,
+CASE
+  WHEN amount >= 1000 THEN 'High Value'
+  WHEN amount >= 500 THEN 'Medium Value'
+  ELSE 'Low Value'
+END AS payment_value_category
+FROM payments;
+
+Business explanation:
+This classifies payments by value.
+High-value failed payments can be prioritised.
+
+Another example:
+
+SELECT payment_id, status,
+CASE
+  WHEN status = 'SUCCESS' THEN 'Completed'
+  WHEN status = 'FAILED' THEN 'Needs Investigation'
+  WHEN status = 'PENDING' THEN 'Awaiting Processing'
+  ELSE 'Unknown'
+END AS business_status
+FROM payments;
+
+Interview answer:
+
+CASE WHEN is useful when raw system values need to be converted into business-friendly categories, priority labels, or reporting fields.
+
+17. Date filtering and timestamps
+
+Most real investigations are time-based.
+
+Business questions:
+What failed today?
+What changed after a release?
+Which payments are stuck?
+Which records were created during an incident window?
+
+Example:
+
+SELECT payment_id, payment_reference, status, payment_date
+FROM payments
+WHERE payment_date >= '2026-06-01'
+AND payment_date < '2026-07-01';
+
+This is often safer than BETWEEN when timestamps are involved.
+
+Reason:
+If payment_date includes hours, minutes, and seconds, using less than the next period start avoids missing records from late on the final day.
+
+Interview answer:
+
+For date-time fields, I prefer using greater than or equal to the start date and less than the next period start. It avoids missing records when timestamps are included.
+
+18. Pending payments older than the expected window
+
+Business rule:
+Payments should not remain pending longer than the agreed processing window.
+
+Query example:
+
+SELECT payment_id, payment_reference, customer_id, amount, status, payment_date
+FROM payments
+WHERE status = 'PENDING'
+AND payment_date < CURRENT_DATE - INTERVAL '2 days';
+
+The exact syntax depends on the database.
+PostgreSQL, MySQL, SQL Server, and Oracle use different date functions.
+
+Business explanation:
+This identifies stuck payments.
+
+Possible causes:
+Missing gateway callback.
+Failed status update.
+Batch process failure.
+Integration timeout.
+Manual review delay.
+
+Interview answer:
+
+The exact syntax depends on the database, but the logic is to filter pending records older than the accepted processing window and then investigate shared patterns.
+
+19. Duplicate detection
+
+Duplicate data is common in payment systems.
+It can be caused by retry logic, browser refresh, double-clicking, API callback duplication, missing idempotency, migration errors, or manual upload mistakes.
+
+Duplicate payment reference query:
+
+SELECT payment_reference, COUNT(*) AS reference_count
+FROM payments
+GROUP BY payment_reference
+HAVING COUNT(*) > 1;
+
+Business explanation:
+This finds payment references appearing more than once.
+
+Impact:
+Duplicate payments can cause customer complaints, refunds, finance errors, and reconciliation issues.
+
+Duplicate customer email query:
+
+SELECT email, COUNT(*) AS email_count
+FROM customers
+GROUP BY email
+HAVING COUNT(*) > 1;
+
+Impact:
+Duplicate customer records can cause KYC problems, support confusion, and inaccurate reporting.
+
+Interview answer:
+
+Duplicate detection is important because duplicate records can create financial, operational, customer, and compliance risk.
+
+20. Orphan records
+
+An orphan record is a child record without a valid parent.
+
+Example:
+A payment has customer_id, but that customer_id does not exist in the customers table.
+
+Query:
+
+SELECT p.payment_id, p.customer_id, p.amount, p.status
+FROM payments p
+LEFT JOIN customers c
+ON p.customer_id = c.customer_id
+WHERE c.customer_id IS NULL;
+
+Business explanation:
+This identifies payments not linked to valid customers.
+
+Impact:
+Reporting issues.
+Support confusion.
+Compliance risk.
+Broken customer ownership.
+
+Interview answer:
+
+I use LEFT JOIN to identify missing parent-child relationships. This is useful for data quality checks, migration validation, and system investigation.
+
+21. Subqueries
+
+A subquery is a query inside another query.
+
+Example:
+Find payments above average amount.
+
+SELECT payment_id, amount, status
+FROM payments
+WHERE amount > (
+  SELECT AVG(amount)
+  FROM payments
+);
+
+Business explanation:
+This identifies unusually high-value payments compared with average.
+
+Another example:
+Find customers with successful payments.
+
+SELECT customer_id, customer_name, country
+FROM customers
+WHERE customer_id IN (
+  SELECT customer_id
+  FROM payments
+  WHERE status = 'SUCCESS'
+);
+
+Interview answer:
+
+I use subqueries when one query result is needed to filter another dataset.
+
+22. EXISTS
+
+EXISTS checks whether a related record exists.
+
+Example:
+Find customers who have at least one successful payment.
+
+SELECT c.customer_id, c.customer_name, c.country
+FROM customers c
+WHERE EXISTS (
+  SELECT 1
+  FROM payments p
+  WHERE p.customer_id = c.customer_id
+  AND p.status = 'SUCCESS'
+);
+
+Business explanation:
+This returns customers who have successful payments.
+
+Interview answer:
+
+EXISTS is useful when I only need to check whether related records exist, not necessarily return their details.
+
+23. CTEs
+
+CTE means Common Table Expression.
+It starts with WITH.
+It makes complex SQL easier to read.
+
+Example:
+
+WITH failed_payments AS (
+  SELECT customer_id, COUNT(*) AS failed_count
+  FROM payments
+  WHERE status = 'FAILED'
+  GROUP BY customer_id
+)
+SELECT c.customer_name, c.country, f.failed_count
+FROM customers c
+JOIN failed_payments f
+ON c.customer_id = f.customer_id;
+
+Business explanation:
+First, calculate failed payment count by customer.
+Then join that result to customer details.
+
+Interview answer:
+
+I use CTEs to break complex analysis into readable steps. This is useful for analyst work because other team members may need to understand and review the logic.
+
+24. COALESCE
+
+COALESCE returns the first non-null value.
+
+Example:
+
+COALESCE(failed_payments, 0).
+
+This means:
+If failed_payments is NULL, show zero.
+
+Business use:
+In reports, missing values may need to appear as zero instead of blank.
+
+Interview answer:
+
+I use COALESCE when I need to replace NULL values with a default value, such as zero for reporting or calculations.
+
+25. Window functions
+
+Window functions calculate across related rows while keeping row-level detail.
+
+Example:
+Rank payments by amount.
+
+SELECT payment_id, customer_id, amount,
+RANK() OVER (ORDER BY amount DESC) AS amount_rank
+FROM payments;
+
+Business explanation:
+This identifies the largest transactions.
+
+Rank payments within each customer:
+
+SELECT payment_id, customer_id, amount,
+RANK() OVER (PARTITION BY customer_id ORDER BY amount DESC) AS customer_payment_rank
+FROM payments;
+
+Business explanation:
+This shows each customer’s highest-value payments.
+
+Interview answer:
+
+Window functions are useful when I need ranking, sequencing, running totals, or comparisons while keeping row-level transaction detail.
+
+26. ROW_NUMBER for duplicate analysis
+
+ROW_NUMBER can help identify duplicate records.
+
+Example:
+
+WITH duplicate_check AS (
+  SELECT payment_id, payment_reference, payment_date,
+  ROW_NUMBER() OVER (PARTITION BY payment_reference ORDER BY payment_date) AS row_num
+  FROM payments
+)
+SELECT *
+FROM duplicate_check
+WHERE row_num > 1;
+
+Business explanation:
+This keeps the first record and shows additional records with the same payment reference.
+
+Use cases:
+Duplicate investigation.
+Migration validation.
+Retry issue analysis.
+Idempotency checks.
+
+Interview answer:
+
+ROW_NUMBER is useful when I need to identify repeated records and separate the first occurrence from later duplicates.
+
+27. UNION and UNION ALL
+
+UNION combines results and removes duplicates.
+UNION ALL combines results and keeps duplicates.
+
+Example:
+
+SELECT customer_id, email FROM customers_uk
+UNION
+SELECT customer_id, email FROM customers_ireland;
+
+Business explanation:
+This combines customer lists from two regions and removes duplicate rows.
+
+Interview answer:
+
+I use UNION when I need combined unique results. I use UNION ALL when duplicates should be preserved or when duplicate removal is not required.
+
+28. DISTINCT
+
+DISTINCT returns unique values.
+
+Example:
+
+SELECT DISTINCT status
+FROM payments;
+
+Business explanation:
+This shows all unique payment statuses.
+
+Use case:
+Before testing or migration, I can check whether unexpected statuses exist.
+
+Example expected statuses:
+SUCCESS.
+FAILED.
+PENDING.
+CANCELLED.
+
+If UNKNOWN appears unexpectedly, that may need investigation.
+
+Interview answer:
+
+DISTINCT is useful for data profiling because it shows which unique values exist in a field.
+
+29. Data quality checks
+
+Data quality checks are important for Business Systems Analyst roles.
+
+Common checks include:
+Missing mandatory values.
+Duplicate records.
+Invalid statuses.
+Orphan records.
+Amount mismatches.
+Unexpected date values.
+Negative amounts.
+Currency mismatch.
+Invalid country codes.
+
+Example missing fields:
+
+SELECT customer_id, customer_name, email, country
+FROM customers
+WHERE email IS NULL
+OR country IS NULL;
+
+Example negative amount:
+
+SELECT payment_id, amount
+FROM payments
+WHERE amount < 0;
+
+Business explanation:
+Poor data quality can cause failed workflows, reporting errors, customer issues, compliance problems, and UAT failures.
+
+Interview answer:
+
+Before migration or release, I would check missing values, duplicates, invalid statuses, orphan records, mismatches, and unusual date or amount values.
+
+30. Data migration validation
+
+Data migration means moving data from an old system to a new system.
+
+SQL helps validate completeness and correctness.
+
+Common checks:
+Record count matches.
+Total amount matches.
+Mandatory fields are populated.
+No unexpected duplicates.
+Key relationships are preserved.
+Statuses are mapped correctly.
+Sample records match.
+
+Example:
+
+SELECT COUNT(*) AS old_payment_count FROM old_payments;
+SELECT COUNT(*) AS new_payment_count FROM new_payments;
+
+Count alone is not enough.
+Check totals:
+
+SELECT SUM(amount) AS old_total_amount FROM old_payments;
+SELECT SUM(amount) AS new_total_amount FROM new_payments;
+
+Interview answer:
+
+For migration validation, I would compare record counts, financial totals, mandatory fields, duplicates, relationships, statuses, and sample records. Count proves records moved, but totals and relationships prove they moved correctly.
+
+31. Reporting validation
+
+Business reports must match source system logic.
+
+Scenario:
+A dashboard says total successful payment amount for June is one million euros.
+I need to validate it.
+
+Query:
+
+SELECT SUM(amount) AS total_successful_amount
+FROM payments
+WHERE status = 'SUCCESS'
+AND payment_date >= '2026-06-01'
+AND payment_date < '2026-07-01';
+
+If the result does not match the dashboard, possible reasons include:
+Different date logic.
+Timezone differences.
+Different status filters.
+Refunds included or excluded.
+Settlement date used instead of payment date.
+Currency conversion.
+Duplicate records.
+Report refresh delay.
+Data pipeline issue.
+
+Interview answer:
+
+I would not simply say the report is wrong. I would compare the report’s business rules with the source-system logic and identify exactly where the difference comes from.
+
+32. Production incident investigation
+
+SQL is useful during incidents.
+
+Scenario:
+Payment failures increased between 10 AM and 11 AM.
+
+Query:
+
+SELECT status, COUNT(*) AS payment_count, SUM(amount) AS total_amount
+FROM payments
+WHERE payment_date >= '2026-06-17 10:00:00'
+AND payment_date < '2026-06-17 11:00:00'
+GROUP BY status;
+
+Then break down by payment method:
+
+SELECT payment_method, status, COUNT(*) AS payment_count
+FROM payments
+WHERE payment_date >= '2026-06-17 10:00:00'
+AND payment_date < '2026-06-17 11:00:00'
+GROUP BY payment_method, status;
+
+Incident communication:
+Between 10 AM and 11 AM, there were 120 failed payments with total value of 18,500 euros. Failures were concentrated in card payments. Bank transfers were not affected.
+
+Interview answer:
+
+SQL helps move incident communication from vague issue to measured business impact.
+
+33. SQL and UAT
+
+UAT means User Acceptance Testing.
+SQL supports UAT by checking backend data against expected business outcomes.
+
+Requirement:
+When payment status is SUCCESS, settlement must exist.
+
+Validation query:
+
+SELECT p.payment_id, p.payment_reference, p.status, s.settlement_id
+FROM payments p
+LEFT JOIN settlements s
+ON p.payment_id = s.payment_id
+WHERE p.status = 'SUCCESS'
+AND s.settlement_id IS NULL;
+
+If zero records return, the rule passes.
+If records return, the rule fails or needs investigation.
+
+Defect wording:
+Expected result: successful payment should create settlement record.
+Actual result: payment status is SUCCESS but settlement record is missing.
+Evidence: SQL result showing payment ID and missing settlement ID.
+Business impact: finance operations cannot reconcile the payment.
+
+Interview answer:
+
+SQL helps me validate whether the backend data confirms the business process. It is especially useful when the screen shows one thing but the database needs to confirm the real transaction state.
+
+34. SQL and stakeholder communication
+
+Business users do not need raw SQL.
+They need meaning.
+
+Technical result:
+LEFT JOIN returned NULL settlement IDs.
+
+Business explanation:
+I found successful payments where settlement records have not been created. These payments may need finance operations investigation before reconciliation can be completed.
+
+Technical result:
+COUNT of failed payments increased after deployment.
+
+Business explanation:
+Failed payment volume increased after the release, especially for card payments.
+
+Technical result:
+Duplicate payment references exist.
+
+Business explanation:
+The same payment reference appears more than once, which may indicate duplicate transaction creation or retry-handling issues.
+
+Interview answer:
+
+A key part of the Business Analyst role is translating technical findings into clear business language.
+
+35. Database transactions
+
+A database transaction is a group of operations that should complete reliably together.
+
+Payment example:
+Insert payment record.
+Update status.
+Create audit log.
+Send event to settlement service.
+Create ledger entry.
+
+If one part fails, the system may need rollback or compensation logic.
+
+Basic concept:
+ACID means Atomicity, Consistency, Isolation, and Durability.
+I do not need to go too deep unless asked.
+
+Interview answer:
+
+A transaction is a controlled set of database operations that should complete reliably. In payment systems, transaction handling is important because partial updates can create inconsistent records, such as a payment marked successful but missing settlement or ledger entry.
+
+36. Indexes and performance awareness
+
+An index helps the database find records faster.
+It is like an index in a book.
+
+Common indexed fields:
+Primary keys.
+Foreign keys.
+Payment reference.
+Customer ID.
+Payment date.
+Status.
+
+If payment_id is indexed, joining payments and settlements may be faster.
+If payment_date is indexed, date filtering may be faster.
+
+Good analyst habits:
+Avoid SELECT star when unnecessary.
+Use clear join conditions.
+Use WHERE filters.
+Filter date ranges carefully.
+Avoid joining large tables without a clear key.
+
+Interview answer:
+
+I am not a database administrator, but I understand that indexes can improve query performance on large tables. As an analyst, I try to write readable queries using proper filters and join keys.
+
+37. Views and stored procedures
+
+A view is a saved query that behaves like a virtual table.
+It can simplify complex joins for reporting or analysis.
+
+Example:
+A successful_payments_view may already join customers, payments, and settlements.
+
+A stored procedure is a saved set of SQL logic that can be executed.
+It may process payments, update statuses, run batch jobs, or generate reports.
+
+Interview answer:
+
+I understand that views can provide a reusable business-friendly layer over complex data. I also understand that stored procedures can contain reusable database logic. I may not write complex stored procedures myself, but I can work with technical teams to understand their purpose, validate outputs, and investigate issues when they affect business data.
+
+38. API and database flow
+
+Modern systems often use APIs and databases together.
+
+Payment flow example:
+Customer clicks pay on the UI.
+Frontend sends request to API.
+API validates the request.
+API writes payment record to database.
+Payment gateway processes the request.
+Gateway sends callback.
+API updates payment status.
+Settlement service creates settlement record.
+Reporting service reads the data.
+
+Business Analyst value:
+A screen issue may come from frontend, API, database, integration, gateway, or reporting layer.
+SQL helps confirm what happened in the database.
+
+Interview answer:
+
+I use SQL as one evidence source in system investigation. If a UI says payment succeeded, I can check whether backend data confirms the payment status, settlement record, and related audit or status history.
+
+Part 2 — Deep SQL Scenario-Based Interview Practice
+
+Now I begin Part 2.
+This section is scenario-based interview practice.
+
+The interviewer gives a business/system problem.
+I need to answer like a Business Systems Analyst.
+
+For each scenario, I should follow this structure:
+
+Clarify the business rule.
+Identify the tables.
+Identify the keys.
+Choose the SQL logic.
+Explain the technical result.
+Explain the business impact.
+Mention next investigation steps.
+
+I should not rush into syntax.
+I should first show structured thinking.
+
+Now the live scenario practice begins.
+
+Scenario 1: Successful payment with no settlement
+
+Interviewer asks:
+A business user says some successful payments are not settled. How would you investigate using SQL?
+
+Pause.
+Think.
+
+Ideal answer:
+
+First, I would confirm the business rule.
+If payment status is SUCCESS, should a settlement record always be created?
+Is settlement immediate, or does it happen through a batch job?
+Is there an expected delay?
+
+Then I would use the payments table as the main table and left join settlements using payment_id.
+I use LEFT JOIN because I want to keep all successful payments, including those without settlement.
+
+SQL query:
+
+SELECT p.payment_id, p.payment_reference, p.amount, p.currency, p.status, p.payment_date, s.settlement_id
+FROM payments p
+LEFT JOIN settlements s
+ON p.payment_id = s.payment_id
+WHERE p.status = 'SUCCESS'
+AND s.settlement_id IS NULL;
+
+This returns successful payments where settlement is missing.
+
+Business impact:
+Finance operations may not be able to reconcile these payments.
+Customers may have paid successfully, but downstream financial records are incomplete.
+
+Next investigation:
+I would summarise affected count, total amount, payment dates, payment method, gateway, and whether the issue started after a release or batch process.
+
+Strong closing:
+This query moves the issue from a general complaint to a list of affected transaction records with measurable business impact.
+
+Scenario 2: Payment and settlement amount mismatch
+
+Interviewer asks:
+How would you check whether payment amount and settlement amount match?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would join payments and settlements using payment_id, then compare the amount fields.
+
+SQL query:
+
+SELECT p.payment_id, p.payment_reference, p.amount AS payment_amount, s.settlement_amount, p.currency, p.status, s.settlement_status
+FROM payments p
+JOIN settlements s
+ON p.payment_id = s.payment_id
+WHERE p.amount <> s.settlement_amount;
+
+This returns records where the payment amount does not equal settlement amount.
+
+Business impact:
+This is important for reconciliation, finance reporting, customer disputes, and ledger accuracy.
+
+I would not immediately assume every mismatch is a defect.
+I would check valid business reasons such as fees, FX conversion, partial settlement, refunds, or chargebacks.
+If no business rule explains the mismatch, I would raise it as a defect or reconciliation issue.
+
+Scenario 3: Customer says they paid twice
+
+Interviewer asks:
+A customer says they paid twice. How would you investigate duplicates?
+
+Pause.
+Think.
+
+Ideal answer:
+
+First, I would collect customer ID, email, payment reference, date, amount, and payment method.
+Then I would check duplicate payment references.
+
+SQL query:
+
+SELECT payment_reference, COUNT(*) AS reference_count
+FROM payments
+GROUP BY payment_reference
+HAVING COUNT(*) > 1;
+
+If references are different, I would check same customer, same amount, and close timestamps.
+
+Example logic:
+
+SELECT customer_id, amount, DATE(payment_date) AS payment_day, COUNT(*) AS payment_count
+FROM payments
+WHERE status = 'SUCCESS'
+GROUP BY customer_id, amount, DATE(payment_date)
+HAVING COUNT(*) > 1;
+
+Business impact:
+Duplicate successful payments can create customer complaints, refund requests, chargebacks, and reconciliation issues.
+
+System causes:
+Retry logic, gateway callback duplication, browser refresh, double-click, timeout handling, or missing idempotency.
+
+Strong answer:
+I would check whether both records were successful and whether both were settled. If one was failed and one succeeded, it may not be a real double charge.
+
+Scenario 4: Failed payments after release
+
+Interviewer asks:
+After a new release, failed payments increased. How would you prove it?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would compare payment status before and after the release.
+I need the release timestamp.
+I would not only count failures; I would calculate failure rate because total volume may have changed.
+
+Daily status query:
+
+SELECT DATE(payment_date) AS payment_day, status, COUNT(*) AS payment_count
+FROM payments
+WHERE payment_date >= '2026-06-01'
+AND payment_date < '2026-06-08'
+GROUP BY DATE(payment_date), status
+ORDER BY payment_day, status;
+
+Failure rate query:
+
+SELECT DATE(payment_date) AS payment_day,
+COUNT(*) AS total_payments,
+SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failed_payments,
+SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS failure_rate
+FROM payments
+WHERE payment_date >= '2026-06-01'
+AND payment_date < '2026-06-08'
+GROUP BY DATE(payment_date)
+ORDER BY payment_day;
+
+Business impact:
+This shows whether failure rate increased after release, not only failure count.
+
+Next investigation:
+Break down by payment method, country, gateway, currency, error code, and customer type.
+
+Scenario 5: Failure rate by country
+
+Interviewer asks:
+How would you calculate payment failure rate by country?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I need customers and payments because country is usually in customers and status is in payments.
+I would join on customer_id.
+
+SQL query:
+
+SELECT c.country,
+COUNT(*) AS total_payments,
+SUM(CASE WHEN p.status = 'FAILED' THEN 1 ELSE 0 END) AS failed_payments,
+ROUND(SUM(CASE WHEN p.status = 'FAILED' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS failure_rate_percentage
+FROM customers c
+JOIN payments p
+ON c.customer_id = p.customer_id
+GROUP BY c.country
+ORDER BY failure_rate_percentage DESC;
+
+Business explanation:
+This identifies countries with high payment failure rates.
+
+Strong judgement:
+I would not prioritise only the highest percentage. A country with one failure out of one payment shows 100 percent, but may not be significant. I would look at both failure rate and payment volume.
+
+Scenario 6: Report total mismatch
+
+Interviewer asks:
+A management report total does not match the source system. How would you validate it?
+
+Pause.
+Think.
+
+Ideal answer:
+
+First, I would clarify the report logic.
+Is the report showing payment count, successful amount, settlement amount, or net amount after refunds?
+Which date field is used: payment date, settlement date, or reporting date?
+Which statuses are included?
+Is currency conversion applied?
+
+Source query example:
+
+SELECT SUM(amount) AS source_successful_amount
+FROM payments
+WHERE status = 'SUCCESS'
+AND payment_date >= '2026-06-01'
+AND payment_date < '2026-07-01';
+
+Then I would compare this with the dashboard.
+
+Possible mismatch reasons:
+Different date range, timezone difference, report refresh delay, refund logic, settlement date versus payment date, duplicated records, currency conversion, status mapping, or data pipeline issue.
+
+Interview answer:
+I would not simply say the report is wrong. I would identify where the report logic differs from source-system logic.
+
+Scenario 7: Pending payments stuck
+
+Interviewer asks:
+How would you find payments stuck in pending status beyond the expected window?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would filter payments where status is PENDING and payment_date is older than the expected processing window.
+
+Example query:
+
+SELECT payment_id, payment_reference, customer_id, amount, status, payment_date, payment_method
+FROM payments
+WHERE status = 'PENDING'
+AND payment_date < CURRENT_DATE - INTERVAL '2 days';
+
+The exact syntax depends on the database.
+
+Business impact:
+Pending payments may create customer uncertainty, support tickets, delayed fulfilment, and operational risk.
+
+Next investigation:
+I would check payment method, gateway, country, callback status, error logs, and whether records share a common processing time or batch.
+
+Scenario 8: UAT settlement requirement
+
+Interviewer asks:
+How would you validate a UAT requirement that successful payments must create settlement records?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would convert the requirement into a testable data rule.
+Rule: for every payment where status equals SUCCESS, a settlement record should exist.
+
+Validation query:
+
+SELECT p.payment_id, p.payment_reference, p.status, p.amount, s.settlement_id
+FROM payments p
+LEFT JOIN settlements s
+ON p.payment_id = s.payment_id
+WHERE p.status = 'SUCCESS'
+AND s.settlement_id IS NULL;
+
+If this returns zero records, the UAT data rule passes.
+If it returns records, the UAT scenario may fail.
+
+Defect wording:
+Expected: successful payment should create settlement.
+Actual: payment is successful but no settlement exists.
+Evidence: SQL result.
+Business impact: finance cannot reconcile those payments.
+
+Scenario 9: Developer says system works as designed
+
+Interviewer asks:
+Your query shows an issue, but the developer says the system is working as designed. What do you do?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would not argue immediately.
+I would return to the business requirement and acceptance criteria.
+
+I would ask:
+Should settlement be immediate or batch-based?
+What is the allowed delay?
+Are there retry rules?
+Are there valid exceptions?
+Are failures logged?
+Is the status expected to remain pending until gateway callback?
+
+Then I would compare expected behaviour, actual data, and documented design.
+
+If the design allows a delay, the result may not be a defect yet.
+If the expected processing window has passed, the issue may still be valid.
+
+Interview answer:
+Not every unexpected SQL result is a defect. Sometimes it reveals a requirement gap, timing rule, configuration issue, or missing business clarification.
+
+Scenario 10: Missing customer data affecting payments
+
+Interviewer asks:
+How would you investigate missing customer data that may affect payment processing?
+
+Pause.
+Think.
+
+Ideal answer:
+
+First, I would identify mandatory customer fields for payment processing.
+Examples: customer ID, email, country, billing address, KYC status, currency, and risk status.
+
+Query:
+
+SELECT customer_id, customer_name, email, country, kyc_status
+FROM customers
+WHERE email IS NULL
+OR country IS NULL
+OR kyc_status IS NULL;
+
+If KYC approval is required:
+
+SELECT customer_id, customer_name, kyc_status
+FROM customers
+WHERE kyc_status <> 'APPROVED'
+OR kyc_status IS NULL;
+
+Business impact:
+Missing customer data can cause payment failures, compliance issues, onboarding blocks, support issues, and bad reporting.
+
+Next step:
+Join affected customers with failed payments to prove the link between data quality and business impact.
+
+Scenario 11: Customers affected by failed payments
+
+Interviewer asks:
+How would you identify customers affected by failed payments?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would join customers and payments using customer_id and filter failed payments.
+
+SQL query:
+
+SELECT c.customer_id, c.customer_name, c.email, c.country, p.payment_id, p.payment_reference, p.amount, p.status, p.payment_date
+FROM customers c
+JOIN payments p
+ON c.customer_id = p.customer_id
+WHERE p.status = 'FAILED';
+
+Business use:
+Support teams can contact affected customers.
+Operations can prioritise high-value failures.
+Product teams can investigate customer segments.
+
+Follow-up query:
+Group by customer to identify repeated failures.
+
+SELECT c.customer_id, c.customer_name, COUNT(*) AS failed_count
+FROM customers c
+JOIN payments p
+ON c.customer_id = p.customer_id
+WHERE p.status = 'FAILED'
+GROUP BY c.customer_id, c.customer_name
+HAVING COUNT(*) > 1;
+
+Scenario 12: Isolated or widespread issue
+
+Interviewer asks:
+How would you check whether a payment issue is isolated or widespread?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would check patterns across time, payment method, country, currency, gateway, customer segment, and status.
+
+Example query:
+
+SELECT payment_method, status, COUNT(*) AS payment_count
+FROM payments
+WHERE payment_date >= '2026-06-01'
+AND payment_date < '2026-06-02'
+GROUP BY payment_method, status
+ORDER BY payment_method, status;
+
+Business explanation:
+If card payments are failing but bank transfers work, the issue may be method-specific.
+If one country is affected, it may be country or issuer-specific.
+If all methods fail, it may be platform or gateway-wide.
+
+Strong answer:
+I would measure scope using both volume and value, then look for shared characteristics across affected records.
+
+Scenario 13: Production incident
+
+Interviewer asks:
+How would SQL support a production incident?
+
+Pause.
+Think.
+
+Ideal answer:
+
+SQL helps quantify scope and impact.
+
+I would identify incident window, affected statuses, affected payment methods, total value, and affected customers.
+
+Query:
+
+SELECT status, COUNT(*) AS payment_count, SUM(amount) AS total_amount
+FROM payments
+WHERE payment_date >= '2026-06-17 10:00:00'
+AND payment_date < '2026-06-17 11:00:00'
+GROUP BY status;
+
+Incident summary example:
+Between 10 AM and 11 AM, 120 payments failed with total value of 18,500 euros. Failures were concentrated in card payments. Bank transfers were not affected.
+
+Business value:
+This helps incident managers prioritise, communicate, and decide whether rollback, fix, or customer communication is needed.
+
+Scenario 14: Technical result versus business insight
+
+Interviewer asks:
+What is the difference between a technical SQL result and business insight?
+
+Pause.
+Think.
+
+Ideal answer:
+
+A technical result is raw output.
+Example: twenty successful payments have NULL settlement IDs.
+
+A business insight explains meaning.
+Example: twenty successful payments did not create settlement records, affecting 8,000 euros. Finance cannot reconcile these transactions, and the issue started after the morning settlement batch.
+
+Interview answer:
+As a Business Systems Analyst, I should not stop at query output. I should explain business impact, affected users, financial value, timing, and next action.
+
+Scenario 15: Explaining SQL to non-technical stakeholders
+
+Interviewer asks:
+How would you explain SQL findings to a non-technical stakeholder?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would avoid SQL jargon.
+
+Instead of saying:
+The LEFT JOIN returned NULL settlement IDs.
+
+I would say:
+I found successful payments where settlement records were not created.
+
+Instead of saying:
+The GROUP BY count increased.
+
+I would say:
+Failed payment volume increased after the release compared with the previous period.
+
+Instead of saying:
+There are duplicate keys.
+
+I would say:
+The same payment reference appears more than once, which may indicate duplicate transaction creation.
+
+Interview answer:
+My role is to translate technical evidence into business language so stakeholders can make decisions.
+
+Scenario 16: WHERE versus HAVING
+
+Interviewer asks:
+Can you explain WHERE versus HAVING with a payment example?
+
+Pause.
+Think.
+
+Ideal answer:
+
+WHERE filters individual rows before grouping.
+HAVING filters grouped results after aggregation.
+
+Example:
+
+SELECT c.country, COUNT(*) AS failed_payment_count
+FROM customers c
+JOIN payments p
+ON c.customer_id = p.customer_id
+WHERE p.status = 'FAILED'
+GROUP BY c.country
+HAVING COUNT(*) > 10;
+
+WHERE filters only failed payments.
+GROUP BY summarises them by country.
+HAVING keeps only countries with more than ten failed payments.
+
+Business explanation:
+This helps identify countries where payment failures are significant enough to investigate.
+
+Scenario 17: CASE WHEN business labels
+
+Interviewer asks:
+Can you explain CASE WHEN with a business example?
+
+Pause.
+Think.
+
+Ideal answer:
+
+CASE WHEN creates business categories from raw data.
+
+Example:
+
+SELECT payment_id, amount,
+CASE
+  WHEN amount >= 1000 THEN 'High Value'
+  WHEN amount >= 500 THEN 'Medium Value'
+  ELSE 'Low Value'
+END AS payment_value_category
+FROM payments;
+
+Business explanation:
+This helps prioritise high-value transactions.
+
+Another example:
+
+CASE can convert statuses into business labels such as Completed, Needs Investigation, or Awaiting Processing.
+
+Interview answer:
+CASE WHEN is useful when system values need to become business-friendly categories for reporting, dashboards, or investigation queues.
+
+Scenario 18: CTEs
+
+Interviewer asks:
+What is a CTE and why would you use one?
+
+Pause.
+Think.
+
+Ideal answer:
+
+A CTE is a Common Table Expression.
+It starts with WITH and helps break complex SQL into readable steps.
+
+Example:
+
+WITH failed_payments AS (
+  SELECT customer_id, COUNT(*) AS failed_count
+  FROM payments
+  WHERE status = 'FAILED'
+  GROUP BY customer_id
+)
+SELECT c.customer_name, c.country, f.failed_count
+FROM customers c
+JOIN failed_payments f
+ON c.customer_id = f.customer_id;
+
+Business explanation:
+This shows customers with failed payment counts.
+
+Interview answer:
+I use CTEs when analysis has multiple steps. They make SQL easier to read, review, and explain.
+
+Scenario 19: Window functions
+
+Interviewer asks:
+Do you know window functions? Give a simple use case.
+
+Pause.
+Think.
+
+Ideal answer:
+
+I understand the basics.
+Window functions calculate ranking, sequencing, or comparison while keeping row-level detail.
+
+Example:
+
+SELECT payment_id, customer_id, amount,
+RANK() OVER (ORDER BY amount DESC) AS amount_rank
+FROM payments;
+
+This ranks payments by value.
+
+Another example:
+
+SELECT payment_id, customer_id, amount,
+RANK() OVER (PARTITION BY customer_id ORDER BY amount DESC) AS customer_payment_rank
+FROM payments;
+
+This ranks payments within each customer.
+
+Interview answer:
+I would use window functions when I need ranking, running totals, or comparisons while still keeping individual transaction rows.
+
+Scenario 20: Data quality before release
+
+Interviewer asks:
+How would you check data quality before a system release or migration?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would check missing values, duplicates, invalid statuses, orphan records, mismatched totals, unexpected dates, and negative values.
+
+Examples:
+
+SELECT customer_id, email, country
+FROM customers
+WHERE email IS NULL
+OR country IS NULL;
+
+SELECT payment_reference, COUNT(*) AS reference_count
+FROM payments
+GROUP BY payment_reference
+HAVING COUNT(*) > 1;
+
+SELECT DISTINCT status
+FROM payments;
+
+Business explanation:
+Data quality checks reduce migration risk, UAT failures, reporting errors, and customer-impacting issues.
+
+Scenario 21: Orphan records
+
+Interviewer asks:
+How would you investigate an orphan record?
+
+Pause.
+Think.
+
+Ideal answer:
+
+An orphan record is a child record without a valid parent.
+
+Payment example:
+A payment has customer_id, but there is no matching customer record.
+
+SQL query:
+
+SELECT p.payment_id, p.customer_id, p.amount, p.status
+FROM payments p
+LEFT JOIN customers c
+ON p.customer_id = c.customer_id
+WHERE c.customer_id IS NULL;
+
+Business impact:
+The payment cannot be properly linked to a customer.
+This can affect reporting, support, compliance, and customer ownership.
+
+Interview answer:
+LEFT JOIN is useful for finding missing parent-child relationships in system data.
+
+Scenario 22: Prioritising investigation results
+
+Interviewer asks:
+How would you prioritise SQL investigation results?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would prioritise by business impact.
+
+Factors:
+Number of affected records.
+Total financial value affected.
+Customer impact.
+Regulatory impact.
+Live processing impact.
+Whether the issue is increasing.
+Whether it started after a release.
+
+Example:
+Two failed payments worth 20,000 euros may be higher priority than fifty failed payments worth 100 euros.
+
+Interview answer:
+I use SQL to quantify volume, value, affected customers, time pattern, and operational risk. Then I prioritise based on impact, not just count.
+
+Scenario 23: SQL mistakes
+
+Interviewer asks:
+What SQL mistakes do you try to avoid?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I avoid SELECT star when not needed.
+I avoid joins without proper join conditions.
+I check NULL using IS NULL, not equals NULL.
+I avoid careless date filters when timestamps are involved.
+I do not rely only on counts without checking value and rate.
+I avoid giving raw SQL output to stakeholders without explaining business impact.
+I use aliases and formatting to make queries readable.
+
+Interview answer:
+For analyst work, SQL should be accurate, readable, and connected to the business question.
+
+Scenario 24: SQL level answer
+
+Interviewer asks:
+How would you explain your SQL level honestly?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would say:
+
+I use SQL mainly for practical data analysis, validation, UAT support, defect investigation, and reporting checks. I am comfortable with SELECT, WHERE, joins, left joins, aggregation, GROUP BY, HAVING, CASE WHEN, date filtering, duplicate detection, subqueries, CTEs, and basic window functions.
+
+My focus is not database administration.
+My focus is using SQL to understand system behaviour, validate business rules, find data issues, and communicate evidence clearly.
+
+Scenario 25: Full example as Business Systems Analyst
+
+Interviewer asks:
+Give me one full example of using SQL as a Business Systems Analyst.
+
+Pause.
+Think.
+
+Ideal answer:
+
+One example is payment settlement validation.
+
+The business rule is that every successful payment should have a settlement record, and the settlement amount should match payment amount unless there is a valid business reason.
+
+I would first check successful payments missing settlement using LEFT JOIN.
+Then I would check amount mismatches using INNER JOIN and a not-equal condition.
+Then I would summarise affected records by date, method, count, and total value.
+
+Business outcome:
+Finance operations can identify which transactions need investigation, whether the issue is isolated or widespread, and whether there is reconciliation risk.
+
+This shows how SQL supports UAT, reconciliation, defect investigation, and stakeholder communication.
+
+Scenario 26: Refund not linked to payment
+
+Interviewer asks:
+A refund exists but cannot be linked to a payment. How would you investigate?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would treat this as a parent-child relationship issue between refunds and payments.
+A refund should normally reference a valid payment_id.
+
+SQL query:
+
+SELECT r.refund_id, r.payment_id, r.refund_amount, r.refund_status
+FROM refunds r
+LEFT JOIN payments p
+ON r.payment_id = p.payment_id
+WHERE p.payment_id IS NULL;
+
+This finds refunds where the original payment record is missing.
+
+Business impact:
+Unlinked refunds can affect customer support, ledger accuracy, financial reporting, and auditability.
+
+Next investigation:
+Check migration mapping, refund API payload, manual refund process, and whether the refund was created in an external provider but not synchronised internally.
+
+Scenario 27: Refund amount greater than original payment
+
+Interviewer asks:
+How would you identify refunds greater than original payment amount?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would join refunds to payments and compare refund amount with payment amount.
+
+SQL query:
+
+SELECT r.refund_id, r.payment_id, r.refund_amount, p.amount AS payment_amount
+FROM refunds r
+JOIN payments p
+ON r.payment_id = p.payment_id
+WHERE r.refund_amount > p.amount;
+
+Business impact:
+A refund greater than the original payment may indicate data error, duplicate refund, manual processing mistake, or special adjustment that needs approval.
+
+Interview answer:
+I would verify whether partial refunds, multiple refunds, and chargebacks are part of the business rules before calling it a defect.
+
+Scenario 28: Chargeback status investigation
+
+Interviewer asks:
+A payment has a chargeback but still appears as normal settled revenue. How would you investigate?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would check payments, settlements, chargebacks, and ledger or reporting tables.
+
+SQL logic:
+Join payments to chargebacks using payment_id and check status.
+Then check whether reporting or ledger has adjusted for the chargeback.
+
+Example query:
+
+SELECT p.payment_id, p.payment_reference, p.amount, p.status, c.chargeback_status, c.chargeback_amount
+FROM payments p
+JOIN chargebacks c
+ON p.payment_id = c.payment_id
+WHERE c.chargeback_status IN ('OPEN', 'WON', 'LOST');
+
+Business impact:
+Chargebacks affect revenue, customer dispute handling, risk reporting, and reconciliation.
+
+Strong answer:
+I would confirm whether the ledger/reporting layer treats chargebacks as adjustments, not only whether the payment originally settled.
+
+Scenario 29: Ledger mismatch
+
+Interviewer asks:
+Payment and settlement are correct, but ledger total is wrong. What next?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would check whether ledger entries were created correctly after settlement.
+This requires comparing payments, settlements, and ledger entries.
+
+Possible SQL logic:
+Group ledger entries by payment_id and compare to expected settlement amount.
+
+Example:
+
+SELECT s.payment_id, s.settlement_amount, SUM(l.ledger_amount) AS ledger_total
+FROM settlements s
+JOIN ledger_entries l
+ON s.payment_id = l.payment_id
+GROUP BY s.payment_id, s.settlement_amount
+HAVING SUM(l.ledger_amount) <> s.settlement_amount;
+
+Business impact:
+Ledger mismatches affect finance reporting and audit accuracy.
+
+Next investigation:
+Check posting rules, fee accounts, tax entries, reversals, refunds, and adjustment entries.
+
+Scenario 30: Currency conversion issue
+
+Interviewer asks:
+A user says EUR and GBP totals do not reconcile. How would you approach it?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would first clarify whether the system stores original currency, settlement currency, and exchange rate.
+A mismatch may be expected if conversion rates or fees apply.
+
+I would check payment currency, settlement currency, exchange rate, payment amount, and settlement amount.
+
+Business questions:
+Was settlement in the same currency?
+Which FX rate was used?
+Was the rate fixed at authorisation or settlement?
+Are fees deducted before settlement?
+
+Interview answer:
+I would not compare raw amounts without checking currency and conversion rules. In financial systems, amount validation must include currency, FX rate, fees, and settlement timing.
+
+Scenario 31: Status history audit
+
+Interviewer asks:
+Payment status looks wrong. How would status history help?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would check the current status in payments and compare it with status history.
+The status history table can show how the payment moved through states.
+
+Example query:
+
+SELECT payment_id, old_status, new_status, changed_date, changed_by
+FROM payment_status_history
+WHERE payment_id = 105
+ORDER BY changed_date;
+
+Business value:
+This helps understand whether payment moved correctly from initiated to authorised to success or failed.
+
+System value:
+It can reveal missing callbacks, manual status changes, retries, or wrong status transitions.
+
+Interview answer:
+When current status is unclear, status history gives the timeline of system behaviour.
+
+Scenario 32: API callback duplication
+
+Interviewer asks:
+Gateway callbacks created duplicate updates. How would SQL help?
+
+Pause.
+Think.
+
+Ideal answer:
+
+I would check payment status history, audit log, and callback or event tables if available.
+I would look for repeated callbacks for the same provider reference.
+
+Example logic:
+
+SELECT provider_reference, COUNT(*) AS callback_count
+FROM gateway_callbacks
+GROUP BY provider_reference
+HAVING COUNT(*) > 1;
+
+Business impact:
+Duplicate callbacks may update status multiple times, create duplicate settlements, or trigger duplicate notifications.
+
+Strong answer:
+This may indicate missing idempotency handling. I would work with developers to confirm whether duplicate callbacks are safely ignored.
+
+Scenario 33: Settlement batch delay
+
+Interviewer asks:
+Successful payments are not settled yet. Could it be normal?
+
+Pause.
+Think.
+
+Ideal answer:
+
+Yes, it could be normal depending on the settlement process.
+Some systems settle in batches rather than instantly.
+
+I would ask:
+What is the normal settlement schedule?
+What is the settlement cut-off time?
+Are weekends or bank holidays involved?
+Is settlement provider-specific?
+
+SQL helps check age of successful unsettled payments.
+
+Example:
+
+SELECT p.payment_id, p.payment_reference, p.payment_date
+FROM payments p
+LEFT JOIN settlements s
+ON p.payment_id = s.payment_id
+WHERE p.status = 'SUCCESS'
+AND s.settlement_id IS NULL
+AND p.payment_date < CURRENT_DATE - INTERVAL '1 day';
+
+Interview answer:
+A missing settlement is not always a defect. I need to compare it against the agreed processing window.
+
+Scenario 34: Release rollback decision
+
+Interviewer asks:
+Can SQL help decide whether to rollback a release?
+
+Pause.
+Think.
+
+Ideal answer:
+
+SQL can support the decision by quantifying impact.
+
+I would compare failure rate, affected value, customer impact, and whether the issue is still increasing.
+
+Example metrics:
+Failures per hour.
+Failure rate by method.
+Total value affected.
+High-value customers affected.
+Settlement missing count.
+
+Business answer:
+SQL does not decide rollback alone, but it provides evidence for incident managers and product owners.
+If failure rate sharply increased after release and affects live transactions, rollback may be considered.
+
+Scenario 35: Control evidence extract
+
+Interviewer asks:
+How could SQL support regulatory control evidence?
+
+Pause.
+Think.
+
+Ideal answer:
+
+SQL can extract evidence that a control operated.
+
+Example control:
+All high-value payments require risk review.
+
+Query idea:
+Find high-value payments without risk review record.
+
+SELECT p.payment_id, p.amount, r.review_id
+FROM payments p
+LEFT JOIN risk_reviews r
+ON p.payment_id = r.payment_id
+WHERE p.amount >= 10000
+AND r.review_id IS NULL;
+
+Business impact:
+This supports control testing and regulatory evidence.
+
+Interview answer:
+SQL helps prove whether controls are operating as expected by identifying exceptions and producing evidence.
+
+Part 3 — FinTech Domain Deep Dive for Ireland and Europe
+
+Now I begin Part 3.
+This part builds FinTech domain understanding.
+
+The goal is to sound like I understand the business environment behind SQL and systems analysis.
+
+For my Ireland and EU route, I should understand payments, settlement, reconciliation, refunds, chargebacks, ledgers, KYC, AML, customer onboarding, operational resilience, RegTech control evidence, and the role of the Central Bank of Ireland.
+
+I do not need to be a lawyer or compliance officer.
+But I should understand enough to speak intelligently in interviews for FinTech, payment, banking, insurance, RegTech, and regulated systems roles.
+
+My strongest domain message is:
+
+I understand that financial systems are not only screens and transactions. They are controlled workflows involving customers, money movement, data accuracy, operational resilience, regulatory evidence, auditability, and customer protection.
+
+1. What FinTech means in interview language
+
+FinTech means technology used to deliver financial services.
+It can include payments, banking platforms, lending, insurance technology, wealth platforms, compliance tools, digital identity, open banking, risk systems, fraud tools, and financial data products.
+
+For my role, FinTech is important because systems must be accurate, reliable, secure, auditable, and compliant.
+A small data issue can become a customer issue, a finance issue, a regulatory issue, or an operational incident.
+
+Interview answer:
+
+FinTech systems require strong data accuracy, workflow control, audit trails, and operational reliability because they affect money movement, customer trust, compliance, and reporting.
+
+As a Business Systems Analyst, I can add value by translating business and regulatory needs into clear requirements, SQL validation, UAT scenarios, and evidence-backed defect analysis.
+
+2. Payment lifecycle overview
+
+A payment lifecycle usually includes several stages.
+
+Payment initiation.
+Validation.
+Authorisation.
+Capture.
+Processing.
+Settlement.
+Reconciliation.
+Reporting.
+Refund or chargeback if needed.
+
+Payment initiation means the customer starts the payment.
+Validation checks whether required fields are present and rules are satisfied.
+Authorisation checks whether the payment can be approved.
+Capture confirms the merchant or platform wants to take the funds.
+Settlement is movement or recording of funds between parties.
+Reconciliation checks whether internal and external records match.
+Reporting summarises transactions for operations, finance, risk, and management.
+
+Interview answer:
+
+When investigating payment issues, I think across the lifecycle. A payment can fail at validation, authorisation, capture, settlement, reconciliation, or reporting stage. SQL helps identify which stage has inconsistent or missing data.
+
+3. Payment statuses
+
+Common payment statuses may include initiated, authorised, captured, success, failed, pending, cancelled, settled, refunded, partially refunded, disputed, and chargeback.
+
+The exact statuses depend on the system.
+
+A Business Analyst should not assume status meaning.
+I should ask:
+What does SUCCESS mean?
+Does SUCCESS mean authorised or fully captured?
+Does SETTLED mean funds have moved or only settlement record created?
+Can PENDING remain valid for a defined period?
+What are allowed status transitions?
+
+Interview answer:
+
+Payment statuses must be clearly defined because reporting, UAT, reconciliation, and customer communication depend on them. I would validate not only the current status, but also whether the status transition follows the expected workflow.
+
+4. Authorisation, capture, and settlement
+
+Authorisation means the payment provider or issuer approves the transaction.
+Capture means the merchant confirms the funds should be taken.
+Settlement means funds are moved or recorded for financial reconciliation.
+
+In some systems, authorisation and capture happen together.
+In other systems, they are separate.
+
+This matters because a payment may be authorised but not captured, captured but not settled, or settled with a different amount due to fees, refunds, or FX.
+
+Interview answer:
+
+I would be careful not to treat all successful-looking payments the same. I would clarify whether success means authorised, captured, or settled. This affects SQL validation, UAT rules, and reconciliation checks.
+
+5. Reconciliation
+
+Reconciliation means checking that records match across systems or stages.
+
+Examples:
+Payment amount should match settlement amount.
+Settlement records should match ledger entries.
+Internal records should match payment provider files.
+Report totals should match source tables.
+Refunds and chargebacks should be reflected in net revenue.
+
+SQL helps reconciliation by finding mismatches, missing records, duplicates, and totals.
+
+Interview answer:
+
+Reconciliation is the process of proving that financial records agree across systems. In a payments context, I would use SQL to compare payment records, settlement records, ledger entries, and reporting totals to identify missing or mismatched records.
+
+6. Ledger thinking
+
+A ledger records financial movements.
+In simple terms, it is the accounting view of system events.
+
+A payment may create ledger entries.
+A refund may reverse or adjust entries.
+A chargeback may create dispute-related entries.
+Fees may create separate ledger entries.
+
+As a Business Systems Analyst, I do not need to be a qualified accountant.
+But I should understand that transaction data and finance data must align.
+
+Interview answer:
+
+In FinTech systems, it is not enough that a payment screen shows success. The downstream settlement and ledger records also need to be correct because finance reporting, audit, and reconciliation depend on them.
+
+7. Refunds
+
+A refund returns money to the customer after a payment.
+Refunds can be full or partial.
+A payment may have multiple partial refunds.
+
+Important checks:
+Refund must link to a valid payment.
+Refund amount should not exceed allowed amount.
+Refund status should be tracked.
+Refund should be reflected in reporting and ledger.
+
+Interview answer:
+
+For refund validation, I would check whether refund records link to original payments, whether refund amounts are within allowed limits, whether statuses are correct, and whether reporting reflects the refund accurately.
+
+8. Chargebacks and disputes
+
+A chargeback happens when a customer disputes a transaction through their bank or card issuer.
+The business may win or lose the dispute.
+
+Chargebacks affect revenue, risk, customer support, and reporting.
+
+System checks:
+Does the chargeback link to a valid payment?
+What is the chargeback status?
+Has the ledger been adjusted?
+Is the case visible to operations?
+Are deadlines tracked?
+
+Interview answer:
+
+Chargebacks are not just support issues. They affect risk, finance, and reconciliation. I would check payment, chargeback, and ledger data together to understand the true business impact.
+
+9. Payment failures
+
+Payments can fail for many reasons.
+
+Possible reasons:
+Insufficient funds.
+Card declined.
+Expired card.
+Incorrect details.
+Fraud rules.
+Gateway outage.
+Timeout.
+3D Secure failure.
+KYC or compliance block.
+Currency unsupported.
+Bank issuer issue.
+System validation error.
+
+As an analyst, I should not only count failures.
+I should group them by reason, method, country, gateway, date, and customer segment.
+
+Interview answer:
+
+When payments fail, I would analyse the pattern rather than only individual records. I would check failure reason, payment method, country, gateway, time window, and whether the issue started after a release or provider incident.
+
+10. KYC and AML basics
+
+KYC means Know Your Customer.
+AML means Anti-Money Laundering.
+
+KYC checks customer identity and eligibility.
+AML controls help detect and prevent money laundering or suspicious activity.
+
+Business systems may include:
+Customer onboarding.
+Identity verification.
+Risk scoring.
+Sanctions screening.
+Transaction monitoring.
+Manual review queues.
+Evidence collection.
+Audit logs.
+
+Interview answer:
+
+I understand that regulated financial systems need strong customer data, risk checks, audit trails, and evidence. From a systems perspective, KYC and AML workflows must be clear, traceable, and testable.
+
+11. RegTech meaning
+
+RegTech means regulatory technology.
+It helps firms manage compliance using systems, workflows, data, reporting, evidence, and monitoring.
+
+Examples:
+Control dashboards.
+Regulatory reporting.
+Policy attestation.
+Audit evidence collection.
+DORA register of information.
+Incident reporting.
+AML transaction monitoring.
+Risk scoring.
+KYC workflow tools.
+
+Interview answer:
+
+RegTech is valuable because regulated firms need to prove that controls exist, operate consistently, and produce evidence. A Business Systems Analyst can help translate regulatory obligations into requirements, workflows, data fields, controls, dashboards, and UAT scenarios.
+
+12. Ireland FinTech context
+
+Ireland is an important European location for financial services, technology firms, payment firms, e-money firms, banks, insurers, and regulated service providers.
+
+For interviews, I should understand that Ireland-based regulated firms may deal with Central Bank of Ireland supervision, EU regulation, operational resilience, payments regulation, AML/KYC, consumer protection, outsourcing, reporting, and technology risk.
+
+This matters for my role because Business Analysts in regulated environments often work on requirements, controls, evidence, systems change, UAT, incident processes, data quality, and reporting.
+
+Interview answer:
+
+In Ireland, FinTech and regulated systems roles often require a mix of business process understanding, technology delivery, data validation, and regulatory awareness. My FIS background helps because I have experience around banking software and enterprise financial systems.
+
+13. Payment Institutions and Electronic Money Institutions in Ireland
+
+In Ireland, payment institutions and electronic money institutions are regulated categories.
+The Central Bank of Ireland is the competent authority for authorisation and supervision of payment institutions under the European Union Payment Services Regulations 2018.
+The Central Bank also handles authorisation of electronic money institutions under the Electronic Money Regulations.
+
+A payment institution may provide regulated payment services.
+An electronic money institution can issue electronic money, which is monetary value electronically stored, issued on receipt of funds, and accepted by parties other than the issuer.
+
+Interview answer:
+
+For Ireland FinTech roles, it is useful to understand that payment institutions and e-money institutions operate under Central Bank of Ireland supervision. From a systems perspective, these firms need strong controls around customer funds, payments, reporting, incidents, safeguarding, outsourcing, and operational resilience.
+
+14. PSD2, PSD3, and PSR
+
+PSD2 is the existing EU payment services framework that shaped areas such as payment services, open banking, strong customer authentication, and payment institution regulation.
+The European Commission has proposed a new Payment Services Directive, known as PSD3, and a Payment Services Regulation, known as PSR.
+The aim is to modernise payment rules, improve consumer protection, competition, security, and trust in electronic payments.
+
+For interviews, I do not need to quote legal articles.
+I should understand the business direction:
+Payments are becoming more digital, open, secure, data-driven, and regulated.
+
+Interview answer:
+
+PSD2, PSD3, and PSR matter because payment firms need systems that support secure payments, clear customer journeys, fraud controls, reporting, and regulatory compliance. As a Business Systems Analyst, I would translate payment rules into workflows, requirements, controls, and UAT scenarios.
+
+15. Open banking and open finance
+
+Open banking allows authorised third parties to access account information or initiate payments with customer consent.
+Open finance extends the idea to a wider set of financial data.
+The European Commission’s Financial Data Access proposal, FiDA, is about secure access to customer data across a wider range of financial services.
+
+System concepts:
+Consent.
+APIs.
+Authentication.
+Data sharing.
+Permission management.
+Audit trails.
+Revocation.
+Customer control.
+
+Interview answer:
+
+Open banking and open finance are about secure, consent-based data sharing. From a systems perspective, this requires strong API design, consent tracking, customer permissions, audit logs, and data protection controls.
+
+16. DORA — Digital Operational Resilience Act
+
+DORA is the EU Digital Operational Resilience Act.
+It has applied since 17 January 2025 and is relevant to a wide range of financial entities regulated by the Central Bank of Ireland.
+DORA focuses on digital operational risk, ICT risk management, incident reporting, resilience testing, third-party ICT risk, and information sharing.
+
+Business meaning:
+Financial firms must be able to withstand, respond to, and recover from ICT disruptions.
+
+System meaning:
+Firms need systems and processes for incident detection, classification, reporting, third-party registers, testing, remediation, and evidence.
+
+Interview answer:
+
+DORA matters because regulated financial firms must prove operational resilience. For a Business Systems Analyst, this creates work around incident workflows, control evidence, ICT risk data, third-party registers, reporting requirements, UAT, and dashboarding.
+
+17. MiCA and crypto-assets
+
+MiCA means Markets in Crypto-Assets Regulation.
+It is the EU framework for crypto-assets and crypto-asset service providers.
+For my target roles, I do not need to specialise deeply in crypto unless the job requires it.
+But I should understand the direction: crypto services in the EU are regulated, and firms need authorisation, governance, risk controls, consumer protection, and reporting.
+
+Interview answer:
+
+MiCA matters for crypto-related FinTech firms because it formalises regulatory expectations around crypto-asset services. From a systems perspective, this creates requirements around customer onboarding, risk controls, transaction monitoring, reporting, and evidence.
+
+18. GDPR and data protection
+
+GDPR is central to EU data protection.
+Financial systems process personal data, identity data, transaction data, and sometimes sensitive risk-related information.
+
+System implications:
+Collect only necessary data.
+Protect customer data.
+Control access.
+Keep audit trails.
+Support retention rules.
+Support deletion or correction where applicable.
+Secure integrations.
+
+Interview answer:
+
+In FinTech systems, data protection is not separate from system design. Requirements should consider access control, auditability, data minimisation, retention, consent where relevant, and secure handling of customer information.
+
+19. EU AI Act and AI in FinTech
+
+AI is increasingly used in financial services for fraud detection, customer support, document processing, risk scoring, workflow automation, and compliance monitoring.
+The EU AI Act introduces governance expectations for AI systems depending on risk category.
+
+As a Business Systems Analyst, I should think about:
+What decision is the AI supporting?
+Is there human review?
+What data is used?
+How are outputs logged?
+How are errors handled?
+How are users informed?
+How is model performance monitored?
+
+Interview answer:
+
+For AI-enabled FinTech systems, I would focus on clear requirements, human oversight, auditability, data quality, output validation, and risk controls. AI should support controlled workflows, not create unexplained business decisions.
+
+20. Operational resilience
+
+Operational resilience means the firm can continue delivering important services during disruption.
+
+Examples of disruptions:
+Payment gateway outage.
+Cloud provider issue.
+Cyber incident.
+Database failure.
+Third-party API downtime.
+Batch processing failure.
+Release defect.
+
+Systems need:
+Monitoring.
+Incident workflow.
+Escalation.
+Recovery procedures.
+Data reconciliation after outage.
+Customer communication.
+Post-incident review.
+Control evidence.
+
+Interview answer:
+
+Operational resilience is important because financial systems must remain reliable even during disruption. SQL can help quantify impact, identify affected records, and support reconciliation after recovery.
+
+21. Third-party and outsourcing risk
+
+FinTech systems often depend on third parties.
+Examples include cloud providers, payment gateways, KYC vendors, fraud tools, open banking providers, and data processors.
+
+Business risks:
+Provider outage.
+Data quality issue.
+API change.
+Delayed callback.
+Security incident.
+Contract or SLA failure.
+
+System analysis questions:
+Which third party is involved?
+What data is exchanged?
+What happens if the API fails?
+Is there retry logic?
+Are failures logged?
+Is there manual fallback?
+How is impact measured?
+
+Interview answer:
+
+In regulated systems, third-party dependencies must be visible, controlled, and monitored. From a BA perspective, this means requirements for error handling, reporting, SLAs, audit trails, and incident workflows.
+
+22. Control evidence
+
+Control evidence proves that a control operated.
+
+Example controls:
+High-value payments require risk review.
+Failed payments are monitored daily.
+Settlement reconciliation is completed each business day.
+Critical incidents are logged and escalated.
+Third-party outages are tracked.
+KYC approval is required before payment access.
+
+System evidence may include:
+SQL extracts.
+Dashboard screenshots.
+Audit logs.
+Workflow status.
+Approval records.
+Exception reports.
+Incident tickets.
+UAT results.
+
+Interview answer:
+
+Regulated firms need evidence, not only process descriptions. As a Business Systems Analyst, I can help design data fields, workflows, reports, and SQL checks that prove controls are operating.
+
+23. Requirements in FinTech systems
+
+FinTech requirements should be clear, testable, and linked to business value.
+
+Weak requirement:
+The system should handle payments correctly.
+
+Strong requirement:
+When a payment status changes to SUCCESS, the system must create a settlement record with matching payment_id, amount, currency, and settlement date within the agreed processing window.
+
+Good requirements include:
+Trigger.
+Expected system action.
+Data fields.
+Validation rules.
+Exception handling.
+Audit requirements.
+Reporting needs.
+Acceptance criteria.
+
+Interview answer:
+
+In FinTech systems, vague requirements create risk. I try to make requirements testable by defining status rules, data fields, expected outputs, exceptions, and validation criteria.
+
+24. UAT scenarios in FinTech
+
+FinTech UAT should test normal flows and exception flows.
+
+Payment UAT examples:
+Successful payment creates settlement.
+Failed payment does not create settlement.
+Pending payment older than processing window is flagged.
+Refund cannot exceed original payment.
+Duplicate payment reference is blocked or handled safely.
+High-value payment triggers review.
+KYC-unapproved customer cannot initiate restricted transaction.
+Report totals match source data.
+
+Interview answer:
+
+For UAT, I would test happy paths, failure paths, edge cases, data validation, and downstream effects. In financial systems, the backend data and reporting impact are as important as the screen behaviour.
+
+25. Product and operations perspective
+
+A Business Systems Analyst should think beyond SQL.
+
+Product asks:
+Does the workflow solve the user problem?
+Is the journey clear?
+Are statuses understandable?
+Are errors actionable?
+
+Operations asks:
+Can the team monitor exceptions?
+Can they investigate quickly?
+Can they export data?
+Can they prioritise high-value issues?
+
+Finance asks:
+Can they reconcile?
+Can they explain differences?
+Can they trust totals?
+
+Compliance asks:
+Is there evidence?
+Are controls operating?
+Are audit trails complete?
+
+Interview answer:
+
+I think about systems from multiple stakeholder views: user journey, operational workflow, technical feasibility, data validation, finance reconciliation, and control evidence.
+
+26. Interview talk track — FinTech domain
+
+If asked about my FinTech understanding, I can answer:
+
+My understanding is that FinTech systems are controlled digital workflows around financial data and money movement. A payment is not only a screen action. It involves customer data, validation, authorisation, status changes, settlement, reconciliation, reporting, audit logs, and sometimes refunds or chargebacks.
+
+For Business Systems Analyst work, the important skill is to understand how the process should work, what data proves it happened, what exceptions can occur, and how to translate that into requirements, SQL checks, UAT scenarios, and stakeholder communication.
+
+This answer connects domain, system, and analyst value.
+
+27. Interview talk track — RegTech domain
+
+If asked about RegTech, I can answer:
+
+RegTech is about using technology to manage regulatory obligations, controls, monitoring, reporting, and evidence. In a financial services environment, it can include KYC workflows, AML monitoring, operational resilience, DORA incident processes, control dashboards, audit evidence, and regulatory reporting.
+
+From a Business Analyst perspective, the value is translating obligations into system requirements: what data is needed, who owns the control, what evidence is captured, what exceptions are reported, and how the process is tested.
+
+28. Interview talk track — Ireland fit
+
+If asked why Ireland or why this market, I can say:
+
+Ireland has a strong financial services and technology environment, including payments, banking, insurance, FinTech, e-money, and regulated service providers. My background in FIS banking software, SQL validation, UAT thinking, and systems analysis fits roles where financial systems need accuracy, reliability, workflow clarity, and regulatory awareness.
+
+I am especially interested in IT Business Analyst and Business Systems Analyst roles where I can connect business requirements, technical delivery, data validation, and regulated system operations.
+
+29. Strong phrases to remember
+
+I use SQL to move from vague system issues to clear evidence.
+
+I think in terms of workflow, data, control, and business impact.
+
+A payment is not only a transaction. It is a lifecycle across customer, payment, settlement, ledger, reporting, and audit layers.
+
+I do not only write queries. I explain what the query proves and why it matters.
+
+In regulated systems, evidence is as important as process.
+
+For UAT, I validate both screen behaviour and backend data.
+
+For incidents, I quantify scope, value, affected customers, and pattern.
+
+For stakeholders, I translate SQL output into plain business meaning.
+
+30. Final Part 3 memory lock
+
+FinTech domain knowledge helps me sound relevant.
+SQL helps me prove system behaviour.
+RegTech awareness helps me understand control and evidence.
+UAT helps me validate requirements.
+Scenario practice helps me answer interviews naturally.
+
+My final positioning is:
+
+I am a FinTech and regulated systems Business Analyst candidate with technical depth. I understand payments, settlement, reconciliation, SQL validation, UAT, defects, incidents, and control evidence.
+
+I can work between business users, developers, testers, operations, finance, and compliance stakeholders.
+
+I can turn unclear problems into clear requirements, evidence, and next actions.
+
+End of Part 3.
+
+Part 2B — SQL Scenario Drill Bank for Repetition
+
+This section is designed for repeated listening. Each drill gives the business problem, SQL logic, and business impact. I should pause after the problem and answer before listening to the model answer.
+
+Drill 1: High-value failed payments
+
+Business problem: Find failed payments above 1,000 euros.
+SQL thinking: Filter payments where status is FAILED and amount is greater than 1000.
+Business impact: This helps prioritise high-value failed transactions for operations and support.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 2: Failed payments by payment method
+
+Business problem: Find which payment method has most failures.
+SQL thinking: Group payments by payment_method and status, then filter or count failures.
+Business impact: This can show whether card, wallet, bank transfer, or open banking payments are affected.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 3: Gateway-specific failures
+
+Business problem: Check whether one gateway is causing failures.
+SQL thinking: Group failed payments by gateway_provider and count records.
+Business impact: If failures concentrate on one gateway, the issue may be provider-specific rather than platform-wide.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 4: Country-specific issue
+
+Business problem: Check whether payment failures are concentrated in one country.
+SQL thinking: Join customers and payments, filter failed status, group by country.
+Business impact: This helps identify issuer, currency, regional bank, or compliance-related patterns.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 5: Currency mismatch
+
+Business problem: Find payments where payment currency differs from settlement currency.
+SQL thinking: Join payments and settlements and filter p.currency not equal to s.settlement_currency.
+Business impact: This may be valid due to FX, but it needs correct conversion and reporting rules.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 6: Missing payment method
+
+Business problem: Find payment records with missing payment method.
+SQL thinking: Filter payments where payment_method is NULL.
+Business impact: Missing method can break reporting, routing analysis, and operational investigation.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 7: Invalid payment status
+
+Business problem: Check unexpected statuses in the payments table.
+SQL thinking: Use SELECT DISTINCT status from payments and compare against allowed values.
+Business impact: Unexpected statuses may show migration issues, code defects, or poor status mapping.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 8: Refunds without original payment
+
+Business problem: Find refund records not linked to a valid payment.
+SQL thinking: Left join refunds to payments and filter missing payment_id from the payments side.
+Business impact: This affects customer support, auditability, and financial reporting.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 9: Refund greater than payment
+
+Business problem: Find refund amount greater than original payment amount.
+SQL thinking: Join refunds to payments and filter refund_amount greater than payment amount.
+Business impact: This may be a defect unless business rules allow special adjustments.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 10: Multiple refunds exceeding payment
+
+Business problem: Find payments where total refund amount exceeds original payment.
+SQL thinking: Group refunds by payment_id, sum refund_amount, join to payments, and compare total refund to payment amount.
+Business impact: This catches over-refund risk.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 11: Chargebacks by status
+
+Business problem: Summarise chargebacks by status.
+SQL thinking: Group chargebacks by chargeback_status and count records and total amount.
+Business impact: This supports risk, dispute operations, and financial exposure reporting.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 12: Unsettled high-value payments
+
+Business problem: Find successful high-value payments without settlements.
+SQL thinking: Left join settlements to payments, filter status SUCCESS, missing settlement, and amount above threshold.
+Business impact: This is a priority reconciliation and finance operations issue.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 13: Payments settled late
+
+Business problem: Find settlements created after the agreed processing window.
+SQL thinking: Compare settlement_date against payment_date plus expected interval.
+Business impact: This helps measure operational SLA breaches.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 14: Settlement amount by day
+
+Business problem: Summarise settlement value by settlement date.
+SQL thinking: Group settlements by date and SUM settlement_amount.
+Business impact: Finance teams can use this for daily reconciliation checks.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 15: Report source validation
+
+Business problem: Validate dashboard total successful amount.
+SQL thinking: Run SUM amount from source payments with same status and date logic as the report.
+Business impact: This proves whether report logic matches source data.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 16: Duplicate customer records
+
+Business problem: Find duplicate customer emails.
+SQL thinking: Group customers by email and having count greater than one.
+Business impact: Duplicate customers create KYC, support, and ownership problems.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 17: Orphan payments
+
+Business problem: Find payments with no valid customer.
+SQL thinking: Left join payments to customers and filter missing customer on the right side.
+Business impact: This is a data integrity issue.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 18: Customer with repeated failures
+
+Business problem: Find customers with more than three failed payments.
+SQL thinking: Join customers and payments, filter failed status, group by customer, having count greater than three.
+Business impact: This can identify affected customers or repeated payment friction.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 19: Payment retry pattern
+
+Business problem: Find multiple attempts by the same customer within a short period.
+SQL thinking: Group by customer, date or time window, amount, and payment method.
+Business impact: This helps detect retry loops or customer friction.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 20: Status transition check
+
+Business problem: Check whether payments moved from initiated directly to success without authorisation.
+SQL thinking: Use status history ordered by changed date and inspect transitions.
+Business impact: Unexpected transitions can reveal workflow defects.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 21: Audit trail missing
+
+Business problem: Find high-risk changes without audit records.
+SQL thinking: Left join changed records to audit logs and filter missing audit entries.
+Business impact: Regulated systems need traceable changes.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 22: Manual adjustment review
+
+Business problem: Find manual financial adjustments above a threshold.
+SQL thinking: Filter ledger or adjustments where adjustment_type is manual and amount above threshold.
+Business impact: This supports control review and approval checks.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 23: KYC-approved before payment
+
+Business problem: Find payments by customers without approved KYC.
+SQL thinking: Join payments to customers and filter customer kyc_status not equal to APPROVED.
+Business impact: This may indicate compliance workflow failure.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 24: High-value payment review
+
+Business problem: Find high-value payments without risk review.
+SQL thinking: Left join risk reviews to payments and filter high amount with missing review.
+Business impact: This is control evidence and exception monitoring.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 25: Dormant customer payment
+
+Business problem: Find payments from customers inactive for over one year.
+SQL thinking: Compare customer last_active_date to payment_date and filter long gaps.
+Business impact: This may support fraud or risk investigation.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 26: Time window incident impact
+
+Business problem: Find all payments affected during incident window.
+SQL thinking: Filter payment_date between incident start and end, group by status and method.
+Business impact: This quantifies incident scope.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 27: Before-after release comparison
+
+Business problem: Compare failed payments before and after release.
+SQL thinking: Aggregate failure rate for equal windows before and after release timestamp.
+Business impact: This supports release impact analysis.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 28: SLA breach
+
+Business problem: Find tickets or payment exceptions unresolved beyond SLA.
+SQL thinking: Filter exception status open and created_date older than SLA window.
+Business impact: This supports operations and service management.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 29: Unknown error codes
+
+Business problem: Find payment failures with missing or unknown error code.
+SQL thinking: Filter failed payments where error_code is NULL or UNKNOWN.
+Business impact: Missing error codes make root-cause analysis harder.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 30: Error code trend
+
+Business problem: Find top payment failure error codes.
+SQL thinking: Group failed payments by error_code and count records.
+Business impact: This identifies most common root causes.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 31: Customer communication list
+
+Business problem: Prepare list of affected customers after incident.
+SQL thinking: Join customers and affected payments, select email and payment reference, deduplicate customer IDs.
+Business impact: This supports support operations and incident communication.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 32: Net payment value
+
+Business problem: Calculate net successful value after refunds.
+SQL thinking: Sum successful payments and subtract successful refunds for same period.
+Business impact: This is more realistic for finance reporting than gross payments alone.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 33: Ledger entry missing
+
+Business problem: Find settled payments without ledger entries.
+SQL thinking: Left join ledger entries to settlements and filter missing ledger entry.
+Business impact: This affects accounting and audit completeness.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 34: Control exception report
+
+Business problem: Create exceptions for missing settlement, mismatch amount, and missing KYC.
+SQL thinking: Use separate CTEs for each exception and union results into an exception report.
+Business impact: This is close to RegTech dashboard thinking.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 35: Data migration row count
+
+Business problem: Validate migration completeness.
+SQL thinking: Compare old and new system row counts by table and status.
+Business impact: Count is a first check, not the only check.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 36: Data migration totals
+
+Business problem: Validate payment amount totals after migration.
+SQL thinking: Compare SUM amount by status between old and new system.
+Business impact: This checks financial completeness.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 37: Data migration sample
+
+Business problem: Validate migrated records by sample IDs.
+SQL thinking: Select same payment IDs from old and new systems and compare key fields.
+Business impact: This checks record-level correctness.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 38: Permission issue
+
+Business problem: User cannot see records they should see. How could SQL help?
+SQL thinking: Check user role, permissions, team, and record ownership tables.
+Business impact: This connects access control logic to business workflow.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 39: PII exposure check
+
+Business problem: Check whether sensitive customer fields appear in reporting extract.
+SQL thinking: Review report dataset columns and joins to customer data.
+Business impact: This supports GDPR and privacy-by-design thinking.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Drill 40: Daily operations dashboard
+
+Business problem: What SQL metrics would you include in a payment operations dashboard?
+SQL thinking: Total payments, failure rate, pending older than SLA, missing settlements, mismatches, refunds, chargebacks, high-value exceptions.
+Business impact: This turns SQL into operational monitoring.
+Interview sentence: I would first clarify the rule, then identify the tables and keys, run a focused query, and summarise the result as business impact rather than raw data.
+
+Part 3B — FinTech and RegTech Interview Q&A Bank
+
+This section is for domain recall. I should listen repeatedly until the answers sound natural.
+
+Domain Q1: What is a payment lifecycle?
+Answer: A payment lifecycle is the journey from customer initiation through validation, authorisation, capture, settlement, reconciliation, reporting, and possible refund or chargeback. In interviews, I should explain that each stage can create data and each stage can fail differently.
+
+Domain Q2: What is settlement?
+Answer: Settlement is the stage where funds are moved or recorded between parties. In system terms, settlement records should link back to payment records and support reconciliation, finance reporting, and ledger accuracy.
+
+Domain Q3: What is reconciliation?
+Answer: Reconciliation is checking that records match across systems or stages. For example, payment amount should match settlement amount, settlement totals should match ledger entries, and reports should match source data.
+
+Domain Q4: What is a ledger?
+Answer: A ledger is the accounting record of financial movements. A payment, refund, fee, or chargeback may create ledger entries. In regulated systems, ledger accuracy is critical for finance and audit.
+
+Domain Q5: What is a chargeback?
+Answer: A chargeback is a customer dispute raised through a bank or card issuer. It can affect revenue, risk, operations, and reporting. Systems need to track chargeback status, amount, evidence, deadlines, and outcome.
+
+Domain Q6: What is KYC?
+Answer: KYC means Know Your Customer. It verifies customer identity and eligibility. In systems, it involves onboarding data, verification status, risk scoring, evidence, audit trail, and sometimes manual review.
+
+Domain Q7: What is AML?
+Answer: AML means Anti-Money Laundering. It includes controls to detect and prevent suspicious financial activity. Systems may support sanctions screening, transaction monitoring, risk scoring, alerts, and case management.
+
+Domain Q8: What is RegTech?
+Answer: RegTech is technology that helps firms manage regulatory obligations, controls, evidence, monitoring, reporting, and compliance workflows. Examples include control dashboards, incident reporting, KYC workflows, and DORA evidence registers.
+
+Domain Q9: Why does audit trail matter?
+Answer: Audit trail matters because regulated firms need to prove who changed what, when, and why. It supports investigation, compliance, operational control, and accountability.
+
+Domain Q10: What is operational resilience?
+Answer: Operational resilience means the ability to continue delivering important services during disruption. In financial systems, this includes monitoring, incident handling, recovery, third-party risk, testing, and post-incident reconciliation.
+
+Domain Q11: What is DORA?
+Answer: DORA is the EU Digital Operational Resilience Act. It applies to many financial entities and focuses on ICT risk management, incident reporting, resilience testing, ICT third-party risk, and evidence.
+
+Domain Q12: How does DORA relate to BA work?
+Answer: DORA creates business analysis work around incident workflows, reporting requirements, third-party registers, control evidence, risk data, dashboards, UAT, and process documentation.
+
+Domain Q13: What is PSD2?
+Answer: PSD2 is the EU payment services framework that shaped payment services, open banking, strong customer authentication, and payment institution regulation.
+
+Domain Q14: What are PSD3 and PSR?
+Answer: PSD3 and PSR are proposed EU updates to payment services rules. The direction is stronger consumer protection, security, competition, and modernisation of digital payments.
+
+Domain Q15: What is open banking?
+Answer: Open banking allows authorised third parties to access account data or initiate payments with customer consent through secure APIs. It requires consent tracking, authentication, audit logs, and data protection.
+
+Domain Q16: What is open finance?
+Answer: Open finance extends secure, consent-based data sharing beyond payment accounts to a wider range of financial services data. FiDA is the EU proposal in this area.
+
+Domain Q17: What is MiCA?
+Answer: MiCA is the EU Markets in Crypto-Assets Regulation. It creates a regulatory framework for crypto-assets and crypto-asset service providers, including governance, consumer protection, and authorisation expectations.
+
+Domain Q18: What is GDPR relevance in FinTech?
+Answer: FinTech systems process personal and financial data, so GDPR principles affect access control, data minimisation, retention, auditability, consent where relevant, and secure data sharing.
+
+Domain Q19: How do SQL and RegTech connect?
+Answer: SQL can produce control evidence and exception reports. For example, it can identify high-value payments without risk review, missing settlement records, or KYC-unapproved customers making restricted transactions.
+
+Domain Q20: How do SQL and FinTech operations connect?
+Answer: SQL helps operations monitor failed payments, pending items, missing settlements, chargebacks, refunds, and high-value exceptions. It turns system data into action lists.
+
+Domain Q21: What is safeguarding in payment/e-money context?
+Answer: Safeguarding generally refers to protecting customer funds according to regulatory expectations. As a BA, I should know it creates requirements around account segregation, reporting, reconciliations, controls, and evidence, though legal detail belongs to compliance experts.
+
+Domain Q22: What is strong customer authentication?
+Answer: Strong customer authentication is a security concept under payment regulation involving robust customer verification. System impact can include authentication flows, exemptions, failure handling, customer messaging, and audit logs.
+
+Domain Q23: What is fraud monitoring?
+Answer: Fraud monitoring uses rules, models, alerts, and review workflows to detect suspicious transactions. Systems need data quality, explainable rules, case management, and false-positive handling.
+
+Domain Q24: What is payment exception management?
+Answer: Exception management is the process for handling payments that do not follow the normal path, such as failed, pending, mismatched, duplicate, disputed, or manually adjusted payments.
+
+Domain Q25: What is a control?
+Answer: A control is a process, rule, check, or approval that reduces risk. Example: high-value payments require review. SQL can test whether the control operated by finding high-value payments with no review record.
+
+Domain Q26: What is control evidence?
+Answer: Control evidence is proof that a control was performed. It may be an approval record, audit log, SQL extract, dashboard, ticket, report, or UAT result.
+
+Domain Q27: Why are requirements different in regulated systems?
+Answer: Requirements need to be testable, auditable, and linked to controls. Vague requirements create operational and compliance risk. Good requirements define data, workflow, exceptions, ownership, and evidence.
+
+Domain Q28: What is an incident workflow?
+Answer: An incident workflow includes detection, logging, classification, escalation, investigation, communication, resolution, post-incident review, and evidence. SQL can quantify impact and affected records.
+
+Domain Q29: What is third-party risk?
+Answer: Third-party risk comes from external providers such as payment gateways, cloud platforms, KYC vendors, fraud tools, and API providers. Requirements should cover failures, retries, SLAs, monitoring, logs, and fallback processes.
+
+Domain Q30: What is a material outsourcing or ICT provider issue?
+Answer: In regulated environments, important third-party services need visibility, governance, risk assessment, monitoring, and evidence. BA work may include registers, workflows, reporting, and incident processes.
+
+Domain Q31: How should I explain FinTech domain in interviews?
+Answer: I should say financial systems are controlled workflows around money, data, customers, risk, and evidence. My role is to understand the process, validate data, support UAT, and explain impact clearly.
+
+Domain Q32: How should I explain RegTech domain in interviews?
+Answer: I should say RegTech translates regulatory obligations into systems, workflows, controls, data fields, reports, dashboards, audit trails, and evidence.
+
+Domain Q33: How do payment systems fail?
+Answer: They can fail at validation, authorisation, capture, callback, settlement, ledger posting, reporting, refund, or chargeback stages. A strong analyst identifies which stage failed.
+
+Domain Q34: What is an error code useful for?
+Answer: Error codes help group failures and identify root causes. Missing or vague error codes make operational investigation harder.
+
+Domain Q35: What is payment idempotency?
+Answer: Idempotency means repeated requests should not create duplicate effects. In payments, it helps prevent duplicate charges when retries or callbacks happen.
+
+Domain Q36: What is a payment gateway?
+Answer: A payment gateway connects the merchant/platform to payment networks or providers. Gateway issues can cause authorisation failures, callback delays, or settlement problems.
+
+Domain Q37: What is a batch process?
+Answer: A batch process runs jobs at scheduled times, such as settlement creation, report generation, reconciliation imports, or file processing. Delays or failures can create missing records or stale reports.
+
+Domain Q38: What is an API callback?
+Answer: A callback is a message from an external provider back to the system, often updating payment status. Missing or duplicate callbacks can create status and settlement issues.
+
+Domain Q39: What is an audit-friendly defect?
+Answer: An audit-friendly defect includes expected result, actual result, record IDs, evidence, impact, severity, date/time, and retest outcome.
+
+Domain Q40: What is the best final interview positioning?
+Answer: I am a FinTech and regulated systems Business Analyst candidate with SQL validation, UAT, payment workflow, reconciliation, incident, and control evidence understanding.
+
+Part 3C — Integrated Case Studies for Interview Storytelling
+
+Case Study 1 — Successful payments missing settlements
+
+Business problem: Finance operations reports that daily settlement total is lower than successful payment total.
+
+Analysis path:
+First, confirm the business rule: every successful captured payment should create a settlement record after the settlement batch.
+Second, identify source tables: payments, settlements, possibly status history, gateway callbacks, and ledger entries.
+Third, use LEFT JOIN to find successful payments without settlements.
+Fourth, summarise by payment date, method, gateway, currency, count, and total amount.
+Fifth, check whether missing settlements started after a release, batch job failure, or provider outage.
+
+Business impact:
+Finance cannot reconcile those transactions. Reporting may be understated. Customers may have completed payments, but finance records are incomplete.
+
+Interview closing:
+I would provide a clear defect or incident summary with affected IDs, total value, time window, suspected process stage, and recommended next checks.
+
+Case Study 2 — Report total mismatch
+
+Business problem: A dashboard says successful payments for June total 1 million euros, but finance source query shows 980,000 euros.
+
+Analysis path:
+Clarify report definition. Is it gross payment amount, net amount after refunds, settled amount, captured amount, or ledger amount?
+Check date logic. Is the report using payment date, settlement date, or reporting date?
+Check timezone. Does the report use UTC while finance uses local time?
+Check status logic. Does the report include authorised or only captured payments?
+Check refunds, chargebacks, currency conversion, and duplicate records.
+
+Business impact:
+Incorrect reports can affect management decisions, financial reporting, operational monitoring, and trust in dashboards.
+
+Interview closing:
+I would compare source-system logic and report logic, identify the exact rule difference, and document the agreed definition for future reporting.
+
+Case Study 3 — Payment failure spike after release
+
+Business problem: Customer support says payment failures increased after a release.
+
+Analysis path:
+Get release timestamp. Compare failure rate before and after the release using equal time windows. Break down by payment method, country, currency, gateway, error code, and device if available. Check whether total volume changed. Review status history and gateway callbacks.
+
+Business impact:
+If the spike affects live payments, there may be revenue loss, customer complaints, operational workload, and potential incident escalation.
+
+Interview closing:
+A strong answer does not only say failures increased. It says failure rate increased from one percent to seven percent after the release, mainly for card payments through one gateway, affecting 400 transactions and 32,000 euros in attempted value.
+
+Case Study 4 — KYC control failure
+
+Business problem: Compliance asks whether any unapproved customers were allowed to transact.
+
+Analysis path:
+Join customer KYC status to payment records. Filter payments where customer KYC is not approved or missing. Check payment status and transaction amount. Summarise exceptions by date, value, country, and onboarding channel. Check whether workflow rule was bypassed or data was stale.
+
+Business impact:
+This can be a compliance, control, and operational risk issue.
+
+Interview closing:
+SQL can support control testing by identifying exceptions to the expected rule and producing evidence for compliance review.
+
+Case Study 5 — DORA-style incident evidence
+
+Business problem: A regulated firm needs evidence for an ICT-related payment disruption.
+
+Analysis path:
+Identify incident time window and impacted service. Use SQL to count failed payments, pending payments, missing settlements, and affected customers. Summarise by payment method, country, provider, and value. Link SQL evidence to incident ticket, timeline, root cause, remediation, and post-incident control improvements.
+
+Business impact:
+Regulated firms need incident evidence, not only technical explanations. Good data supports internal governance, supervisory reporting where applicable, customer communication, and remediation tracking.
+
+Interview closing:
+As a Business Systems Analyst, I would help define the data needed for incident classification, impact assessment, reporting, and post-incident evidence.
+
+Final Extended Revision Lock
+
+
+The core skill is not SQL alone.
+The core skill is SQL plus systems thinking plus business impact.
+
+When I hear a scenario, I ask:
+What is the expected business rule?
+What data proves it?
+Which tables are involved?
+Which join type is appropriate?
+Do I need missing records, mismatches, duplicates, totals, rates, or trends?
+What is the impact on customers, finance, operations, compliance, or reporting?
+How do I explain the result without jargon?
+
+My strongest interview answer pattern is:
+
+I would first clarify the expected business rule. Then I would identify the relevant tables and keys. I would run a focused SQL check to validate the data, summarise the affected records by count, value, timing, and pattern, and then explain the business impact and next investigation step.
+
+My strongest domain identity is:
+
+I understand financial systems as controlled workflows across customer data, payments, settlements, refunds, chargebacks, ledgers, reports, audit trails, and regulatory evidence.
+
+My strongest role identity is:
+
+I am an IT Business Analyst and Business Systems Analyst with FinTech systems understanding, SQL validation ability, UAT mindset, and practical business communication.
+
+End of extended Parts 1, 2 and 3.
+
+
+Source Appendix
+
+These source notes are for review only. They do not need to be read aloud unless I want source awareness.
+
+1. Central Bank of Ireland — Payment Institutions.
+The Central Bank of Ireland is the competent authority for authorisation and supervision of payment institutions under the European Union Payment Services Regulations 2018.
+URL: https://www.centralbank.ie/regulation/industry-market-sectors/payment-institutions
+
+2. Central Bank of Ireland — Electronic Money Institutions.
+An e-money institution issues electronic money under the Electronic Money Regulations. E-money is electronically stored monetary value issued on receipt of funds and accepted by a party other than the issuer.
+URL: https://www.centralbank.ie/regulation/industry-market-sectors/electronic-money-institutions
+
+3. Central Bank of Ireland — DORA.
+DORA has applied since 17 January 2025 and applies to a wide range of financial entities regulated by the Central Bank of Ireland.
+URL: https://www.centralbank.ie/regulation/digital-operational-resilience-act-dora
+
+4. European Commission — Payment Services.
+The European Commission payment services page covers PSD2 and the proposals for PSD3 and the Payment Services Regulation.
+URL: https://finance.ec.europa.eu/consumer-finance-and-payments/payment-services/payment-services_en
+
+5. European Commission — Financial Data Access and Payments Package.
+The package aims to bring payments and the wider financial sector into the digital age, focusing on consumer protection, competition, security, and trust.
+URL: https://finance.ec.europa.eu/publications/financial-data-access-and-payments-package_en
+
+6. European Commission — Framework for Financial Data Access.
+FiDA proposes secure access to customer data across a wider range of financial services.
+URL: https://finance.ec.europa.eu/digital-finance/framework-financial-data-access_en
+
+7. European Commission — Markets in Crypto-assets Regulation.
+MiCA is the EU regulatory framework for crypto-assets and related services.
+URL: https://finance.ec.europa.eu/regulation-and-supervision/financial-services-legislation/implementing-and-delegated-acts/markets-crypto-assets-regulation_en

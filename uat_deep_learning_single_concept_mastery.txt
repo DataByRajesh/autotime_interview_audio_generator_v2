@@ -1,0 +1,1141 @@
+Title: UAT Deep Learning - Single Concept Mastery for Business Analyst Interviews
+
+Intro.
+
+Today we are learning only one concept.
+
+UAT.
+
+User Acceptance Testing.
+
+Do not rush.
+
+The goal is not to memorise a definition.
+
+The goal is to understand UAT like a working Business Analyst.
+
+[PAUSE_MEDIUM]
+
+By the end of this audio, you should be able to explain:
+
+What UAT means.
+
+Why UAT exists.
+
+Who performs UAT.
+
+What the Business Analyst does in UAT.
+
+How UAT connects to requirements.
+
+How UAT connects to acceptance criteria.
+
+How UAT connects to Jira.
+
+How UAT connects to production release.
+
+And how to explain UAT in an interview.
+
+[PAUSE_LONG]
+
+Section 1: Simple Meaning.
+
+UAT means User Acceptance Testing.
+
+[PAUSE_SHORT]
+
+Simple meaning.
+
+UAT is when business users check whether the system is ready for real business use.
+
+[PAUSE_MEDIUM]
+
+Repeat.
+
+UAT is business-side testing before release.
+
+[PAUSE_MEDIUM]
+
+Again.
+
+UAT checks whether the business can accept the system.
+
+[PAUSE_MEDIUM]
+
+One more time.
+
+UAT is not just checking whether the software works technically.
+
+UAT checks whether the software works for the real business need.
+
+[PAUSE_LONG]
+
+Section 2: Real-Time Scenario.
+
+Imagine a FinTech payment system.
+
+Customers make payments.
+
+Sometimes payments are refunded.
+
+Customer support agents need to check refund status.
+
+But the current screen does not clearly show whether the refund is pending, completed, failed, or reversed.
+
+Because of this, support agents cannot answer customers properly.
+
+The business asks for a change.
+
+The team builds a new refund status display on the transaction screen.
+
+[PAUSE_MEDIUM]
+
+Now the developers say:
+
+"The feature is built."
+
+The testers say:
+
+"The feature passed system testing."
+
+But the business still needs to check something.
+
+The business needs to check:
+
+Can support agents actually use it?
+
+Does it show the correct refund statuses?
+
+Is the wording clear?
+
+Does it help agents answer customers?
+
+Does it follow the business rules?
+
+Does it work for real operational scenarios?
+
+[PAUSE_MEDIUM]
+
+This is where UAT happens.
+
+[PAUSE_LONG]
+
+Repeat the scenario.
+
+The system has been built.
+
+The technical team has tested it.
+
+Now the business users check whether it works for real use.
+
+That is UAT.
+
+[PAUSE_LONG]
+
+Section 3: Why UAT Exists.
+
+UAT exists because technical testing alone is not enough.
+
+[PAUSE_MEDIUM]
+
+A developer may check:
+
+Does the code run?
+
+Does the screen load?
+
+Does the API return data?
+
+Does the database update correctly?
+
+[PAUSE_MEDIUM]
+
+A tester may check:
+
+Does the feature match the test cases?
+
+Are there bugs?
+
+Do different statuses display correctly?
+
+Does the screen handle errors?
+
+[PAUSE_MEDIUM]
+
+But business users check something different.
+
+They check:
+
+Does this solve the real business problem?
+
+Can real users use it?
+
+Is the business process correct?
+
+Is the wording understandable?
+
+Are the rules acceptable?
+
+Can the business safely use this in production?
+
+[PAUSE_MEDIUM]
+
+That is why UAT exists.
+
+[PAUSE_LONG]
+
+Simple repeat.
+
+Developer testing checks the code.
+
+System testing checks the system.
+
+UAT checks business acceptance.
+
+[PAUSE_LONG]
+
+Section 4: UAT Is Business Validation.
+
+Important sentence.
+
+UAT is business validation.
+
+[PAUSE_MEDIUM]
+
+Say it again.
+
+UAT is business validation.
+
+[PAUSE_MEDIUM]
+
+This means the business is not just asking:
+
+"Does the button work?"
+
+The business is asking:
+
+"Can we accept this change for real use?"
+
+[PAUSE_MEDIUM]
+
+In the refund status example, the business checks:
+
+Can agents see pending refunds?
+
+Can agents see completed refunds?
+
+Can agents see failed refunds?
+
+Can agents see reversed refunds?
+
+Can agents see refund reference?
+
+Can agents see refund date?
+
+Are agents blocked from editing refund status?
+
+Is restricted payment information protected?
+
+Is the screen clear enough for support work?
+
+[PAUSE_MEDIUM]
+
+If the answer is yes, the business may accept the change.
+
+If the answer is no, the team may need to fix or improve it.
+
+[PAUSE_LONG]
+
+Section 5: Who Performs UAT.
+
+UAT is usually performed by business users or business representatives.
+
+[PAUSE_MEDIUM]
+
+Examples:
+
+Customer support users.
+
+Operations users.
+
+Product owner.
+
+Business subject matter experts.
+
+Compliance users.
+
+Finance operations users.
+
+Testers acting on behalf of business users.
+
+[PAUSE_MEDIUM]
+
+In a FinTech company, UAT could involve:
+
+Payments operations team.
+
+Customer support team.
+
+Settlement operations team.
+
+Risk or compliance team.
+
+Product owner.
+
+[PAUSE_MEDIUM]
+
+Important point.
+
+The Business Analyst does not always perform all UAT alone.
+
+The Business Analyst often supports UAT.
+
+[PAUSE_MEDIUM]
+
+Repeat.
+
+Business users perform or approve UAT.
+
+The Business Analyst supports, coordinates, clarifies, and documents UAT.
+
+[PAUSE_LONG]
+
+Section 6: Business Analyst Role in UAT.
+
+Now listen carefully.
+
+This is important for interviews.
+
+[PAUSE_MEDIUM]
+
+The Business Analyst may support UAT by:
+
+Understanding the business requirement.
+
+Preparing UAT scenarios.
+
+Linking UAT scenarios to acceptance criteria.
+
+Helping business users understand what to test.
+
+Clarifying expected behaviour.
+
+Recording UAT issues.
+
+Updating Jira tickets.
+
+Coordinating with developers and testers.
+
+Tracking defect fixes.
+
+Confirming whether the business accepts the change.
+
+Supporting sign-off.
+
+[PAUSE_LONG]
+
+Simple meaning.
+
+The Business Analyst helps make UAT organised, clear, and connected to business requirements.
+
+[PAUSE_MEDIUM]
+
+Repeat.
+
+A Business Analyst does not just say "test it".
+
+A Business Analyst helps business users test the right scenarios.
+
+[PAUSE_MEDIUM]
+
+Again.
+
+A Business Analyst connects requirements, acceptance criteria, test scenarios, Jira issues, and business sign-off.
+
+[PAUSE_LONG]
+
+Section 7: UAT and Requirements.
+
+UAT starts from requirements.
+
+If the requirement is unclear, UAT becomes messy.
+
+[PAUSE_MEDIUM]
+
+Bad requirement.
+
+Add refund status.
+
+[PAUSE_MEDIUM]
+
+This is too weak.
+
+What status?
+
+Where should it appear?
+
+Who can see it?
+
+Can users edit it?
+
+What happens when status is missing?
+
+Should refund date show?
+
+Should refund reference show?
+
+Should restricted users be blocked?
+
+[PAUSE_MEDIUM]
+
+Good requirement.
+
+Customer support agents must be able to view refund status on the transaction screen so they can answer customer queries accurately. The system must show pending, completed, failed, or reversed status. Support agents must not edit the status.
+
+[PAUSE_MEDIUM]
+
+Now UAT becomes easier.
+
+Because business users know what to check.
+
+[PAUSE_LONG]
+
+Repeat.
+
+Clear requirements lead to clear UAT.
+
+Unclear requirements lead to confusing UAT.
+
+[PAUSE_LONG]
+
+Section 8: UAT and Acceptance Criteria.
+
+Acceptance criteria are very important for UAT.
+
+[PAUSE_MEDIUM]
+
+User story:
+
+As a customer support agent, I want to view refund status on the transaction screen, so that I can answer customer queries quickly and accurately.
+
+[PAUSE_MEDIUM]
+
+Acceptance criteria:
+
+Refund status must be visible on the transaction screen.
+
+Allowed statuses are pending, completed, failed, and reversed.
+
+Refund date must be shown if available.
+
+Refund reference number must be shown if available.
+
+Support agents must not edit refund status.
+
+If refund status is unavailable, the system must show a clear message.
+
+[PAUSE_MEDIUM]
+
+Now UAT scenarios can be created from these acceptance criteria.
+
+[PAUSE_MEDIUM]
+
+UAT scenario one.
+
+Check a pending refund.
+
+Expected result.
+
+The screen shows pending.
+
+[PAUSE_MEDIUM]
+
+UAT scenario two.
+
+Check a completed refund.
+
+Expected result.
+
+The screen shows completed.
+
+[PAUSE_MEDIUM]
+
+UAT scenario three.
+
+Check a failed refund.
+
+Expected result.
+
+The screen shows failed.
+
+[PAUSE_MEDIUM]
+
+UAT scenario four.
+
+Check user permission.
+
+Expected result.
+
+Support agent can view refund status but cannot edit it.
+
+[PAUSE_MEDIUM]
+
+This is how acceptance criteria become UAT checks.
+
+[PAUSE_LONG]
+
+Repeat.
+
+Acceptance criteria define what must be true.
+
+UAT confirms whether those conditions are acceptable to the business.
+
+[PAUSE_LONG]
+
+Section 9: UAT and Jira.
+
+In real teams, UAT is often tracked in Jira.
+
+[PAUSE_MEDIUM]
+
+The Jira ticket may move through statuses like:
+
+To Do.
+
+In Progress.
+
+Ready for Test.
+
+In Testing.
+
+Ready for UAT.
+
+In UAT.
+
+UAT Passed.
+
+Done.
+
+[PAUSE_MEDIUM]
+
+During UAT, business users may find an issue.
+
+Example.
+
+The refund status shows completed, but the refund date is missing.
+
+[PAUSE_MEDIUM]
+
+The Business Analyst may add a Jira comment:
+
+During UAT, business user confirmed refund status is visible, but refund date is not displayed for completed refund transactions. This does not meet acceptance criteria number three.
+
+[PAUSE_MEDIUM]
+
+Then the developer checks it.
+
+The tester retests it.
+
+The business user validates again.
+
+If it works, the ticket can move towards UAT passed.
+
+[PAUSE_LONG]
+
+Simple meaning.
+
+Jira helps track UAT progress, issues, comments, fixes, and final acceptance.
+
+[PAUSE_MEDIUM]
+
+Repeat.
+
+Jira is evidence of what happened during UAT.
+
+[PAUSE_LONG]
+
+Section 10: UAT Defect.
+
+A UAT defect is a problem found during UAT.
+
+[PAUSE_MEDIUM]
+
+Example.
+
+Business user tests completed refund status.
+
+Expected result.
+
+Refund status should show completed, and refund date should be visible.
+
+Actual result.
+
+Refund status shows completed, but refund date is blank.
+
+[PAUSE_MEDIUM]
+
+This is a UAT defect.
+
+[PAUSE_MEDIUM]
+
+The defect should clearly explain:
+
+What was tested.
+
+What was expected.
+
+What actually happened.
+
+Business impact.
+
+Screenshot or evidence if available.
+
+Priority.
+
+Related user story or acceptance criteria.
+
+[PAUSE_MEDIUM]
+
+Good UAT defect description.
+
+When testing completed refund transactions, the refund date is not displayed on the transaction screen. Expected behaviour is that refund date should be shown when available, as per acceptance criteria. This may prevent support agents from giving accurate refund updates to customers.
+
+[PAUSE_LONG]
+
+Repeat.
+
+A good UAT defect explains expected result, actual result, and business impact.
+
+[PAUSE_LONG]
+
+Section 11: UAT Sign-Off.
+
+UAT sign-off means the business confirms that the change is acceptable.
+
+[PAUSE_MEDIUM]
+
+It does not always mean the system is perfect.
+
+It means the business agrees it is acceptable for release.
+
+[PAUSE_MEDIUM]
+
+Sometimes UAT passes with no issues.
+
+Sometimes UAT passes after defects are fixed.
+
+Sometimes UAT passes with known minor issues accepted by the business.
+
+Sometimes UAT fails and the release is delayed.
+
+[PAUSE_MEDIUM]
+
+Simple meaning.
+
+UAT sign-off is business approval for release.
+
+[PAUSE_MEDIUM]
+
+Repeat.
+
+UAT sign-off means the business accepts the change for real use.
+
+[PAUSE_LONG]
+
+Section 12: UAT vs Testing.
+
+Now compare.
+
+[PAUSE_MEDIUM]
+
+Developer testing.
+
+Focuses on code.
+
+Question.
+
+Does the code work?
+
+[PAUSE_MEDIUM]
+
+System testing.
+
+Focuses on system behaviour.
+
+Question.
+
+Does the system work as expected?
+
+[PAUSE_MEDIUM]
+
+Regression testing.
+
+Focuses on existing features.
+
+Question.
+
+Did the new change break anything old?
+
+[PAUSE_MEDIUM]
+
+UAT.
+
+Focuses on business acceptance.
+
+Question.
+
+Can the business accept this for real use?
+
+[PAUSE_LONG]
+
+Repeat.
+
+Developer testing checks code.
+
+System testing checks system behaviour.
+
+Regression testing checks old functionality is not broken.
+
+UAT checks business acceptance.
+
+[PAUSE_LONG]
+
+Section 13: Common Mistakes About UAT.
+
+Mistake one.
+
+Thinking UAT is only testing.
+
+Correction.
+
+UAT is business validation.
+
+[PAUSE_MEDIUM]
+
+Mistake two.
+
+Thinking the Business Analyst must test everything alone.
+
+Correction.
+
+Business users usually perform or approve UAT. The Business Analyst supports the process.
+
+[PAUSE_MEDIUM]
+
+Mistake three.
+
+Starting UAT without clear acceptance criteria.
+
+Correction.
+
+UAT should be linked to requirements and acceptance criteria.
+
+[PAUSE_MEDIUM]
+
+Mistake four.
+
+Only testing happy path scenarios.
+
+Correction.
+
+UAT should include real business scenarios, including exceptions.
+
+[PAUSE_MEDIUM]
+
+Mistake five.
+
+Not recording UAT issues properly.
+
+Correction.
+
+UAT defects should clearly explain expected result, actual result, and business impact.
+
+[PAUSE_LONG]
+
+Section 14: Mini Recall Questions.
+
+Question one.
+
+What does UAT stand for?
+
+[PAUSE_LONG]
+
+Answer.
+
+User Acceptance Testing.
+
+[PAUSE_MEDIUM]
+
+Question two.
+
+What is the simple meaning of UAT?
+
+[PAUSE_LONG]
+
+Answer.
+
+Business users check whether the system is ready for real business use.
+
+[PAUSE_MEDIUM]
+
+Question three.
+
+Who usually performs UAT?
+
+[PAUSE_LONG]
+
+Answer.
+
+Business users, product owners, operations teams, customer support users, or business representatives.
+
+[PAUSE_MEDIUM]
+
+Question four.
+
+What does the Business Analyst do in UAT?
+
+[PAUSE_LONG]
+
+Answer.
+
+The Business Analyst supports UAT by preparing scenarios, clarifying requirements, linking tests to acceptance criteria, tracking issues, coordinating fixes, and supporting business sign-off.
+
+[PAUSE_MEDIUM]
+
+Question five.
+
+What is UAT sign-off?
+
+[PAUSE_LONG]
+
+Answer.
+
+UAT sign-off is business approval that the change is acceptable for release.
+
+[PAUSE_MEDIUM]
+
+Question six.
+
+How is UAT different from system testing?
+
+[PAUSE_LONG]
+
+Answer.
+
+System testing checks whether the system works as expected. UAT checks whether the business accepts the system for real use.
+
+[PAUSE_LONG]
+
+Section 15: Fill in the Blank.
+
+Complete this in your mind.
+
+UAT means User Blank Testing.
+
+[PAUSE_LONG]
+
+Answer.
+
+Acceptance.
+
+UAT means User Acceptance Testing.
+
+[PAUSE_MEDIUM]
+
+Complete this.
+
+UAT checks whether the business can blank the system.
+
+[PAUSE_LONG]
+
+Answer.
+
+Accept.
+
+UAT checks whether the business can accept the system.
+
+[PAUSE_MEDIUM]
+
+Complete this.
+
+Acceptance criteria help create UAT blank.
+
+[PAUSE_LONG]
+
+Answer.
+
+Scenarios.
+
+Acceptance criteria help create UAT scenarios.
+
+[PAUSE_MEDIUM]
+
+Complete this.
+
+A good UAT defect should explain expected result, actual result, and business blank.
+
+[PAUSE_LONG]
+
+Answer.
+
+Impact.
+
+A good UAT defect should explain expected result, actual result, and business impact.
+
+[PAUSE_LONG]
+
+Section 16: Basic Interview Answer.
+
+Interview question.
+
+What is UAT?
+
+[PAUSE_LONG]
+
+Basic answer.
+
+UAT means User Acceptance Testing. It is the stage where business users check whether the system meets the business requirement and is ready for real use.
+
+[PAUSE_MEDIUM]
+
+Repeat.
+
+UAT means business users validate the system before release.
+
+[PAUSE_LONG]
+
+Section 17: Stronger Interview Answer.
+
+Interview question.
+
+Can you explain UAT in an Agile project?
+
+[PAUSE_LONG]
+
+Stronger answer.
+
+In an Agile project, UAT is the business validation stage where users or business representatives confirm whether the delivered change meets the agreed requirements and acceptance criteria. It usually happens after development and system testing. The Business Analyst may support UAT by preparing scenarios, clarifying expected behaviour, tracking issues in Jira, coordinating with developers and testers, and helping the business reach sign-off.
+
+[PAUSE_LONG]
+
+Repeat the strong answer in simpler words.
+
+UAT is where the business checks the final change. The Business Analyst helps make sure the UAT is clear, organised, linked to requirements, and properly tracked.
+
+[PAUSE_LONG]
+
+Section 18: FinTech Interview Answer.
+
+Interview question.
+
+How would you support UAT for a payment system change?
+
+[PAUSE_LONG]
+
+Answer.
+
+For a payment system change, I would first understand the business requirement and acceptance criteria.
+
+For example, if the change is to display refund status on a transaction screen, I would help prepare UAT scenarios for pending, completed, failed, and reversed refunds.
+
+[PAUSE_SHORT]
+
+I would also include permission checks, unavailable data handling, and any business rules around refund reference or refund date.
+
+During UAT, I would help business users understand what to test, record issues clearly in Jira, coordinate fixes, and support business sign-off once the change is accepted.
+
+[PAUSE_LONG]
+
+Repeat the key point.
+
+In FinTech UAT, the goal is not only to check the screen. The goal is to confirm that the payment or refund process works correctly for real business users.
+
+[PAUSE_LONG]
+
+Section 19: STAR Interview Answer.
+
+Interview question.
+
+Tell me about a time you supported testing or business validation.
+
+[PAUSE_LONG]
+
+Use STAR.
+
+Situation.
+
+In a financial software environment, a change was needed to improve how users viewed transaction or refund-related information.
+
+[PAUSE_MEDIUM]
+
+Task.
+
+The task was to make sure the change was clear, testable, and acceptable for business users before release.
+
+[PAUSE_MEDIUM]
+
+Action.
+
+I would clarify the requirement, confirm the expected behaviour, support acceptance criteria, prepare or review test scenarios, track issues, and coordinate with technical and business stakeholders. If users found a problem during UAT, I would document the expected result, actual result, and business impact clearly so the team could prioritise and fix it.
+
+[PAUSE_MEDIUM]
+
+Result.
+
+This helps reduce misunderstanding, improves release confidence, and ensures the delivered change supports the real business process.
+
+[PAUSE_LONG]
+
+Now listen to the full STAR answer.
+
+In a financial software environment, a change was needed to improve how users viewed transaction or refund-related information. My role would be to help ensure the change was clear, testable, and acceptable for business users before release. I would clarify the requirement, confirm expected behaviour, support acceptance criteria, prepare or review UAT scenarios, and track issues clearly with expected result, actual result, and business impact. This helps reduce misunderstanding, improve release confidence, and ensure the delivered change supports the real business process.
+
+[PAUSE_LONG]
+
+Section 20: Interview Follow-Up Questions.
+
+Question.
+
+What documents or artefacts are useful for UAT?
+
+[PAUSE_LONG]
+
+Answer.
+
+Useful UAT artefacts include user stories, acceptance criteria, UAT scenarios, test data, Jira tickets, defect logs, screenshots, UAT results, and sign-off evidence.
+
+[PAUSE_MEDIUM]
+
+Question.
+
+What makes a good UAT scenario?
+
+[PAUSE_LONG]
+
+Answer.
+
+A good UAT scenario is realistic, linked to a business process, connected to acceptance criteria, and clear about the expected result.
+
+[PAUSE_MEDIUM]
+
+Question.
+
+What would you do if a business user finds an issue during UAT?
+
+[PAUSE_LONG]
+
+Answer.
+
+I would capture the issue clearly, confirm the expected and actual result, assess the business impact, log or update the Jira ticket, coordinate with developers and testers, and help the business retest once fixed.
+
+[PAUSE_MEDIUM]
+
+Question.
+
+What if business users are not available for UAT?
+
+[PAUSE_LONG]
+
+Answer.
+
+I would raise the risk early, agree a realistic UAT plan with the product owner or delivery lead, identify suitable business representatives, and make sure sign-off responsibility is clear before release.
+
+[PAUSE_LONG]
+
+Section 21: One-Minute Interview Version.
+
+Now practise a one-minute interview answer.
+
+[PAUSE_MEDIUM]
+
+UAT stands for User Acceptance Testing.
+
+It is the stage where business users or business representatives validate whether a delivered change meets the business requirement and is ready for real use.
+
+It is different from technical testing because the focus is business acceptance, not only system behaviour.
+
+[PAUSE_SHORT]
+
+As a Business Analyst, I would support UAT by preparing realistic scenarios from acceptance criteria, clarifying expected behaviour, helping users during testing, tracking issues in Jira, coordinating fixes, and supporting business sign-off.
+
+For example, in a payment system refund-status change, UAT would check scenarios such as pending, completed, failed, and reversed refunds, including permission rules and unavailable data handling.
+
+The goal is to make sure the change works for the real business process before production release.
+
+[PAUSE_LONG]
+
+Repeat the strongest sentence.
+
+UAT is the point where business users confirm that the delivered change is acceptable for real-world use.
+
+[PAUSE_LONG]
+
+Section 22: Final Mental Model.
+
+Remember this model.
+
+Requirement.
+
+Acceptance criteria.
+
+Development.
+
+Testing.
+
+UAT.
+
+Sign-off.
+
+Release.
+
+[PAUSE_MEDIUM]
+
+Again.
+
+Requirement explains what the business needs.
+
+Acceptance criteria explain how we know it is done.
+
+Development builds it.
+
+Testing checks it.
+
+UAT validates it with business users.
+
+Sign-off approves it.
+
+Release makes it live.
+
+[PAUSE_LONG]
+
+Final recap.
+
+UAT means User Acceptance Testing.
+
+UAT is business-side testing before release.
+
+UAT checks business acceptance.
+
+Business users usually perform or approve UAT.
+
+The Business Analyst supports UAT by preparing scenarios, clarifying requirements, tracking issues, and supporting sign-off.
+
+UAT should connect to requirements and acceptance criteria.
+
+UAT issues should be recorded clearly with expected result, actual result, and business impact.
+
+In interviews, explain UAT as business validation, not just testing.
+
+[PAUSE_LONG]
+
+Final repeat.
+
+UAT is business validation.
+
+UAT is business acceptance.
+
+UAT confirms whether the system is ready for real use.
+
+[PAUSE_LONG]
+
+End of audio.
