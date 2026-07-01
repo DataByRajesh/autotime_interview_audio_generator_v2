@@ -43,3 +43,4 @@ ffmpeg-*-essentials_build/
 # Local config (do not commit your personal config)
 config.json
 config.real.json
+config.tamil.json
