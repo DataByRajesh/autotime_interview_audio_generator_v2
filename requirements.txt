@@ -1,1 +1,11 @@
 pytest>=7.0
+
+# --- Tamil TTS (Indic Parler-TTS) ---
+# Only required if you're generating Tamil audio via indic_tamil_tts.py.
+# The core English pipeline (interview_audio_generator_v2.py + Piper)
+# does not need these.
+torch
+transformers
+soundfile
+# Install separately (not on PyPI under a plain pip name):
+#   pip install --break-system-packages git+https://github.com/huggingface/parler-tts.git
