@@ -5,6 +5,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from interview_audio_generator_v2 import (
+    add_tamil_pauses,
     clean_text_for_tts,
     cognitive_load_warnings,
     generate_learning_script,
@@ -136,7 +137,7 @@ issue workflow acceptance criteria.
 
 Question. What is Jira?
 """
-    warnings = cognitive_load_warnings(text, speed=0.85, workplace_mode=True)
+    warnings = cognitive_load_warnings(text, speed=0.75, workplace_mode=True)
 
     assert not any("key terms" in warning for warning in warnings)
 
@@ -148,3 +149,14 @@ def test_prepare_text_splits_dense_paragraphs_for_listening():
     assert "[PAUSE_SHORT]" in prepared
     assert not any(len(p.split()) > 90 for p in prepared.split("\n\n") if p.strip())
 
+def test_tamil_pause_processing_preserves_technical_terms():
+    text = "TERM 1: Payment ID\nதமிழ் விளக்கம் with Timestamp and Webhook.\nRecap: Queue and DORA."
+    prepared, pause_ms = add_tamil_pauses(text)
+
+    assert "Payment ID" in prepared
+    assert "Timestamp" in prepared
+    assert "Webhook" in prepared
+    assert "Queue" in prepared
+    assert "DORA" in prepared
+    assert pause_ms == 3500
+    assert "..." in prepared

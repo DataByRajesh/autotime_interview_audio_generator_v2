@@ -1,6 +1,9 @@
 {
   "input": "tamil_script.txt",
-  "output_dir": "output/tamil_chunks",
+  "output": "output/tamil_final.mp3",
+  "ffmpeg": "C:/ffmpeg/bin/ffmpeg.exe",
   "chunk_size": 600,
+  "speed": 1.0,
+  "bitrate": "128k",
   "description": "A clear female Tamil speaker delivers speech at a moderate pace with a warm, professional tone. The recording is studio quality with no background noise."
 }

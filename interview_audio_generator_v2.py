@@ -26,7 +26,7 @@ python interview_audio_generator_v2.py ^
   --piper "C:\tts\piper\piper.exe" ^
   --voice "C:\tts\piper\voices\en_GB-alba-medium.onnx" ^
   --config "C:\tts\piper\voices\en_GB-alba-medium.onnx.json" ^
-  --speed 1.0
+  --speed 0.75
 """
 
 from __future__ import annotations
@@ -37,6 +37,8 @@ import re
 import shutil
 import subprocess
 from pathlib import Path
+
+ENTRY_FILE = Path(__file__).name
 
 
 TECH_REPLACEMENTS = [
@@ -79,6 +81,26 @@ PAUSE_DURATIONS_MS = {
     "[PAUSE_MEDIUM]": 1200,
     "[PAUSE_LONG]": 2000,
 }
+
+TAMIL_MODE = {
+    "voice": Path("voices/ta_IN-Valluvar-medium.onnx"),
+    "config": Path("voices/ta_IN-Valluvar-medium.onnx.json"),
+    "input": Path("input/ireland_eu_fintech_tamil_terms_first_situational_script.txt"),
+    "output_wav": Path("output/ireland_eu_fintech_tamil_full_learning_audio.wav"),
+    "output_mp3": Path("output/ireland_eu_fintech_tamil_full_learning_audio_075x.mp3"),
+    "speed": 0.75,
+    "bitrate": "128k",
+}
+
+TAMIL_PAUSE_RULES = (
+    ("section", 2500, lambda line: "============================================================" in line),
+    ("term", 1500, lambda line: line.lstrip().startswith("TERM")),
+    ("heading", 2000, lambda line: line.lstrip().startswith("SITUATION")),
+    ("recap", 2000, lambda line: "Recap:" in line),
+    ("recap", 2000, lambda line: "\u0bae\u0ba9\u0ba4\u0bbf\u0bb2\u0bcd \u0ba8\u0bbf\u0bb1\u0bcd\u0b95\u0bc1\u0bae\u0bcd \u0b9a\u0bc1\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bae\u0bcd" in line),
+    ("heading", 2000, lambda line: "\u0ba8\u0bc7\u0bb0\u0bcd\u0b95\u0bbe\u0ba3\u0bb2\u0bcd \u0baa\u0ba4\u0bbf\u0bb2\u0bcd" in line),
+    ("example", 1000, lambda line: "\u0b89\u0ba4\u0bbe\u0bb0\u0ba3\u0bae\u0bcd" in line),
+)
 
 LEARNING_MODES = (
     "learn_mode",
@@ -312,6 +334,44 @@ def require_executable(name: str, custom_path: str | None = None) -> str:
     return found
 
 
+def describe_file_for_error(path: Path) -> str:
+    if not path.exists():
+        return f"{path} | exists: no"
+    size = path.stat().st_size
+    return f"{path} | exists: yes | size: {size:,} bytes"
+
+
+def validate_tamil_voice_files(model_path: Path, config_path: Path) -> tuple[Path, Path]:
+    min_model_bytes = 1_000_000
+    issues: list[str] = []
+
+    if not model_path.exists():
+        issues.append("Tamil model file is missing.")
+    elif model_path.stat().st_size < min_model_bytes:
+        issues.append("Tamil model file is too small and looks like an invalid download.")
+
+    if not config_path.exists():
+        issues.append("Tamil config file is missing.")
+
+    if issues:
+        details = [
+            "Tamil Piper voice setup failed.",
+            f"Expected model path: {model_path}",
+            f"Expected config path: {config_path}",
+            describe_file_for_error(model_path),
+            describe_file_for_error(config_path),
+            "The .onnx model should be a real Piper model, usually around 60+ MB. If it is under 1 MB, it is probably an HTML error page or failed download.",
+            "Download commands:",
+            "cd C:\\Users\\rajan\\Downloads\\autotime_interview_audio_generator_v2",
+            "mkdir voices -Force",
+            'curl.exe -L "https://huggingface.co/datasets/Jeyaram-K/piper-tamil-voice/resolve/main/ta_IN-Valluvar-medium/ta_IN-Valluvar-medium.onnx" -o ".\\voices\\ta_IN-Valluvar-medium.onnx"',
+            'curl.exe -L "https://huggingface.co/datasets/Jeyaram-K/piper-tamil-voice/resolve/main/ta_IN-Valluvar-medium/ta_IN-Valluvar-medium.onnx.json" -o ".\\voices\\ta_IN-Valluvar-medium.onnx.json"',
+            "Get-ChildItem .\\voices\\ta_IN-Valluvar-medium* | Select-Object Name, Length",
+        ]
+        raise FileNotFoundError("\n".join(details + [f"- {issue}" for issue in issues]))
+
+    return model_path, config_path
+
 def clean_text_for_tts(text: str) -> str:
     text = text.replace("\r\n", "\n").replace("\r", "\n")
 
@@ -458,6 +518,7 @@ def run_command(cmd: list[str], input_text: str | None = None) -> None:
         cmd,
         input=input_text,
         text=True if input_text is not None else False,
+        encoding="utf-8" if input_text is not None else None,
         capture_output=True,
     )
 
@@ -779,7 +840,7 @@ def cognitive_load_warnings(text: str, speed: float, workplace_mode: bool = Fals
         seen_terms.update(section_terms)
 
     if workplace_mode and speed > 1.0:
-        warnings.append("Workplace speed is above 1.0. Use 0.85 to 1.0 for low cognitive load listening.")
+        warnings.append("Workplace speed is above 1.0. Use 0.75 to 1.0 for low cognitive load listening.")
 
     if not re.search(r"\b(quiz|question|what|which|why|how)\b", lowered):
         warnings.append("No quiz questions found. Add a recall question or mini quiz.")
@@ -813,6 +874,114 @@ def render_warnings(warnings: list[str]) -> None:
     for warning in warnings:
         print(f"- {warning}")
 
+
+def tamil_pause_ms_for_line(line: str) -> int:
+    for _name, pause_ms, matches in TAMIL_PAUSE_RULES:
+        if matches(line):
+            return pause_ms
+    return 0
+
+
+def tamil_pause_text(pause_ms: int) -> str:
+    if pause_ms <= 0:
+        return ""
+    ellipsis_count = max(1, round(pause_ms / 500))
+    return "\n\n" + " ".join("..." for _ in range(ellipsis_count)) + "\n\n"
+
+
+def add_tamil_pauses(text: str) -> tuple[str, int]:
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    prepared: list[str] = []
+    total_pause_ms = 0
+
+    for line in text.split("\n"):
+        prepared.append(line.rstrip())
+        pause_ms = tamil_pause_ms_for_line(line)
+        if pause_ms:
+            prepared.append(tamil_pause_text(pause_ms))
+            total_pause_ms += pause_ms
+
+    return "\n".join(prepared).strip(), total_pause_ms
+
+
+def count_words(text: str) -> int:
+    return len(re.findall(r"\S+", text))
+
+
+def estimated_duration_seconds(word_count: int, speed: float, pause_ms: int = 0) -> int:
+    base_words_per_minute = 130
+    spoken_seconds = (word_count / base_words_per_minute) * 60 if word_count else 0
+    slowed_seconds = spoken_seconds / speed if speed else spoken_seconds
+    return round(slowed_seconds + (pause_ms / 1000))
+
+
+def format_duration(total_seconds: int) -> str:
+    minutes, seconds = divmod(max(0, total_seconds), 60)
+    hours, minutes = divmod(minutes, 60)
+    if hours:
+        return f"{hours}h {minutes}m {seconds}s"
+    return f"{minutes}m {seconds}s"
+
+
+def generate_tamil_audio_file(
+    input_path: Path,
+    output_wav: Path,
+    output_mp3: Path,
+    voice_model: Path,
+    config_file: Path,
+    piper_exe: str,
+    ffmpeg_exe: str,
+    speed: float,
+    bitrate: str,
+    keep_wav: bool = False,
+) -> None:
+    output_wav.parent.mkdir(parents=True, exist_ok=True)
+    output_mp3.parent.mkdir(parents=True, exist_ok=True)
+
+    raw_text = input_path.read_text(encoding="utf-8")
+    tts_text, pause_ms = add_tamil_pauses(raw_text)
+    words = count_words(raw_text)
+    duration = estimated_duration_seconds(words, speed, pause_ms)
+
+    if not tts_text.strip():
+        raise ValueError("No readable text found in Tamil input file.")
+
+    print("Setup check passed.")
+    print(f"Actual script/entry file used: {ENTRY_FILE}")
+    print("Mode used: tamil")
+    print(f"Input file: {input_path}")
+    print(f"Voice model: {voice_model}")
+    print(f"Speed: {speed}x")
+    print(f"Word count: {words}")
+    print(f"Estimated duration: {format_duration(duration)}")
+    print(f"Intermediate WAV path: {output_wav}")
+    print(f"Output MP3 path: {output_mp3}")
+
+    print("Generating one full Tamil WAV...")
+    generate_chunk(
+        piper_exe=piper_exe,
+        voice_model=voice_model,
+        config_file=config_file,
+        text=tts_text,
+        output_wav=output_wav,
+    )
+
+    print("Converting Tamil WAV to one slowed MP3...")
+    export_mp3(
+        ffmpeg_exe=ffmpeg_exe,
+        input_wav=output_wav,
+        output_mp3=output_mp3,
+        speed=speed,
+        bitrate=bitrate,
+    )
+
+    if keep_wav:
+        print(f"Keeping intermediate Tamil WAV: {output_wav}")
+    else:
+        output_wav.unlink(missing_ok=True)
+        print("Removed intermediate Tamil WAV after MP3 export.")
+
+    print("Success: Tamil full continuous MP3 created.")
 
 def generate_audio_file(
     raw_text: str,
@@ -914,6 +1083,7 @@ def main() -> None:
         description="Generate a long-form interview podcast MP3 using Piper TTS."
     )
 
+    parser.add_argument("--mode", choices=("english", "tamil"), default="english", help="Generation mode. Default keeps the existing English workflow.")
     parser.add_argument("--input", required=False, help="Input .txt file")
     parser.add_argument("--output", required=False, help="Output .mp3 file")
     parser.add_argument("--voice", required=False, help="Piper .onnx voice model")
@@ -921,10 +1091,11 @@ def main() -> None:
     parser.add_argument("--piper", default=None, help="Optional piper executable path")
     parser.add_argument("--ffmpeg", default=None, help="Optional ffmpeg executable path")
     parser.add_argument("--config-file", default=None, help="Optional JSON config file (overrides defaults)")
-    parser.add_argument("--speed", type=float, default=None, help="Final MP3 speed. Use 1.0 for normal playback")
+    parser.add_argument("--speed", type=float, default=None, help="Final audio speed. Default is 0.75 for slower learning playback")
+    parser.add_argument("--confirm-speed-change", action="store_true", help="Allow a speed other than the protected 0.75 learning speed")
     parser.add_argument("--bitrate", default=None, help="MP3 bitrate, e.g. 96k or 128k")
     parser.add_argument("--chunk-size", type=int, default=None, help="TTS chunk size in characters")
-    parser.add_argument("--keep-temp", action="store_true", help="Keep temporary WAV files")
+    parser.add_argument("--keep-temp", action="store_true", help="Keep temporary/intermediate WAV files")
     parser.add_argument("--dry-run", action="store_true", help="Validate setup and show chunk count only")
     parser.add_argument("--learning-mode", choices=LEARNING_MODES, default=None, help="Generate a psychology-backed learning script before TTS")
     parser.add_argument("--topic", default=None, help="Topic name for a learning mode, e.g. Agile or Payment lifecycle")
@@ -960,14 +1131,48 @@ def main() -> None:
             print(f"- {item['title']}")
         return
 
+    mode = resolve("mode", "english")
+    if mode not in {"english", "tamil"}:
+        raise ValueError("Mode must be either 'english' or 'tamil'.")
+
+    if mode == "tamil":
+        if args.dry_run:
+            raise ValueError("Tamil mode has no test mode. Remove --dry-run to generate the full continuous audio.")
+
+        piper_exe = require_executable("piper", resolve("piper", args.piper))
+        ffmpeg_exe = require_executable("ffmpeg", resolve("ffmpeg", args.ffmpeg))
+        input_path = require_file(TAMIL_MODE["input"], "Tamil input text")
+        voice_model, config_file = validate_tamil_voice_files(
+            TAMIL_MODE["voice"],
+            TAMIL_MODE["config"],
+        )
+
+        generate_tamil_audio_file(
+            input_path=input_path,
+            output_wav=TAMIL_MODE["output_wav"],
+            output_mp3=TAMIL_MODE["output_mp3"],
+            voice_model=voice_model,
+            config_file=config_file,
+            piper_exe=piper_exe,
+            ffmpeg_exe=ffmpeg_exe,
+            speed=float(TAMIL_MODE["speed"]),
+            bitrate=str(TAMIL_MODE["bitrate"]),
+            keep_wav=args.keep_temp,
+        )
+        return
     learning_mode = resolve("learning_mode")
     topic_arg = resolve("topic")
     compare_topic = resolve("compare_topic")
     workplace_mode = learning_mode == "workplace_playlist_mode" or bool(args.spaced_playlist)
-    default_speed = 0.85 if workplace_mode else 1.0
+    protected_speed = 0.75
+    default_speed = protected_speed
     speed = float(resolve("speed", default_speed))
-    if not (0.8 <= speed <= 1.5):
-        raise ValueError("Speed must be between 0.8 and 1.5. Use 1.0 for normal playback.")
+    if not (0.5 <= speed <= 1.5):
+        raise ValueError("Speed must be between 0.5 and 1.5. Default learning playback is 0.75.")
+    if abs(speed - protected_speed) > 1e-9:
+        if not args.confirm_speed_change:
+            raise ValueError("Warning: speed change requested. Protected learning speed is 0.75. Re-run with --confirm-speed-change only after approval.")
+        print(f"Warning: speed changed from protected learning speed {protected_speed} to {speed}.")
 
     input_arg = resolve("input")
     output_arg = resolve("output")
@@ -999,7 +1204,7 @@ def main() -> None:
         output_dir = Path(output_arg)
         output_dir.mkdir(parents=True, exist_ok=True)
 
-        for mode, filename in spaced_repetition_plan(topic_arg, extension=".wav"):
+        for mode, filename in spaced_repetition_plan(topic_arg, extension=".mp3"):
             script = generate_learning_script(mode, topic_arg, compare_topic)
             render_warnings(cognitive_load_warnings(script, speed, workplace_mode=True))
             script_path = output_dir / Path(filename).with_suffix(".txt").name

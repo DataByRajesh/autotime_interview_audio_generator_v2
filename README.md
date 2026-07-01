@@ -99,7 +99,7 @@ python interview_audio_generator_v2.py `
   --voice "C:\tts\piper\voices\en_GB-alba-medium.onnx" `
   --config "C:\tts\piper\voices\en_GB-alba-medium.onnx.json" `
   --ffmpeg "C:\ffmpeg\bin\ffmpeg.exe" `
-  --speed 1.0 `
+  --speed 0.75 `
   --bitrate 128k
 ```
 
@@ -113,7 +113,7 @@ Important config fields:
 - `config`: optional Piper `.onnx.json` config path.
 - `piper`: Piper executable path.
 - `ffmpeg`: FFmpeg executable path.
-- `speed`: playback speed. Use `1.0` for normal speed.
+- `speed`: playback speed. Default is `0.75` for slower learning playback. Use `1.0` for normal speed.
 - `bitrate`: MP3 bitrate, such as `128k` or `192k`.
 - `chunk_size`: text chunk size in characters. `2200` is a good starting point.
 
@@ -144,7 +144,7 @@ python interview_audio_generator_v2.py --learning-mode learn_mode --topic "UAT" 
 Generate one learning audio file:
 
 ```powershell
-python interview_audio_generator_v2.py --config-file config.real.json --learning-mode interview_mode --topic "Payment lifecycle" --output output/payment_lifecycle_interview.mp3 --speed 0.85
+python interview_audio_generator_v2.py --config-file config.real.json --learning-mode interview_mode --topic "Payment lifecycle" --output output/payment_lifecycle_interview.mp3 --speed 0.75
 ```
 
 Generate a spaced repetition playlist:
@@ -156,10 +156,10 @@ python interview_audio_generator_v2.py --config-file config.real.json --spaced-p
 Example playlist outputs:
 
 ```text
-01_Agile_Scrum_Jira_Day1_Learn.wav
-02_Agile_Scrum_Jira_Day2_Recall.wav
-03_Agile_Scrum_Jira_Day4_Compare.wav
-04_Agile_Scrum_Jira_Day7_Interview.wav
+01_Agile_Scrum_Jira_Day1_Learn.mp3
+02_Agile_Scrum_Jira_Day2_Recall.mp3
+03_Agile_Scrum_Jira_Day4_Compare.mp3
+04_Agile_Scrum_Jira_Day7_Interview.mp3
 ```
 
 Supported pause markers in scripts:
@@ -183,7 +183,7 @@ python batch_generate_deep_concepts.py
 By default, this searches the Downloads folder for matching deep concept transcript files and writes output to:
 
 ```text
-output/deep_concepts_085x
+output/deep_concepts_075x
 ```
 
 Useful batch flags:
@@ -191,7 +191,7 @@ Useful batch flags:
 ```powershell
 python batch_generate_deep_concepts.py --dry-run
 python batch_generate_deep_concepts.py --limit 3
-python batch_generate_deep_concepts.py --input-dir "C:\Users\rajan\Downloads" --output-dir output/deep_concepts_085x --speed 0.85
+python batch_generate_deep_concepts.py --input-dir "C:\Users\rajan\Downloads" --output-dir output/deep_concepts_075x --speed 0.75
 ```
 
 The batch runner is resumable and skips existing non-empty MP3 files.
@@ -227,9 +227,9 @@ The repository includes several long-form study scripts that can be used as inpu
 - If Piper is not found, confirm the `piper` path in your config or add Piper to `PATH`.
 - If FFmpeg is not found, confirm the `ffmpeg` path or run `ffmpeg -version`.
 - If the voice model is missing, check the `.onnx` path and the matching `.onnx.json` path.
-- If audio sounds too fast or too slow, adjust `speed`. Start with `1.0`.
+- If audio sounds too fast or too slow, adjust `speed`. Start with `0.75` for learning playback.
 - If a long generation stops midway, rerun the same command. Existing WAV chunks are skipped.
-- If generated learning scripts feel too dense, add pause markers or lower the speed to around `0.85`.
+- If generated learning scripts feel too dense, add pause markers or lower the speed to around `0.75`.
 
 ## Git Notes
 

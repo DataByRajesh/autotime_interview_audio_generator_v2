@@ -44,3 +44,6 @@ ffmpeg-*-essentials_build/
 config.json
 config.real.json
 config.tamil.json
+.venv_tamil/
+.hf_cache/
+.tmp/
