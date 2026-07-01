@@ -37,6 +37,20 @@ Test on a short Tamil sample first:
 python indic_tamil_tts.py --input tamil_sample.txt --output-dir output/tamil_test_chunks
 ```
 
+Or use a config file, same pattern as the English pipeline:
+
+```powershell
+Copy-Item config.tamil.example.json config.tamil.json
+python indic_tamil_tts.py --config-file config.tamil.json
+```
+
+CLI flags override config file values, so you can still do a one-off
+change without editing the file:
+
+```powershell
+python indic_tamil_tts.py --config-file config.tamil.json --chunk-size 400
+```
+
 Then merge the generated WAV chunks with FFmpeg, the same way the
 existing Piper pipeline merges chunks — see `merge_wav_chunks` in
 `interview_audio_generator_v2.py` for the reference command.

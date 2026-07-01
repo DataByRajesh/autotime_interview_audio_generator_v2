@@ -35,12 +35,9 @@ Piper pipeline does (see merge_wav_chunks in interview_audio_generator_v2.py).
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from pathlib import Path
-
-import soundfile as sf
-import torch
-from transformers import AutoTokenizer
 
 MODEL_NAME = "ai4bharat/indic-parler-tts"
 
@@ -78,7 +75,9 @@ class IndicParlerTamilTTS:
     """Loads the Indic Parler-TTS model once, reused across all chunks."""
 
     def __init__(self, device: str | None = None, description: str = DEFAULT_DESCRIPTION):
-        from parler_tts import ParlerTTSForConditionalGeneration  # imported lazily
+        import torch
+        from parler_tts import ParlerTTSForConditionalGeneration
+        from transformers import AutoTokenizer
 
         self.device = device or ("cuda:0" if torch.cuda.is_available() else "cpu")
         print(f"Loading {MODEL_NAME} on {self.device} (first run downloads the model)...")
@@ -92,6 +91,8 @@ class IndicParlerTamilTTS:
 
     def synthesize_chunk(self, text: str, output_wav: Path) -> Path:
         """Synthesize a single text chunk to a WAV file."""
+        import soundfile as sf
+
         description_ids = self.description_tokenizer(
             self.description, return_tensors="pt"
         ).to(self.device)
@@ -108,21 +109,30 @@ class IndicParlerTamilTTS:
         return output_wav
 
 
+_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.?!])\s+")
+
+
 def split_tamil_text(text: str, chunk_size: int = 600) -> list[str]:
     """
-    Sentence-aware chunker for Tamil/mixed text. Splits on '.' boundaries
-    and keeps each chunk under chunk_size characters. Indic Parler-TTS
-    handles shorter chunks more reliably than Piper does, so the default
-    here is smaller than the Piper pipeline's chunk_size (2200).
+    Sentence-aware chunker for Tamil/mixed text. Splits on '.', '?', and
+    '!' boundaries and keeps each chunk under chunk_size characters.
+    Interview-style scripts are mostly questions, so '?' and '!' need to
+    end a sentence just as reliably as '.' does, or they get merged into
+    oversized chunks. Indic Parler-TTS handles shorter chunks more
+    reliably than Piper does, so the default here is smaller than the
+    Piper pipeline's chunk_size (2200).
     """
-    sentences = [s.strip() for s in text.replace("\n", " ").split(".") if s.strip()]
+    normalised = text.replace("\n", " ")
+    raw_sentences = _SENTENCE_SPLIT_RE.split(normalised)
+    sentences = [s.strip() for s in raw_sentences if s.strip()]
+
     chunks: list[str] = []
     current = ""
     for sentence in sentences:
-        candidate = f"{current} {sentence}.".strip() if current else f"{sentence}."
+        candidate = f"{current} {sentence}".strip() if current else sentence
         if len(candidate) > chunk_size and current:
             chunks.append(current)
-            current = f"{sentence}."
+            current = sentence
         else:
             current = candidate
     if current:
@@ -166,21 +176,40 @@ def main():
     parser = argparse.ArgumentParser(
         description="Generate Tamil speech from a .txt script using Indic Parler-TTS."
     )
-    parser.add_argument("--input", required=True, help="Tamil .txt script")
-    parser.add_argument("--output-dir", required=True, help="Directory for WAV chunks")
-    parser.add_argument("--chunk-size", type=int, default=600)
+    parser.add_argument("--config-file", default=None, help="Optional JSON config file")
+    parser.add_argument("--input", default=None, help="Tamil .txt script")
+    parser.add_argument("--output-dir", default=None, help="Directory for WAV chunks")
+    parser.add_argument("--chunk-size", type=int, default=None)
     parser.add_argument(
         "--description",
-        default=DEFAULT_DESCRIPTION,
+        default=None,
         help="Voice style prompt (speaker, tone, pace)",
     )
     args = parser.parse_args()
 
+    config = {}
+    if args.config_file:
+        with open(args.config_file, "r", encoding="utf-8") as f:
+            config = json.load(f)
+
+    def resolve(key: str, default=None):
+        cli_value = getattr(args, key)
+        if cli_value is not None:
+            return cli_value
+        return config.get(key, default)
+
+    input_path = resolve("input")
+    output_dir = resolve("output_dir")
+    if not input_path:
+        raise ValueError("Input script not provided (use --input or config-file 'input')")
+    if not output_dir:
+        raise ValueError("Output dir not provided (use --output-dir or config-file 'output_dir')")
+
     synthesize_tamil_script(
-        input_path=Path(args.input),
-        output_dir=Path(args.output_dir),
-        chunk_size=args.chunk_size,
-        description=args.description,
+        input_path=Path(input_path),
+        output_dir=Path(output_dir),
+        chunk_size=resolve("chunk_size", 600),
+        description=resolve("description", DEFAULT_DESCRIPTION),
     )
     print("Done. Merge WAV chunks with FFmpeg the same way as the Piper pipeline.")
 

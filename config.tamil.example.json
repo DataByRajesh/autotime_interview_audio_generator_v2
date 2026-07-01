@@ -1,0 +1,6 @@
+{
+  "input": "tamil_script.txt",
+  "output_dir": "output/tamil_chunks",
+  "chunk_size": 600,
+  "description": "A clear female Tamil speaker delivers speech at a moderate pace with a warm, professional tone. The recording is studio quality with no background noise."
+}
