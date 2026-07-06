@@ -158,14 +158,15 @@ def run_command(command: list[str], *, input_text: str | None = None) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate a short Tamil Piper sample for Roja A/B testing.")
-    parser.add_argument("--voice", choices=sorted(VOICE_FILES), default="roja", help="Piper Tamil voice to test")
+    parser = argparse.ArgumentParser(description="Generate a short Tamil Piper sample for Valluvar/Roja A/B testing.")
+    parser.add_argument("--voice", choices=sorted(VOICE_FILES), default="valluvar", help="Piper Tamil voice to test; default is Valluvar for learning")
     parser.add_argument("--piper", type=Path, help="Path to piper.exe")
     parser.add_argument("--model", type=Path, help="Path to the selected .onnx model")
     parser.add_argument("--config", type=Path, help="Path to a Piper .onnx.json config")
     parser.add_argument("--ffmpeg", type=Path, help="Path to ffmpeg.exe")
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT, help="Input text file to synthesize")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR, help="Output directory")
+    parser.add_argument("--length-scale", default="1.30", help="Piper length_scale; 1.30 is the learning-speed default")
     args = parser.parse_args()
 
     ensure_sample_file(args.input)
@@ -217,9 +218,10 @@ def main() -> None:
     print(f"Config: {config_path}")
     print(f"FFmpeg: {ffmpeg_exe}")
     print(f"Input:  {args.input}")
+    print(f"Length scale: {args.length_scale}")
 
     run_command(
-        [str(piper_exe), "--model", str(model_path), "--config", str(config_path), "--output_file", str(wav_path)],
+        [str(piper_exe), "--model", str(model_path), "--config", str(config_path), "--output_file", str(wav_path), "--length_scale", args.length_scale],
         input_text=text,
     )
     run_command([str(ffmpeg_exe), "-y", "-i", str(wav_path), "-codec:a", "libmp3lame", "-b:a", "128k", str(mp3_path)])

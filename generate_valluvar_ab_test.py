@@ -1,11 +1,14 @@
 """
-Generate a Valluvar A/B pair that matches the existing Roja A/B test.
+Generate a Valluvar A/B pair at the default learning speed.
 
 Outputs:
     outputs/valluvar_ab_raw_no_glossary.wav
     outputs/valluvar_ab_raw_no_glossary.mp3
     outputs/valluvar_ab_glossary_applied.wav
     outputs/valluvar_ab_glossary_applied.mp3
+
+Default speed:
+    Piper length_scale = 1.30 for learning-phase clarity
 
 Run from PowerShell in the project root:
     python generate_valluvar_ab_test.py
@@ -37,7 +40,7 @@ FFMPEG_EXE = (
 )
 INPUT_TEXT = ROOT / "tests" / "roja_test.txt"
 OUTPUT_DIR = ROOT / "outputs"
-LENGTH_SCALE = "1.0"
+LENGTH_SCALE = "1.30"
 
 
 def fail(message: str) -> None:
