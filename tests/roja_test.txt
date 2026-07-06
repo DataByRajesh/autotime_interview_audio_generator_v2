@@ -1,0 +1,9 @@
+Payment reconciliation-ன் simple meaning என்னன்னா, payment system-ல் இருக்கும் record-ம் settlement system-ல் இருக்கும் record-ம் match ஆகிறதா என்று check பண்ணுறது.
+
+ஒரு payment app-ல் success என்று காட்டலாம். ஆனால் bank settlement file-ல் அதே amount வரவில்லை என்றால், அது reconciliation issue.
+
+இதில் நாம் check பண்ண வேண்டியது payment ID, amount, status, timestamp, reference number, மற்றும் settlement record.
+
+Interview-ல் இதை சொல்லும்போது, நான் payment record-ம் settlement record-ம் compare பண்ணி, mismatch இருந்தால் logs, database, மற்றும் report values check பண்ணுவேன் என்று சொல்லலாம்.
+
+இதை simple-ஆ நினைவில் வைக்கணும்னா, payment success மட்டும் போதாது. Payment record-ம் settlement record-ம் match ஆகணும்.

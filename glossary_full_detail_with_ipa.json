@@ -1,0 +1,1794 @@
+[
+  {
+    "word": "AI",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "ஏ.ஐ.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "AML",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "ஏ.எம்.எல்.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "API",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "ஏ.பி.ஐ.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "BRD",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "பி.ஆர்.டி.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "CSV",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "சி.எஸ்.வி.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "DORA",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "டி.ஓ.ஆர்.ஏ.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "EU",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "ஈ.யு.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "GDPR",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "ஜி.டி.பி.ஆர்.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "ICT",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "ஐ.சி.டி.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "ID",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "ஐ.டி.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "JSON",
+    "ipa": "dʒeɪsɑːn",
+    "tamil_draft": "ஜேஸான்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "KYC",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "கே.வை.சி.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "NoSQL",
+    "ipa": "noʊ ɛskjuːɛl",
+    "tamil_draft": "னோஎஸ்க்யூஎல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "OAuth",
+    "ipa": "oʊ ɔːθ",
+    "tamil_draft": "ஓஓத்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "PayGuard",
+    "ipa": "peɪ ɡɑːɹd",
+    "tamil_draft": "பேகார்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "PostHog",
+    "ipa": "poʊst hɑːɡ",
+    "tamil_draft": "போஸ்ட்ஹாக்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "QA",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "க்யூ.ஏ.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "RegPulse",
+    "ipa": "ɹɛdʒ pʌls",
+    "tamil_draft": "ரெஜ்பல்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "SEPA",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "எஸ்.ஈ.பி.ஏ.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "SQL",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "எஸ்.க்யூ.எல்.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "Stripe",
+    "ipa": "stɹaɪp",
+    "tamil_draft": "ஸ்ட்ரைப்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "Supabase",
+    "ipa": "suːpɐbeɪs",
+    "tamil_draft": "ஸூபபேஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "Vercel",
+    "ipa": "vɜːsəl",
+    "tamil_draft": "வர்ஸல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "VoP",
+    "ipa": "(acronym - spelled letter by letter)",
+    "tamil_draft": "வி.ஓ.பி.",
+    "needs_manual_review": false,
+    "mode": "acronym"
+  },
+  {
+    "word": "acceptance",
+    "ipa": "ɐksɛptəns",
+    "tamil_draft": "அக்ஸெப்டன்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "accounts",
+    "ipa": "ɐkaʊnts",
+    "tamil_draft": "அகஅவ்ன்ட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "affected",
+    "ipa": "ɐfɛktᵻd",
+    "tamil_draft": "அஃபெக்டிட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "agency",
+    "ipa": "eɪdʒənsi",
+    "tamil_draft": "ஏஜன்ஸி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "aggregation",
+    "ipa": "æɡɹɪɡeɪʃən",
+    "tamil_draft": "ஆக்ரிகேஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "agile",
+    "ipa": "ædʒəl",
+    "tamil_draft": "ஆஜல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "amount",
+    "ipa": "ɐmaʊnt",
+    "tamil_draft": "அமஅவ்ன்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "analyst",
+    "ipa": "ænɐlɪst",
+    "tamil_draft": "ஆனலிஸ்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "analytics",
+    "ipa": "ænɐlɪɾɪks",
+    "tamil_draft": "ஆனலிடிக்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "answer",
+    "ipa": "ænsɚ",
+    "tamil_draft": "ஆன்ஸர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "application",
+    "ipa": "æplɪkeɪʃən",
+    "tamil_draft": "ஆப்லிகேஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "approach",
+    "ipa": "ɐpɹoʊtʃ",
+    "tamil_draft": "அப்ரோச்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "assumption",
+    "ipa": "ɐsʌmpʃən",
+    "tamil_draft": "அஸம்ப்ஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "audit",
+    "ipa": "ɔːdɪt",
+    "tamil_draft": "ஓடிட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "backlog",
+    "ipa": "bæklɑːɡ",
+    "tamil_draft": "பாக்லாக்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "bank",
+    "ipa": "bæŋk",
+    "tamil_draft": "பாங்க்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "based",
+    "ipa": "beɪst",
+    "tamil_draft": "பேஸ்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "batch",
+    "ipa": "bætʃ",
+    "tamil_draft": "பாச்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "behaviour",
+    "ipa": "bᵻheɪvjɚ",
+    "tamil_draft": "பிஹேவ்யர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "billing",
+    "ipa": "bɪlɪŋ",
+    "tamil_draft": "பிலிங்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "brd",
+    "ipa": "biːɑːɹdiː",
+    "tamil_draft": "பீஆர்டீ",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "business",
+    "ipa": "bɪznəs",
+    "tamil_draft": "பிஸ்னஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "challenge",
+    "ipa": "tʃælɪndʒ",
+    "tamil_draft": "சாலின்ஜ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "change",
+    "ipa": "tʃeɪndʒ",
+    "tamil_draft": "சேன்ஜ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "chargeback",
+    "ipa": "tʃɑːɹdʒɪbæk",
+    "tamil_draft": "சார்ஜிபாக்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "check",
+    "ipa": "tʃɛk",
+    "tamil_draft": "செக்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "checks",
+    "ipa": "tʃɛks",
+    "tamil_draft": "செக்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "clarify",
+    "ipa": "klæɹᵻfaɪ",
+    "tamil_draft": "க்லாரிஃபை",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "classification",
+    "ipa": "klæsɪfɪkeɪʃən",
+    "tamil_draft": "க்லாஸிஃபிகேஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "clear",
+    "ipa": "klɪɹ",
+    "tamil_draft": "க்லிர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "client",
+    "ipa": "klaɪənt",
+    "tamil_draft": "க்லைஅன்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "collaborate",
+    "ipa": "kəlæbɚɹeɪt",
+    "tamil_draft": "கலாபர்ரேட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "column",
+    "ipa": "kɑːlʌm",
+    "tamil_draft": "காலம்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "communication",
+    "ipa": "kəmjuːnɪkeɪʃən",
+    "tamil_draft": "கம்யூனிகேஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "compare",
+    "ipa": "kəmpɛɹ",
+    "tamil_draft": "கம்பெர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "completed",
+    "ipa": "kəmpliːɾᵻd",
+    "tamil_draft": "கம்ப்லீடிட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "compliance",
+    "ipa": "kəmplaɪəns",
+    "tamil_draft": "கம்ப்லைஅன்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "concept",
+    "ipa": "kɑːnsɛpt",
+    "tamil_draft": "கான்ஸெப்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "confirm",
+    "ipa": "kənfɜːm",
+    "tamil_draft": "கன்ஃபர்ம்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "control",
+    "ipa": "kəntɹoʊl",
+    "tamil_draft": "கன்ட்ரோல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "count",
+    "ipa": "kaʊnt",
+    "tamil_draft": "கஅவ்ன்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "country",
+    "ipa": "kʌntɹi",
+    "tamil_draft": "கன்ட்ரி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "create",
+    "ipa": "kɹiːeɪt",
+    "tamil_draft": "க்ரீஏட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "created",
+    "ipa": "kɹiːeɪɾᵻd",
+    "tamil_draft": "க்ரீஏடிட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "criteria",
+    "ipa": "kɹaɪtiəɹɪə",
+    "tamil_draft": "க்ரைடிஅரிஅ",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "critical",
+    "ipa": "kɹɪɾɪkəl",
+    "tamil_draft": "க்ரிடிகல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "crossborder",
+    "ipa": "kɹɔsboːɹdɚ",
+    "tamil_draft": "க்ராஸ்போர்டர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "currency",
+    "ipa": "kɜːɹənsi",
+    "tamil_draft": "கர்ரன்ஸி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "customer",
+    "ipa": "kʌstəmɚ",
+    "tamil_draft": "கஸ்டமர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "customers",
+    "ipa": "kʌstəmɚz",
+    "tamil_draft": "கஸ்டமர்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "dashboard",
+    "ipa": "dæʃboːɹd",
+    "tamil_draft": "டாஷ்போர்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "database",
+    "ipa": "deɪɾəbeɪs",
+    "tamil_draft": "டேடபேஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "dataset",
+    "ipa": "deɪɾəsɛt",
+    "tamil_draft": "டேடஸெட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "deadline",
+    "ipa": "dɛdlaɪn",
+    "tamil_draft": "டெட்லைன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "defect",
+    "ipa": "diːfɛkt",
+    "tamil_draft": "டீஃபெக்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "deliverable",
+    "ipa": "dᵻlɪvɚɹəbəl",
+    "tamil_draft": "டிலிவர்ரபல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "delivery",
+    "ipa": "dᵻlɪvɚɹi",
+    "tamil_draft": "டிலிவர்ரி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "dependency",
+    "ipa": "dᵻpɛndənsi",
+    "tamil_draft": "டிபென்டன்ஸி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "documentation",
+    "ipa": "dɑːkjuːmənteɪʃən",
+    "tamil_draft": "டாக்யூமன்டேஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "domain",
+    "ipa": "dəmeɪn",
+    "tamil_draft": "டமேன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "dora",
+    "ipa": "doːɹə",
+    "tamil_draft": "டோர",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "drill",
+    "ipa": "dɹɪl",
+    "tamil_draft": "ட்ரில்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "duplicate",
+    "ipa": "duːplᵻkeɪt",
+    "tamil_draft": "டூப்லிகேட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "duplicate rows",
+    "ipa": "duːplᵻkeɪt ɹoʊz",
+    "tamil_draft": "டூப்லிகேட்ரோஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "duplicates",
+    "ipa": "duːplᵻkeɪts",
+    "tamil_draft": "டூப்லிகேட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "engine",
+    "ipa": "ɛndʒɪn",
+    "tamil_draft": "என்ஜின்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "engineer",
+    "ipa": "ɛndʒɪnɪɹ",
+    "tamil_draft": "என்ஜினிர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "escalation",
+    "ipa": "ɛskɐleɪʃən",
+    "tamil_draft": "எஸ்கலேஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "evidence",
+    "ipa": "ɛvɪdəns",
+    "tamil_draft": "எவிடன்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "example",
+    "ipa": "ɛɡzæmpəl",
+    "tamil_draft": "எக்ஸாம்பல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "examples",
+    "ipa": "ɛɡzæmpəlz",
+    "tamil_draft": "எக்ஸாம்பல்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "exists",
+    "ipa": "ɛɡzɪsts",
+    "tamil_draft": "எக்ஸிஸ்ட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "expected",
+    "ipa": "ɛkspɛktᵻd",
+    "tamil_draft": "எக்ஸ்பெக்டிட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "experience",
+    "ipa": "ɛkspiəɹɪəns",
+    "tamil_draft": "எக்ஸ்பிஅரிஅன்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "explain",
+    "ipa": "ɛkspleɪn",
+    "tamil_draft": "எக்ஸ்ப்லேன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "explanation",
+    "ipa": "ɛksplɐneɪʃən",
+    "tamil_draft": "எக்ஸ்ப்லனேஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "extension",
+    "ipa": "ɛkstɛnʃən",
+    "tamil_draft": "எக்ஸ்டென்ஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "failed",
+    "ipa": "feɪld",
+    "tamil_draft": "ஃபேல்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "failure",
+    "ipa": "feɪlɪɹ",
+    "tamil_draft": "ஃபேலிர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "feedback",
+    "ipa": "fiːdbæk",
+    "tamil_draft": "ஃபீட்பாக்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "fields",
+    "ipa": "fiːldz",
+    "tamil_draft": "ஃபீல்ட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "file",
+    "ipa": "faɪl",
+    "tamil_draft": "ஃபைல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "filter",
+    "ipa": "fɪltɚ",
+    "tamil_draft": "ஃபில்டர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "filters",
+    "ipa": "fɪltɚz",
+    "tamil_draft": "ஃபில்டர்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "finance",
+    "ipa": "faɪnæns",
+    "tamil_draft": "ஃபைனான்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "financial",
+    "ipa": "faɪnænʃəl",
+    "tamil_draft": "ஃபைனான்ஷல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "fintech",
+    "ipa": "fɪntɛk",
+    "tamil_draft": "ஃபின்டெக்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "focused",
+    "ipa": "foʊkəst",
+    "tamil_draft": "ஃபோகஸ்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "gap",
+    "ipa": "ɡæp",
+    "tamil_draft": "காப்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "gap analysis",
+    "ipa": "ɡæp ɐnæləsɪs",
+    "tamil_draft": "காபனாலஸிஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "gateway",
+    "ipa": "ɡeɪtweɪ",
+    "tamil_draft": "கேட்வே",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "group",
+    "ipa": "ɡɹuːp",
+    "tamil_draft": "க்ரூப்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "helps",
+    "ipa": "hɛlps",
+    "tamil_draft": "ஹெல்ப்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "identify",
+    "ipa": "aɪdɛntᵻfaɪ",
+    "tamil_draft": "ஐடென்டிஃபை",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "impact",
+    "ipa": "ɪmpækt",
+    "tamil_draft": "இம்பாக்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "important",
+    "ipa": "ɪmpoːɹtənt",
+    "tamil_draft": "இம்போர்டன்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "incident",
+    "ipa": "ɪnsɪdənt",
+    "tamil_draft": "இன்ஸிடன்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "inner",
+    "ipa": "ɪnɚ",
+    "tamil_draft": "இனர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "insight",
+    "ipa": "ɪnsaɪt",
+    "tamil_draft": "இன்ஸைட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "intelligence",
+    "ipa": "ɪntɛlɪdʒəns",
+    "tamil_draft": "இன்டெலிஜன்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "interview",
+    "ipa": "ɪntɚvjuː",
+    "tamil_draft": "இன்டர்வ்யூ",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "interviewer",
+    "ipa": "ɪntɚvjuːɚ",
+    "tamil_draft": "இன்டர்வ்யூஎர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "investigate",
+    "ipa": "ɪnvɛstᵻɡeɪt",
+    "tamil_draft": "இன்வெஸ்டிகேட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "investigation",
+    "ipa": "ɪnvɛstɪɡeɪʃən",
+    "tamil_draft": "இன்வெஸ்டிகேஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "invoice",
+    "ipa": "ɪnvɔɪs",
+    "tamil_draft": "இன்வாய்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "issue",
+    "ipa": "ɪʃuː",
+    "tamil_draft": "இஷூ",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "issues",
+    "ipa": "ɪʃuːz",
+    "tamil_draft": "இஷூஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "join",
+    "ipa": "dʒɔɪn",
+    "tamil_draft": "ஜாய்ன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "ledger",
+    "ipa": "lɛdʒɚ",
+    "tamil_draft": "லெஜர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "level",
+    "ipa": "lɛvəl",
+    "tamil_draft": "லெவல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "logic",
+    "ipa": "lɑːdʒɪk",
+    "tamil_draft": "லாஜிக்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "logs",
+    "ipa": "lɔɡz",
+    "tamil_draft": "லாக்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "manager",
+    "ipa": "mænɪdʒɚ",
+    "tamil_draft": "மானிஜர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "match",
+    "ipa": "mætʃ",
+    "tamil_draft": "மாச்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "matching",
+    "ipa": "mætʃɪŋ",
+    "tamil_draft": "மாசிங்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "medium",
+    "ipa": "miːdiəm",
+    "tamil_draft": "மீடிஅம்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "memory",
+    "ipa": "mɛmɚɹi",
+    "tamil_draft": "மெமர்ரி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "metric",
+    "ipa": "mɛtɹɪk",
+    "tamil_draft": "மெட்ரிக்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "migrant",
+    "ipa": "maɪɡɹənt",
+    "tamil_draft": "மைக்ரன்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "milestone",
+    "ipa": "maɪlstoʊn",
+    "tamil_draft": "மைல்ஸ்டோன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "mismatch",
+    "ipa": "mɪsmætʃ",
+    "tamil_draft": "மிஸ்மாச்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "missing",
+    "ipa": "mɪsɪŋ",
+    "tamil_draft": "மிஸிங்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "needs",
+    "ipa": "niːdz",
+    "tamil_draft": "னீட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "null values",
+    "ipa": "nʌl væljuːz",
+    "tamil_draft": "னல்வால்யூஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "onboarding",
+    "ipa": "ɑːnboːɹdɪŋ",
+    "tamil_draft": "ஆன்போர்டிங்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "operational",
+    "ipa": "ɑːpɚɹeɪʃənəl",
+    "tamil_draft": "ஆபர்ரேஷனல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "operations",
+    "ipa": "ɑːpɚɹeɪʃənz",
+    "tamil_draft": "ஆபர்ரேஷன்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "order",
+    "ipa": "ɔːɹdɚ",
+    "tamil_draft": "ஓர்டர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "outlier",
+    "ipa": "aʊtlaɪɚ",
+    "tamil_draft": "அவ்ட்லைஎர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "owner",
+    "ipa": "oʊnɚ",
+    "tamil_draft": "ஓனர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "pause",
+    "ipa": "pɔːz",
+    "tamil_draft": "போஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "payment",
+    "ipa": "peɪmənt",
+    "tamil_draft": "பேமன்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "payments",
+    "ipa": "peɪmənts",
+    "tamil_draft": "பேமன்ட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "pending",
+    "ipa": "pɛndɪŋ",
+    "tamil_draft": "பென்டிங்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "permit",
+    "ipa": "pɜːmɪt",
+    "tamil_draft": "பர்மிட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "pipeline",
+    "ipa": "paɪplaɪn",
+    "tamil_draft": "பைப்லைன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "planning",
+    "ipa": "plænɪŋ",
+    "tamil_draft": "ப்லானிங்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "portfolio",
+    "ipa": "poːɹtfoʊlɪoʊ",
+    "tamil_draft": "போர்ட்ஃபோலிஓ",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "priority",
+    "ipa": "pɹaɪɔːɹᵻɾi",
+    "tamil_draft": "ப்ரைஓரிடி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "problem",
+    "ipa": "pɹɑːbləm",
+    "tamil_draft": "ப்ராப்லம்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "process",
+    "ipa": "pɹɑːsɛs",
+    "tamil_draft": "ப்ராஸெஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "product",
+    "ipa": "pɹɑːdʌkt",
+    "tamil_draft": "ப்ராடக்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "project",
+    "ipa": "pɹɑːdʒɛkt",
+    "tamil_draft": "ப்ராஜெக்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "quality",
+    "ipa": "kwɔlᵻɾi",
+    "tamil_draft": "க்வாலிடி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "query",
+    "ipa": "kwiəɹi",
+    "tamil_draft": "க்விஅரி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "question",
+    "ipa": "kwɛstʃən",
+    "tamil_draft": "க்வெஸ்சன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "rather",
+    "ipa": "ɹæðɚ",
+    "tamil_draft": "ராதர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "ready",
+    "ipa": "ɹɛdi",
+    "tamil_draft": "ரெடி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "reconciliation",
+    "ipa": "ɹɛkənsɪlɪeɪʃən",
+    "tamil_draft": "ரெகன்ஸிலிஏஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "record",
+    "ipa": "ɹɛkɚd",
+    "tamil_draft": "ரெகர்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "records",
+    "ipa": "ɹɛkɚdz",
+    "tamil_draft": "ரெகர்ட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "reference",
+    "ipa": "ɹɛfɹəns",
+    "tamil_draft": "ரெஃப்ரன்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "reference number",
+    "ipa": "ɹɛfɹəns nʌmbɚ",
+    "tamil_draft": "ரெஃப்ரன்ஸ்னம்பர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "refund",
+    "ipa": "ɹᵻfʌnd",
+    "tamil_draft": "ரிஃபன்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "refunds",
+    "ipa": "ɹᵻfʌndz",
+    "tamil_draft": "ரிஃபன்ட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "related",
+    "ipa": "ɹᵻleɪɾᵻd",
+    "tamil_draft": "ரிலேடிட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "release",
+    "ipa": "ɹᵻliːs",
+    "tamil_draft": "ரிலீஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "relocation",
+    "ipa": "ɹᵻloʊkeɪʃən",
+    "tamil_draft": "ரிலோகேஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "repeat",
+    "ipa": "ɹᵻpiːt",
+    "tamil_draft": "ரிபீட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "report",
+    "ipa": "ɹᵻpoːɹt",
+    "tamil_draft": "ரிபோர்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "reporting",
+    "ipa": "ɹᵻpoːɹɾɪŋ",
+    "tamil_draft": "ரிபோர்டிங்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "requirement",
+    "ipa": "ɹᵻkwaɪɚmənt",
+    "tamil_draft": "ரிக்வைஎர்மன்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "requirements",
+    "ipa": "ɹᵻkwaɪɚmənts",
+    "tamil_draft": "ரிக்வைஎர்மன்ட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "resilience",
+    "ipa": "ɹᵻsɪliəns",
+    "tamil_draft": "ரிஸிலிஅன்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "responsibility",
+    "ipa": "ɹᵻspɑːnsəbɪlᵻɾi",
+    "tamil_draft": "ரிஸ்பான்ஸபிலிடி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "result",
+    "ipa": "ɹɪzʌlt",
+    "tamil_draft": "ரிஸல்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "results",
+    "ipa": "ɹɪzʌlts",
+    "tamil_draft": "ரிஸல்ட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "returns",
+    "ipa": "ɹᵻtɜːnz",
+    "tamil_draft": "ரிடர்ன்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "review",
+    "ipa": "ɹᵻvjuː",
+    "tamil_draft": "ரிவ்யூ",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "rewind",
+    "ipa": "ɹᵻwaɪnd",
+    "tamil_draft": "ரிவைன்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "risk",
+    "ipa": "ɹɪsk",
+    "tamil_draft": "ரிஸ்க்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "role",
+    "ipa": "ɹoʊl",
+    "tamil_draft": "ரோல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "rules",
+    "ipa": "ɹuːlz",
+    "tamil_draft": "ரூல்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "scenario",
+    "ipa": "sənæɹioʊ",
+    "tamil_draft": "ஸனாரிஓ",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "schema",
+    "ipa": "skiːmə",
+    "tamil_draft": "ஸ்கீம",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "scope",
+    "ipa": "skoʊp",
+    "tamil_draft": "ஸ்கோப்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "scoring",
+    "ipa": "skoːɹɪŋ",
+    "tamil_draft": "ஸ்கோரிங்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "scrum",
+    "ipa": "skɹʌm",
+    "tamil_draft": "ஸ்க்ரம்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "section",
+    "ipa": "sɛkʃən",
+    "tamil_draft": "ஸெக்ஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "select",
+    "ipa": "sᵻlɛkt",
+    "tamil_draft": "ஸிலெக்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "sepa",
+    "ipa": "sɛpə",
+    "tamil_draft": "ஸெப",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "settlement",
+    "ipa": "sɛɾəlmənt",
+    "tamil_draft": "ஸெடல்மன்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "settlements",
+    "ipa": "sɛɾəlmənts",
+    "tamil_draft": "ஸெடல்மன்ட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "shows",
+    "ipa": "ʃoʊz",
+    "tamil_draft": "ஷோஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "skills",
+    "ipa": "skɪlz",
+    "tamil_draft": "ஸ்கில்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "sla",
+    "ipa": "ɛsɛleɪ",
+    "tamil_draft": "எஸெலே",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "solution",
+    "ipa": "səluːʃən",
+    "tamil_draft": "ஸலூஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "source",
+    "ipa": "soːɹs",
+    "tamil_draft": "ஸோர்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "sprint",
+    "ipa": "spɹɪnt",
+    "tamil_draft": "ஸ்ப்ரின்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "staffing",
+    "ipa": "stæfɪŋ",
+    "tamil_draft": "ஸ்டாஃபிங்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "stakeholder",
+    "ipa": "steɪkhoʊldɚ",
+    "tamil_draft": "ஸ்டேக்ஹோல்டர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "status",
+    "ipa": "stæɾəs",
+    "tamil_draft": "ஸ்டாடஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "statuses",
+    "ipa": "stæɾəsᵻz",
+    "tamil_draft": "ஸ்டாடஸிஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "store",
+    "ipa": "stoːɹ",
+    "tamil_draft": "ஸ்டோர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "stores",
+    "ipa": "stoːɹz",
+    "tamil_draft": "ஸ்டோர்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "stories",
+    "ipa": "stoːɹiz",
+    "tamil_draft": "ஸ்டோரிஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "story",
+    "ipa": "stoːɹi",
+    "tamil_draft": "ஸ்டோரி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "strength",
+    "ipa": "stɹɛŋθ",
+    "tamil_draft": "ஸ்ட்ரெங்த்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "success",
+    "ipa": "səksɛs",
+    "tamil_draft": "ஸக்ஸெஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "successful",
+    "ipa": "səksɛsfəl",
+    "tamil_draft": "ஸக்ஸெஸ்ஃபல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "summarise",
+    "ipa": "sʌmɚɹaɪz",
+    "tamil_draft": "ஸமர்ரைஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "support",
+    "ipa": "səpoːɹt",
+    "tamil_draft": "ஸபோர்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "supports",
+    "ipa": "səpoːɹts",
+    "tamil_draft": "ஸபோர்ட்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "system",
+    "ipa": "sɪstəm",
+    "tamil_draft": "ஸிஸ்டம்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "systems",
+    "ipa": "sɪstəmz",
+    "tamil_draft": "ஸிஸ்டம்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "table",
+    "ipa": "teɪbəl",
+    "tamil_draft": "டேபல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "tables",
+    "ipa": "teɪbəlz",
+    "tamil_draft": "டேபல்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "team",
+    "ipa": "tiːm",
+    "tamil_draft": "டீம்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "technical",
+    "ipa": "tɛknɪkəl",
+    "tamil_draft": "டெக்னிகல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "terminology",
+    "ipa": "tɜːmɪnɑːlədʒi",
+    "tamil_draft": "டர்மினாலஜி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "test case",
+    "ipa": "tɛst keɪs",
+    "tamil_draft": "டெஸ்ட்கேஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "testing",
+    "ipa": "tɛstɪŋ",
+    "tamil_draft": "டெஸ்டிங்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "ticket",
+    "ipa": "tɪkɪt",
+    "tamil_draft": "டிகிட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "timestamp",
+    "ipa": "taɪmstæmp",
+    "tamil_draft": "டைம்ஸ்டாம்ப்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "tracking",
+    "ipa": "tɹækɪŋ",
+    "tamil_draft": "ட்ராகிங்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "transaction",
+    "ipa": "tɹænsækʃən",
+    "tamil_draft": "ட்ரான்ஸாக்ஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "transactions",
+    "ipa": "tɹænsækʃənz",
+    "tamil_draft": "ட்ரான்ஸாக்ஷன்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "trend",
+    "ipa": "tɹɛnd",
+    "tamil_draft": "ட்ரென்ட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "uat",
+    "ipa": "juːæt",
+    "tamil_draft": "யூஆட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "useful",
+    "ipa": "juːsfəl",
+    "tamil_draft": "யூஸ்ஃபல்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "user story",
+    "ipa": "juːzɚ stoːɹi",
+    "tamil_draft": "யூஸர்ஸ்டோரி",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "users",
+    "ipa": "juːzɚz",
+    "tamil_draft": "யூஸர்ஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "validate",
+    "ipa": "vælᵻdeɪt",
+    "tamil_draft": "வாலிடேட்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "validation",
+    "ipa": "vælɪdeɪʃən",
+    "tamil_draft": "வாலிடேஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "value",
+    "ipa": "væljuː",
+    "tamil_draft": "வால்யூ",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "values",
+    "ipa": "væljuːz",
+    "tamil_draft": "வால்யூஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "visualization",
+    "ipa": "vɪʒuːəlᵻzeɪʃən",
+    "tamil_draft": "விஜூஅலிஸேஷன்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "weakness",
+    "ipa": "wiːknəs",
+    "tamil_draft": "வீக்னஸ்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "webhook",
+    "ipa": "wɛbhʊk",
+    "tamil_draft": "வெப்ஹுக்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "whether",
+    "ipa": "wɛðɚ",
+    "tamil_draft": "வெதர்",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "window",
+    "ipa": "wɪndoʊ",
+    "tamil_draft": "வின்டோ",
+    "needs_manual_review": false,
+    "mode": "word"
+  },
+  {
+    "word": "workflow",
+    "ipa": "wɜːkfloʊ",
+    "tamil_draft": "வர்க்ஃப்லோ",
+    "needs_manual_review": false,
+    "mode": "word"
+  }
+]
